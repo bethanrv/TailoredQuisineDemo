@@ -94,12 +94,13 @@
   function swapCaroselImg(){
     food_image_index++;
     if(food_image_index == food_images.length) food_image_index = 0;
-    fadeOut('chefsWorkImg');
+    document.getElementById('chefsWorkImg').src = food_images[food_image_index];
+    //fadeOut('chefsWorkImg');
 
-    setTimeout(function(){
-      document.getElementById('chefsWorkImg').src = food_images[food_image_index];
-      fadeIn('chefsWorkImg');
-    }, 1500);
+    // setTimeout(function(){
+    //   document.getElementById('chefsWorkImg').src = food_images[food_image_index];
+    //   fadeIn('chefsWorkImg');
+    // }, 1500);
   }
 
 
