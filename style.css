@@ -1,0 +1,151 @@
+/*
+  Style sheet for Tailored Quisine Demo 1
+*/
+
+
+*{
+  font-family: 'Open Sans', sans-serif;
+  color:#3d3f4a;
+}
+
+body{
+  background-color: #fff2ba;
+  padding-bottom: 10vh;
+}
+
+
+
+header{
+  padding-top: 4vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+}
+
+.logo{
+    border-radius: 50%;
+    width: 35vh;
+    height: auto;
+}
+
+logoContainer{
+  padding-left: 4vw;
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+flexContainer{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+txtPadding{
+  padding-left: 5vw;
+}
+
+
+centeredContainer{
+  padding-top: 7vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+carosel{
+  width: 90%;
+}
+
+carosel img{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+linkContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+.linkTxt{
+  padding-left: 1vh;
+}
+.linkTxt:hover{
+  color:dodgerblue;
+  text-decoration: underline;
+}
+
+.socialMediaIcon{
+  padding-top: 1vh;
+  width: 4vh;
+  height: 4vh;
+}
+
+.defaultBtn{
+    font-size: 1.5em;
+    background-color: white;
+    border-color: black;
+    width: 25vw;
+}
+.defaultBtn:hover{
+    font-size: 1.5em;
+    background-color: black;
+    border-color: black;
+    color:white;
+}
+
+.borderedTxt{
+  border-style: solid;
+  border-width: thick;
+  border-color: white;
+  border-radius: 5px;
+}
+
+
+/*
+  Responsive Design Styling
+*/
+@media (min-width:0px){
+
+}
+/*
+  Resizing for mobile
+*/
+@media (max-width:768px){
+  logoContainer{
+    justify-content: center;
+    width: 100%;
+    padding-left: 0;
+    padding-bottom: 5vh;
+  }
+  flexContainer{
+    align-items: center;
+    width: 100%;
+  }
+
+}
+
+/*
+  Resizing for low-res device
+*/
+
+@media (max-width:340px){
+  .logo{
+    width: 70vh;
+  }
+}
+
+/*
+  Resizing for desktop
+*/
+@media (min-width:1200px){
+  .logo{
+    width: 30vw;
+  }
+  logoContainer{
+    width: 43%;
+  }
+}
