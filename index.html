@@ -5,37 +5,84 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title> Tailored Quisine </title>
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?version=1.1">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
   </head>
   <body>
+
+    <!-- nav bar on top of screen -->
+    <topNav>
+      <div style="display:flex;">
+        <img onclick="openMenu()" class="icon" src="https://iili.io/30DYl4.png" style="cursor:pointer;" alt="menu icon">
+        <p class="cursive"> Tailored Quisine </p>
+      </div>
+
+      <div style="display:flex;">
+        <txtLink> Sign Up </txtLink>
+      </div>
+    </topNav>
+
+    <sideNav id="sideNavBar" style="display:none;">
+      <img onclick="closeMenu()" class="icon" src="https://iili.io/31dCu4.png" style="cursor:pointer;" alt="close menu icon">
+      <div id="sideNavItems" style="display: flex; flex-direction: column; align-items:center;">
+        <p> Order A Meal </p>
+        <p> Order Recurring Meals </p>
+        <p> Order A Custom Meal </p>
+        <p> Shop Health Products </p>
+      </div>
+    </sideNav>
 
     <!-- Header... Inludes logo img and about us sentence -->
     <header>
       <logoContainer>
-        <img class="logo" src="https://i.ibb.co/Lx0mDxL/Screenshot-44-Copy-Copy.png" alt="Tailored Quisine Logo">
+        <img class="logo" style="cursor:default;" src="https://i.ibb.co/Lx0mDxL/Screenshot-44-Copy-Copy.png" alt="Tailored Quisine Logo">
       </logoContainer>
 
       <flexContainer class="borderedTxt">
         <txtPadding>
-          <h2> We offer...  </h2>
-          <p> (finish this sentence) </p>
+          <h2> The Meal Kit Project For The D.C. Community  </h2>
+          <p> Now Offering Delivery Each Monday, Wednesday, And Friday </p>
+
+          <div class="dynamicCenterContainer" >
+            <button  class="defaultBtn"> Order Now </button>
+          </div>
+
         </txtPadding>
       </flexContainer
     </header>
 
+
+    <!-- Pasta and soup images + desc -->
+    <centeredContainer>
+
+      <h2 class="cursive" style="font-size:2.5em;"> Tailored Quisine Meals </h2>
+      <p style="margin:0;"> Providing The On-The-Go Family   </p>
+      <p style="margin:0;"> With Delicious, Healthy, And Affordable Meals </p>
+      <p style="margin:0;">  - Servicing The D.C. Area  </p>
+
+      <tripleImgContainer>
+        <img id="pastaMakingImg" src="https://iili.io/319Y9R.md.png" alt="pasta making image">
+        <img id="soupImg" src="https://iili.io/30yv3J.jpg" alt="soup image">
+        <img id="pastaImg" src="https://iili.io/31958v.md.png" alt="pasta image">
+      </tripleImgContainer>
+    </centeredContainer>
+
+
     <!-- Sign Up Blurb and button -->
     <centeredContainer>
-      <h2> Sign Up </h2>
-      <p> Sign up for... (finish this sentence) </p>
-      <button id="signUpButton" class="defaultBtn" type="button" name="signUpButton"> Sign Up </button>
+      <h2> Sign Up For Recurring Deliveries </h2>
+      <p  style="margin:0;"> Get Tailored Quisine Delivered Every Week!  </p>
+      <p  style="margin-top:0;"> Offered Each Monday, Wednesday, And Friday </p>
+      <button id="signUpButton" class="defaultBtn" type="button" name="signUpButton"> Schedual Your Orders </button>
     </centeredContainer>
 
     <!-- Food Images Carosel -->
     <centeredContainer>
       <h2> The Chef's Work  </h2>
-      <carosel>
+      <carosel onclick="window.open('https://www.instagram.com/tailored_quisine101/')">
         <img id='chefsWorkImg' src="https://i.ibb.co/wWwfjR6/Screenshot-75.png" alt="Chef's Work">
       </carosel
     </centeredContainer>
@@ -44,9 +91,15 @@
     <!-- Our Story -->
     <centeredContainer>
       <h2> Our Story  </h2>
-      <p> How you got started... </p>
-      <p> Goal/Mission? </p>
-      <p> - some nice pictures? - </p>
+      <p>* ...good place for video... *</p>
+    </centeredContainer>
+
+
+    <!-- Health Products Area -->
+    <centeredContainer>
+      <h2> Home-Made Health Products </h2>
+      <p> Natural Health Products From The Chef And Family </p>
+      <button class="defaultBtn"> Shop Now </button>
     </centeredContainer>
 
 
@@ -60,10 +113,9 @@
 
       <linkContainer onclick="window.open('https://www.instagram.com/tailored_quisine101/')">
         <img class="socialMediaIcon" src="https://i.ibb.co/jbvtJFC/fb.png" alt="">
-        <p class="linkTxt"> facebook? </p>
+        <p class="linkTxt"> facebook </p>
       </linkContainer>
 
-      <p> other? </p>
     </centeredContainer>
 
 
@@ -72,16 +124,75 @@
 <script type="text/javascript">
 
   //properties...
+
+  //main food Images
+  var mainFoodImgsIDs = ['pastaMakingImg', 'soupImg', 'pastaImg'];
+  var mainFoodImgs = ['https://iili.io/319Y9R.md.png', 'https://iili.io/30yv3J.jpg', 'https://iili.io/31958v.md.png'];
+  var mainFoodDescs = ['https://iili.io/31H7fe.png', 'https://iili.io/31HY0u.png', 'https://iili.io/31HaUb.png' ];
+
   var food_images = ['https://i.ibb.co/wWwfjR6/Screenshot-75.png', 'https://i.ibb.co/239qxwf/Screenshot-74.png', 'https://i.ibb.co/SNLmBNV/Screenshot-73.png', 'https://i.ibb.co/j3BYp8v/Screenshot-72.png', 'https://i.ibb.co/WWQ2D9J/Screenshot-71.png', 'https://i.ibb.co/jhWh5wn/Screenshot-70.png']
   var food_image_index = 0;
+
+
 
 
   //on page load...
   window.onload = function(){
 
+    //init food onclicks
+    initMainFoods();
+
     //make carosel switch images
     initCarosel();
 
+  }
+
+  //open side nav menu
+  function openMenu(){
+    document.getElementById('sideNavItems').style.display = 'none';
+    document.getElementById('sideNavBar').style.display = 'block';
+    document.getElementById('sideNavBar').style.width = 0;
+
+    let width  = 0;
+    var slideInInterval = setInterval(function(){
+      width++;
+      document.getElementById('sideNavBar').style.width = width + 'vw';
+      if(width >= 40) {
+        clearInterval(slideInInterval);
+        document.getElementById('sideNavItems').style.display = 'flex';
+      }
+    }, 10);
+  }
+
+  //close side nav menu
+  function closeMenu(){
+    document.getElementById('sideNavItems').style.display = 'none';
+    let width  = 40;
+    var slideOutInterval = setInterval(function(){
+      width--;
+      document.getElementById('sideNavBar').style.width = width + 'vw';
+      if(width <= 0) {
+        clearInterval(slideOutInterval);
+        document.getElementById('sideNavBar').style.display = 'none';
+      }
+    }, 10);
+  }
+
+  //set on hover for main food images
+  function initMainFoods(){
+    for(var foodId in mainFoodImgsIDs){
+      let id = mainFoodImgsIDs[foodId];
+      let foodImg = mainFoodImgs[foodId];
+      let descImg = mainFoodDescs[foodId];
+
+      document.getElementById(id).onmouseover = function(){
+        document.getElementById(id).src = descImg;
+      };
+
+      document.getElementById(id).onmouseleave = function(){
+        document.getElementById(id).src = foodImg;
+      };
+    }
   }
 
   //init carosel - swap images every few seconds
