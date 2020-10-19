@@ -6,6 +6,18 @@
 *{
   font-family: 'Open Sans', sans-serif;
   color:#3d3f4a;
+  cursor: default;
+}
+.cursive{
+  font-family: 'Dancing Script', cursive;
+}
+
+button{
+  cursor: pointer;
+}
+
+img{
+  cursor: pointer;
 }
 
 p{
@@ -24,10 +36,63 @@ body{
   padding-bottom: 10vh;
 }
 
+topNav{
+  width: 100%;
+  height: 6vh;
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+topNav p{
+  padding-left: 3vh;
+  font-size: 2em;
+  margin:0;
+  padding-top: 1vh;
+}
+
+sideNav{
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: white;
+  width: 40%;
+  height: 100%;
+}
+
+sideNav p{
+  cursor: pointer;
+}
+
+sideNav p:hover{
+  color: dodgerblue;
+  text-decoration: underline;
+}
+
+txtLink{
+  padding-top: 2vh;
+  padding-right: 2vh;
+  color: dodgerblue;
+  cursor: pointer;
+}
+txtLink:hover{
+  text-decoration: underline;
+}
+
+.icon{
+  width: 3vh;
+  height: 3vh;
+  padding-top: 1.5vh;
+  padding-left: 2vh;
+}
+
 
 
 header{
-  padding-top: 4vh;
+  padding-top: 10vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -37,7 +102,7 @@ header{
 .logo{
     border-radius: 50%;
     width: 35vh;
-    height: auto;
+    height: 35vh;
 }
 
 logoContainer{
@@ -55,6 +120,8 @@ flexContainer{
 
 txtPadding{
   padding-left: 5vw;
+  padding-right: 5vw;
+  padding-bottom: 4vh;
 }
 
 
@@ -65,6 +132,24 @@ centeredContainer{
   flex-direction: column;
   align-items: center;
 }
+
+tripleImgContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+tripleImgContainer img{
+  width: 40vw;
+  height: 50vw;
+  padding: 3vh;
+  border-radius: 100px;
+  text-align: center;
+}
+
+
 
 carosel{
   width: 90%;
@@ -82,9 +167,17 @@ linkContainer{
   padding-bottom: 2vh;
 }
 
+.imgCenteredTxt{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .linkTxt{
   padding-left: 1vh;
   margin:0;
+  cursor: pointer;
 }
 .linkTxt:hover{
   color:dodgerblue;
@@ -114,6 +207,12 @@ linkContainer{
   border-width: thick;
   border-color: white;
   border-radius: 5px;
+}
+
+.dynamicCenterContainer{
+  width:100%;
+  display:flex;
+  justify-content:center;
 }
 
 
@@ -150,6 +249,7 @@ linkContainer{
 @media (max-width:340px){
   .logo{
     width: 70vh;
+    height: 70vh;
   }
 }
 
@@ -159,8 +259,29 @@ linkContainer{
 @media (min-width:1200px){
   .logo{
     width: 30vw;
+    height: 30vw;
   }
   logoContainer{
     width: 43%;
+    height: 43%;
+  }
+  txtPadding{
+    padding-top: 10vh;
+  }
+  tripleImgContainer{
+    flex-direction: row;
+  }
+  tripleImgContainer img{
+    width: 20vw;
+    height: 30vw;
+  }
+  carosel{
+    width: 50%;
+  }
+  .borderedTxt{
+    border:none;
+  }
+  .dynamicCenterContainer{
+    justify-content: start;
   }
 }
