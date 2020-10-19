@@ -149,6 +149,13 @@
 
   //open side nav menu
   function openMenu(){
+
+    let fullWidth = 40;
+
+    if(window.innerWidth < 768){
+      fullWidth = 60;
+    }
+
     document.getElementById('sideNavItems').style.display = 'none';
     document.getElementById('sideNavBar').style.display = 'block';
     document.getElementById('sideNavBar').style.width = 0;
@@ -157,7 +164,7 @@
     var slideInInterval = setInterval(function(){
       width++;
       document.getElementById('sideNavBar').style.width = width + 'vw';
-      if(width >= 40) {
+      if(width >= fullWidth) {
         clearInterval(slideInInterval);
         document.getElementById('sideNavItems').style.display = 'flex';
       }
@@ -166,8 +173,15 @@
 
   //close side nav menu
   function closeMenu(){
+
+    let fullWidth = 40;
+
+    if(window.innerWidth < 768){
+      fullWidth = 60;
+    }
+
     document.getElementById('sideNavItems').style.display = 'none';
-    let width  = 40;
+    let width  = fullWidth;
     var slideOutInterval = setInterval(function(){
       width--;
       document.getElementById('sideNavBar').style.width = width + 'vw';
