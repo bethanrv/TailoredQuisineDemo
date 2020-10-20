@@ -215,6 +215,10 @@ linkContainer{
   justify-content:center;
 }
 
+.largeBtn{
+  width: 20vw;
+}
+
 
 /*
   Responsive Design Styling
@@ -227,7 +231,9 @@ linkContainer{
 */
 @media (max-width:768px){
 
-
+  .largeBtn{
+    width: 40vw;
+  }
 
   logoContainer{
     justify-content: center;
