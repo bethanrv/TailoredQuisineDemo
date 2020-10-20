@@ -24,6 +24,12 @@ p{
   font-size: 22px;
 }
 
+.titleTxt{
+  font-size:2em;
+  padding:1vh;
+  border-radius: 20px;
+}
+
 h2{
   font-size:32px;
 }
@@ -82,11 +88,28 @@ txtLink:hover{
   text-decoration: underline;
 }
 
+.boldTxt{
+  font-size: 2em;
+  font-weight: bold;
+}
+
 .icon{
   width: 3vh;
   height: 3vh;
   padding-top: 1.5vh;
   padding-left: 2vh;
+}
+
+.headImg{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.transBG{
+  background-color: rgba(255, 252, 240, 0.8 )
 }
 
 
@@ -96,6 +119,7 @@ header{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -108,8 +132,7 @@ header{
 logoContainer{
   padding-left: 4vw;
   display: flex;
-  justify-content: flex-start;
-  width: 50%;
+  justify-content: center;
 }
 
 flexContainer{
@@ -118,10 +141,19 @@ flexContainer{
   width: 40%;
 }
 
+flexContainerFull{
+  display: flex;
+  flex-direction: column;
+}
+
 txtPadding{
   padding-left: 5vw;
   padding-right: 5vw;
   padding-bottom: 4vh;
+}
+
+.borderShrink{
+  width: 100%;
 }
 
 
@@ -219,6 +251,12 @@ linkContainer{
   width: 20vw;
 }
 
+imgContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 /*
   Responsive Design Styling
@@ -239,12 +277,17 @@ linkContainer{
     justify-content: center;
     width: 100%;
     padding-left: 0;
-    padding-bottom: 5vh;
+    padding-top: 5vh;
   }
   flexContainer{
     align-items: center;
     width: 100%;
   }
+  flexContainerFull{
+    align-items: center;
+    width: 100%;
+  }
+
 
 }
 
@@ -289,5 +332,9 @@ linkContainer{
   }
   .dynamicCenterContainer{
     justify-content: start;
+  }
+  .borderShrink{
+    width: 40%;
+    align-items: center;
   }
 }
