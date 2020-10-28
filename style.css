@@ -37,6 +37,46 @@ h1{
   font-size: 2em;
 }
 
+menuDesc{
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  padding-left: 6vh;
+  padding-right: 6vh;
+  font-size: 1.4em;
+}
+
+menuItemTxt{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+menuItemDesc{
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 4vh;
+  padding-right: 8vh;
+  font-size: 1.25em;
+}
+
+.menuImg{
+    height: 30vh;
+    border-radius: 20px;
+}
+
+menuTripleImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+menuTripleImg imgContainer img{
+  width: 20vh;
+  height: 20vh;
+  padding: 3vh;
+  border-radius: 20%;
+
+}
+
 body{
   background-color: #fff2ba;
   padding-bottom: 10vh;

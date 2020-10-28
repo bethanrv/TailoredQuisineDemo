@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title> Tailored Quisine </title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css?version=1.31">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  </head>
+  <body style="background-image:url('https://iili.io/3E7bxp.jpg'); margin-left:5%; margin-right:5%;">
+
+    <!-- nav bar on top of screen -->
+    <topNav>
+      <div style="display:flex;">
+        <img onclick="openMenu()" class="icon" src="https://iili.io/30DYl4.png" style="cursor:pointer;" alt="menu icon">
+        <p class="cursive"> Tailored Quisine 101</p>
+      </div>
+
+      <div style="display:flex;">
+        <txtLink> Sign Up </txtLink>
+      </div>
+    </topNav>
+
+    <sideNav id="sideNavBar" style="display:none; background-image:url('https://iili.io/3EMP0Q.md.jpg');" >
+      <img onclick="closeMenu()" class="icon" src="https://iili.io/31dCu4.png" style="cursor:pointer;" alt="close menu icon">
+      <div id="sideNavItems" style="display: flex; flex-direction: column; align-items:left; padding-left: 4vh; ">
+        <p class="boldTxt"> Order A Meal </p>
+        <p class="boldTxt"> Order Recurring Meals </p>
+        <p class="boldTxt"> Order A Custom Meal </p>
+        <p class="boldTxt"> Shop Health Products </p>
+      </div>
+    </sideNav>
+
+
+
+
+    <!-- Header - Place Your Order - Select -->
+    <centeredContainer >
+      <div class="" style="border-radius: 20px; background-image:url('https://iili.io/3E7eHb.jpg'); background-repeat: repeat;">
+        <centeredContainer style="padding-top:0; padding-bottom:5vh; text-align: center;">
+          <h2 class="cursive" style="font-size:2.5em; color:white;"> Place Your Order </h2>
+          <p style="margin:0; font-weight: bold; font-size: 1.5em; justify-content:center; padding-left:4vh; padding-right:4vh; color:white;">
+           Select Items To Add To Your Order
+         </p>
+
+        </centeredContainer>
+      </div>
+
+
+
+    </centeredContainer>
+
+    <!-- Seasonal Soups Selection -->
+    <div style="display:flex; justify-content:center; padding-bottom:4vh; padding-top:4vh;">
+      <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+        <h2> Seasonal Soups - Made Daily </h2>
+        <menuDesc  style="padding-bottom:0vh;"> Delivered Frozen - Needs To Be Heated On Stove By Responsible Party Over 16 </menuDesc>
+
+        <p class="cursive transBG titleTxt" style=""> Our Spicy Thai Coconut </p>
+        <img class="menuImg" id="soupImg" src="https://iili.io/30yv3J.jpg" alt="soup image">
+
+        <!--
+        <menuTripleImg>
+          <imgContainer>
+            <p class="cursive transBG titleTxt" style=""> Home Made Pastas </p>
+            <img id="pastaMakingImg" src="https://iili.io/319Y9R.md.png" alt="pasta making image">
+          </imgContainer>
+          <imgContainer>
+            <p class="cursive transBG titleTxt" style=""> House Soups </p>
+            <img id="soupImg" src="https://iili.io/30yv3J.jpg" alt="soup image">
+          </imgContainer>
+          <imgContainer>
+            <p class="cursive transBG titleTxt" style=""> Custom Orders </p>
+            <img id="pastaImg" src="https://iili.io/31958v.md.png" alt="pasta image">
+          </imgContainer>
+        </menuTripleImg>
+      -->
+
+          <h2> Select From... </h2>
+
+          <div style="display:flex; justify-content: left; flex-direction:column; padding-left:4vh;">
+            <menuItemTxt> 1. Tomato & Tumeric $7 Half - $14 Full  </menuItemTxt>
+            <menuItemDesc>
+              Homemade Macaroni Baked In A Decadent House Cheese Blend Of Guda, Sharp Chedder, & A Touch Of Love From Our Kitchen To Yours
+            </menuItemDesc>
+
+            <menuItemTxt> 2. Cream Of Crab $7 Half - $14 Full  </menuItemTxt>
+            <menuItemDesc>
+              Homemade Macaroni Baked In A Decadent House Cheese Blend Of Guda, Sharp Chedder, & A Touch Of Love From Our Kitchen To Yours
+            </menuItemDesc>
+
+            <menuItemTxt> 3. Lobster Bisque $7 Half - $14 Full </menuItemTxt>
+            <menuItemDesc>
+              Homemade Macaroni Baked In A Decadent House Cheese Blend Of Guda, Sharp Chedder, & A Touch Of Love From Our Kitchen To Yours
+            </menuItemDesc>
+
+            <menuItemTxt> 4. Chicken or Crab Curry Pumpkin $7 Half - $14 Full </menuItemTxt>
+            <menuItemDesc>
+              Classic Alfredo Fresh Pasta Noodles Tossed & Flash-Simmered In A Light Butter & Cream Sauce Topped With Pepper & Parmesan Cheese
+            </menuItemDesc>
+
+            <menuItemTxt> 5. Cream Of Corn & Crab Chowder $7 Half - $14 Full </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+
+            <menuItemTxt> 6. Cajun Seafood Gumbo $7 Half - $14 Full </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+
+            <menuItemTxt> 7. Full Flavored Veggie Broth $7 Half - $14 Full ( + Healthy ) </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+
+            <menuItemTxt> 8. Black Bean Enchilada $6 Half - $12 Full </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+
+            <menuItemTxt> 9. Vegan Potato Kale $5 Half - $10 Full </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+
+            <menuItemTxt> 10. Spicy Thai Coconut $6 Half - $12 Full </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+          </div>
+      </centeredContainer>
+    </div>
+
+
+
+
+
+    <!-- Fresh Pastas Selection -->
+    <div style="display:flex; justify-content:center;">
+      <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+        <h2> Fresh Pastas - Made Daily </h2>
+        <menuDesc> Turning The Region's Bounty Into Modern Interpretations Of Classic Italian Fare </menuDesc>
+        <menuDesc  style="padding-bottom:0vh;"> Delivered Frozen - Can Be Warmed Up In Mircowave By Youth Or Heated In Oven By Responsible Party Over 18  </menuDesc>
+
+        <p class="cursive transBG titleTxt" style=""> Our Fettichini Alfredo </p>
+        <img class="menuImg" id="pastaImg" src="https://iili.io/31958v.md.png" alt="pasta image">
+
+          <h2> Select From... </h2>
+
+          <div style="display:flex; justify-content: left; flex-direction:column; padding-left:4vh;">
+            <menuItemTxt> 1. House Noodle Spigot $12  </menuItemTxt>
+            <menuItemDesc>
+              Homemade Macaroni Baked In A Decadent House Cheese Blend Of Guda, Sharp Chedder, & A Touch Of Love From Our Kitchen To Yours
+            </menuItemDesc>
+            <menuItemTxt> 2. From Scratch Macaroni $12  </menuItemTxt>
+            <menuItemDesc>
+              Homemade Macaroni Baked In A Decadent House Cheese Blend Of Guda, Sharp Chedder, & A Touch Of Love From Our Kitchen To Yours
+            </menuItemDesc>
+            <menuItemTxt> 3. Fettichini Alfredo $12 </menuItemTxt>
+            <menuItemDesc>
+              Classic Alfredo Fresh Pasta Noodles Tossed & Flash-Simmered In A Light Butter & Cream Sauce Topped With Pepper & Parmesan Cheese
+            </menuItemDesc>
+            <menuItemTxt> 4. From Scratch Spinach Dip Raviloi $16 </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+          </div>
+      </centeredContainer>
+    </div>
+
+
+
+  </body>
+</html>
+<script type="text/javascript">
+
+  //properties...
+
+  //on page load...
+  window.onload = function(){
+  }
+
+  //open side nav menu
+  function openMenu(){
+
+    let fullWidth = 40;
+
+    if(window.innerWidth < 768){
+      fullWidth = 70;
+    }
+
+    document.getElementById('sideNavItems').style.display = 'none';
+    document.getElementById('sideNavBar').style.display = 'block';
+    document.getElementById('sideNavBar').style.width = 0;
+
+    let width  = 0;
+    var slideInInterval = setInterval(function(){
+      width++;
+      document.getElementById('sideNavBar').style.width = width + 'vw';
+      if(width >= fullWidth) {
+        clearInterval(slideInInterval);
+        document.getElementById('sideNavItems').style.display = 'flex';
+      }
+    }, 10);
+  }
+
+  //close side nav menu
+  function closeMenu(){
+
+    let fullWidth = 40;
+
+    if(window.innerWidth < 768){
+      fullWidth = 70;
+    }
+
+    document.getElementById('sideNavItems').style.display = 'none';
+    let width  = fullWidth;
+    var slideOutInterval = setInterval(function(){
+      width--;
+      document.getElementById('sideNavBar').style.width = width + 'vw';
+      if(width <= 0) {
+        clearInterval(slideOutInterval);
+        document.getElementById('sideNavBar').style.display = 'none';
+      }
+    }, 10);
+  }
+
+
+
+  //fade out given element - decrement opacity until 0
+  function fadeOut(id){
+    let opacity = 1;
+    var fadeOutInterval = setInterval(function(){
+      opacity -= 0.01;
+      if(opacity <= 0) { console.log('clear'); clearInterval(fadeOutInterval);  };
+      document.getElementById(id).style.opacity = opacity;
+
+    }, 10);
+  }
+  //fade In given element - increment opacity until 1
+  function fadeIn(id){
+    let opacity = 0;
+    var fadeInInterval = setInterval(function(){
+      opacity += 0.01
+      if(opacity >= 1) clearInterval(fadeInInterval);
+      document.getElementById(id).style.opacity = opacity;
+    }, 10);
+  }
+
+
+
+</script>
