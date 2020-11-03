@@ -48,6 +48,11 @@ menuDesc{
 menuItemTxt{
   font-size: 1.5em;
   font-weight: bold;
+  cursor: pointer;
+}
+menuItemTxt:hover{
+  color:dodgerblue;
+  text-decoration: underline;
 }
 
 menuItemDesc{
@@ -126,6 +131,30 @@ txtLink{
 }
 txtLink:hover{
   text-decoration: underline;
+}
+
+.prompt{
+  background-color: white;
+  position: fixed;
+  top:25vh;
+  left: 25vw;
+  height: 50vh;
+  width: 50vw;
+  z-index: 2;
+  display: none;
+}
+
+dim{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+  display: none;
+  cursor: none;
 }
 
 .boldTxt{
@@ -297,6 +326,40 @@ imgContainer{
   align-items: center;
 }
 
+button{
+  background-color: white;
+  padding: 1vh;
+}
+
+button:hover{
+  color:white;
+  background-color: black;
+}
+
+cart{
+  position: fixed;
+  top: 11vh;
+  left: 80vw;
+  display: none;
+}
+
+.cartBtn{
+  background-color: white; 
+  padding: 2vh; 
+  border-radius: 50%; 
+}
+
+.cartBtn:hover{
+  border-style: solid;
+  border-color: dodgerblue;
+  border-width: 5px;
+}
+
+pad{
+  width:1vw;
+  height: 3vh;
+}
+
 
 /*
   Responsive Design Styling
@@ -366,6 +429,9 @@ imgContainer{
   }
   carosel{
     width: 50%;
+  }
+  cart{
+    left:87vw;
   }
   .borderedTxt{
     border:none;

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title> Tailored Quisine </title>
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css?version=1.31">
+    <link rel="stylesheet" href="style.css?version=1.61">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
@@ -36,6 +36,28 @@
     </sideNav>
 
 
+    <!-- checkout prompt -->
+    <div id='checkoutPrompt' class="prompt">
+      <div style="display: flex; justify-content: center;  align-items: center; flex-direction: column;">
+        <h2> Added Item To Cart </h2>
+        <button style="font-size: 2em;"> Checkout </button>
+        <pad></pad>
+        <button onclick="closeCheckoutPromt();" style="font-size: 2em;"> Keep Shopping </button>
+      </div>
+    </div>
+
+    <!-- dim behind prompt -->
+    <dim id='dim'>
+    </dim>
+
+    <!-- cart button -->
+    <cart id='cart'>
+      <circleButton>
+        <img class="cartBtn" src="https://iili.io/36c3rv.png" alt="cart image">
+      </circleButton>
+    </cart>
+
+
 
 
     <!-- Header - Place Your Order - Select -->
@@ -60,22 +82,6 @@
         <p class="cursive transBG titleTxt" style=""> Our Spicy Thai Coconut </p>
         <img class="menuImg" id="soupImg" src="https://iili.io/30yv3J.jpg" alt="soup image">
 
-        <!--
-        <menuTripleImg>
-          <imgContainer>
-            <p class="cursive transBG titleTxt" style=""> Home Made Pastas </p>
-            <img id="pastaMakingImg" src="https://iili.io/319Y9R.md.png" alt="pasta making image">
-          </imgContainer>
-          <imgContainer>
-            <p class="cursive transBG titleTxt" style=""> House Soups </p>
-            <img id="soupImg" src="https://iili.io/30yv3J.jpg" alt="soup image">
-          </imgContainer>
-          <imgContainer>
-            <p class="cursive transBG titleTxt" style=""> Custom Orders </p>
-            <img id="pastaImg" src="https://iili.io/31958v.md.png" alt="pasta image">
-          </imgContainer>
-        </menuTripleImg>
-      -->
 
           <h2> Select From... </h2>
 
@@ -180,6 +186,33 @@
 
   //on page load...
   window.onload = function(){
+    //onclick for menu items... prompt checkout or keep shopping
+    initMenuItemsOnClick();
+  }
+
+  //onclick for menu items... prompt checkout or keep shopping
+  function initMenuItemsOnClick(){
+    var menuItems = document.getElementsByTagName('menuItemTxt');
+
+    for(var i = 0; i < menuItems.length; i++){
+      menuItems[i].onclick = function(){promptCheckout()};
+    }
+
+  }
+
+  //prompt user to either checkout or keep shopping when an item is added to cart
+  function promptCheckout(){
+    document.getElementById('checkoutPrompt').style.display = 'block';
+    document.getElementById('dim').style.display = 'block';
+
+    //add cart to display
+    document.getElementById('cart').style.display = 'block';
+  }
+
+  //close checkout prompt
+  function closeCheckoutPromt(){
+    document.getElementById('checkoutPrompt').style.display = 'none';
+    document.getElementById('dim').style.display = 'none';
   }
 
   //open side nav menu
