@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title> Tailored Quisine </title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css?version=1.61">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  </head>
+  <body style="background-image:url('https://iili.io/3E7bxp.jpg'); margin-left:5%; margin-right:5%;">
+
+    <!-- nav bar on top of screen -->
+    <topNav>
+      <div style="display:flex;">
+        <img onclick="openMenu()" class="icon" src="https://iili.io/30DYl4.png" style="cursor:pointer;" alt="menu icon">
+        <p class="cursive"> Tailored Quisine 101</p>
+      </div>
+
+      <div style="display:flex;">
+        <txtLink> Sign Up </txtLink>
+      </div>
+    </topNav>
+
+    <sideNav id="sideNavBar" style="display:none; background-image:url('https://iili.io/3EMP0Q.md.jpg');" >
+      <img onclick="closeMenu()" class="icon" src="https://iili.io/31dCu4.png" style="cursor:pointer;" alt="close menu icon">
+      <div id="sideNavItems" style="display: flex; flex-direction: column; align-items:left; padding-left: 4vh; ">
+        <p class="boldTxt"> Order A Meal </p>
+        <p class="boldTxt"> Order Recurring Meals </p>
+        <p class="boldTxt"> Order A Custom Meal </p>
+        <p class="boldTxt"> Shop Health Products </p>
+      </div>
+    </sideNav>
+
+
+    <!-- checkout prompt -->
+    <div id='checkoutPrompt' style="background-image:url('https://iili.io/3EMP0Q.md.jpg');" class="prompt">
+      <div style="display: flex; justify-content: center;  align-items: center; flex-direction: column;">
+        <h2 id="promptedAddedTxt"> Added Item To Cart </h2>
+        <h2> Total - $7 </h2>
+        <button style="font-size: 2em;"> Checkout </button>
+        <pad></pad>
+        <button onclick="closeCheckoutPromt();" style="font-size: 2em;"> Keep Shopping </button>
+      </div>
+    </div>
+
+    <!-- dim behind prompt -->
+    <dim id='dim'>
+    </dim>
+
+    <!-- cart button -->
+    <cart id='cart'>
+      <circleButton>
+        <img class="cartBtn" onclick="promptCheckout();" src="https://iili.io/36c3rv.png" alt="cart image">
+      </circleButton>
+    </cart>
+
+
+
+
+    <!-- Header - Schedule Your Order - Select days -->
+    <centeredContainer >
+      <div class="" style="border-radius: 20px; background-image:url('https://iili.io/3E7eHb.jpg'); background-repeat: repeat;">
+        <centeredContainer style="padding-top:0; padding-bottom:5vh; text-align: center;">
+          <h2 class="cursive" style="font-size:2.5em; color:white;"> Schedule Your Orders </h2>
+          <p style="margin:0; font-weight: bold; font-size: 1.5em; justify-content:center; padding-left:4vh; padding-right:4vh; color:white;">
+           Select Days To Receive Your Recurring Orders
+         </p>
+
+        </centeredContainer>
+      </div>
+    </centeredContainer>
+
+    <!-- Day Of Week Selection(s) -->
+    <div style="display:flex; justify-content:center; padding-bottom:4vh; padding-top:4vh;">
+      <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+        <h2> Select Days To Receive Your Order </h2>
+
+        <weekDays>
+          <day id="daySelectorM">M</day>
+          <padBetween> </padBetween>
+          <day id="daySelectorW">W</day>
+          <padBetween> </padBetween>
+          <day id="daySelectorF">F</day>
+        </weekDays>
+
+          </div>
+      </centeredContainer>
+    </div>
+
+
+
+
+
+    <!-- Seasonal Soups Selection -->
+    <div id="soupSelections" style="display:none; justify-content:center; padding-bottom:4vh; padding-top:4vh;">
+      <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+        <h2> Seasonal Soups - Made Daily </h2>
+        <menuDesc  style="padding-bottom:0vh;"> Delivered Frozen - Needs To Be Heated On Stove By Responsible Party Over 16 </menuDesc>
+
+        <p class="cursive transBG titleTxt" style=""> Our Spicy Thai Coconut </p>
+        <img class="menuImg" id="soupImg" src="https://iili.io/30yv3J.jpg" alt="soup image">
+
+
+          <h2> Select From... </h2>
+
+          <div style="display:flex; justify-content: left; flex-direction:column; padding-left:4vh;">
+            <menuItemTxt>
+              1. Tomato & Tumeric $7 Half - $14 Full
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+            </menuItemTxt>
+            <menuItemDesc>
+              Homemade Macaroni Baked In A Decadent House Cheese Blend Of Guda, Sharp Chedder, & A Touch Of Love From Our Kitchen To Yours
+            </menuItemDesc>
+
+            <menuItemTxt> 2. Cream Of Crab $7 Half - $14 Full
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+            </menuItemTxt>
+            <menuItemDesc>
+              Homemade Macaroni Baked In A Decadent House Cheese Blend Of Guda, Sharp Chedder, & A Touch Of Love From Our Kitchen To Yours
+            </menuItemDesc>
+
+            <menuItemTxt> 3. Lobster Bisque $7 Half - $14 Full
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+            </menuItemTxt>
+            <menuItemDesc>
+              Homemade Macaroni Baked In A Decadent House Cheese Blend Of Guda, Sharp Chedder, & A Touch Of Love From Our Kitchen To Yours
+            </menuItemDesc>
+
+            <menuItemTxt> 4. Chicken or Crab Curry Pumpkin $7 Half - $14 Full
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+            </menuItemTxt>
+            <menuItemDesc>
+              Classic Alfredo Fresh Pasta Noodles Tossed & Flash-Simmered In A Light Butter & Cream Sauce Topped With Pepper & Parmesan Cheese
+            </menuItemDesc>
+
+            <menuItemTxt> 5. Cream Of Corn & Crab Chowder $7 Half - $14 Full
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+            </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+
+            <menuItemTxt> 6. Cajun Seafood Gumbo $7 Half - $14 Full
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+            </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+
+            <menuItemTxt> 7. Full Flavored Veggie Broth $7 Half - $14 Full ( + Healthy )
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+             </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+
+            <menuItemTxt> 8. Black Bean Enchilada $6 Half - $12 Full
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+            </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+
+            <menuItemTxt> 9. Vegan Potato Kale $5 Half - $10 Full
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+            </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+
+            <menuItemTxt> 10. Spicy Thai Coconut $6 Half - $12 Full
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+            </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+          </div>
+      </centeredContainer>
+    </div>
+
+
+
+
+
+    <!-- Fresh Pastas Selection -->
+    <div id="pastaSelections" style="display:flex; justify-content:center; display:none;">
+      <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+        <h2> Fresh Pastas - Made Daily </h2>
+        <menuDesc> Turning The Region's Bounty Into Modern Interpretations Of Classic Italian Fare </menuDesc>
+        <menuDesc  style="padding-bottom:0vh;"> Delivered Frozen - Can Be Warmed Up In Mircowave By Youth Or Heated In Oven By Responsible Party Over 18  </menuDesc>
+
+        <p class="cursive transBG titleTxt" style=""> Our Fettichini Alfredo </p>
+        <img class="menuImg" id="pastaImg" src="https://iili.io/31958v.md.png" alt="pasta image">
+
+          <h2> Select From... </h2>
+
+          <div style="display:flex; justify-content: left; flex-direction:column; padding-left:4vh;">
+            <menuItemTxt> 1. House Noodle Spigot $12
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+            </menuItemTxt>
+            <menuItemDesc>
+              Homemade Macaroni Baked In A Decadent House Cheese Blend Of Guda, Sharp Chedder, & A Touch Of Love From Our Kitchen To Yours
+            </menuItemDesc>
+            <menuItemTxt> 2. From Scratch Macaroni $12
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+             </menuItemTxt>
+            <menuItemDesc>
+              Homemade Macaroni Baked In A Decadent House Cheese Blend Of Guda, Sharp Chedder, & A Touch Of Love From Our Kitchen To Yours
+            </menuItemDesc>
+            <menuItemTxt> 3. Fettichini Alfredo $12
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+            </menuItemTxt>
+            <menuItemDesc>
+              Classic Alfredo Fresh Pasta Noodles Tossed & Flash-Simmered In A Light Butter & Cream Sauce Topped With Pepper & Parmesan Cheese
+            </menuItemDesc>
+            <menuItemTxt> 4. From Scratch Spinach Dip Raviloi $16
+              <weekDays>
+                <padBetween> </padBetween>
+                <day class="mon">M</day>
+                <padBetween> </padBetween>
+                <day class="wed">W</day>
+                <padBetween> </padBetween>
+                <day class="fri">F</day>
+              </weekDays>
+            </menuItemTxt>
+            <menuItemDesc>
+              About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
+            </menuItemDesc>
+          </div>
+      </centeredContainer>
+    </div>
+
+
+
+  </body>
+</html>
+<script type="text/javascript">
+
+  //properties...
+  var daysSelected = [];
+  var selectedItems = [];
+  var totalItems = 0;
+
+  //on page load...
+  window.onload = function(){
+    //onclick for menu items... prompt checkout or keep shopping
+    initMenuItemsOnClick();
+
+    //onclick for Days
+    initDayOfWeekOnClick();
+  }
+
+
+
+  //onclick for menu items... prompt checkout or keep shopping
+  function initMenuItemsOnClick(){
+    var menuItems = document.getElementsByTagName('menuItemTxt');
+
+    for(var i = 0; i < menuItems.length; i++){
+      // menuItems[i].onclick = function(){promptCheckout()};
+    }
+
+  }
+
+  //init day of week Selection
+  function initDayOfWeekOnClick(){
+    var daysOfWeek = document.getElementsByTagName('day');
+
+    for(var i = 0; i < daysOfWeek.length; i++){
+      let id = 'none';
+      if(daysOfWeek[i].id != undefined){ //for day selectors on top... sets availality for remaining days below
+        id = daysOfWeek[i].id;
+      }
+
+      daysOfWeek[i].onclick = function(){alterSelection(this, id)};
+    }
+  }
+
+  //onclick for item days...
+  function countItemsSelected(){
+    var mons = document.getElementsByClassName('mon');
+    var weds = document.getElementsByClassName('wed');
+    var fris = document.getElementsByClassName('fri');
+
+    totalItems = 0;
+
+    for(var mon in mons){
+      if(mons[mon].classList !== undefined){
+        for(var i = 0; i < mons[mon].classList.length; i++){
+          if(mons[mon].classList[i] == "selected"){
+            totalItems++;
+          }
+        }
+      }
+    }
+    for(var wed in weds){
+      if(weds[wed].classList !== undefined){
+        for(var i = 0; i < weds[wed].classList.length; i++){
+          if(weds[wed].classList[i] == "selected"){
+            totalItems++;
+          }
+        }
+      }
+    }
+    for(var fri in fris){
+      if(fris[fri].classList !== undefined){
+        for(var i = 0; i < fris[fri].classList.length; i++){
+          if(fris[fri].classList[i] == "selected"){
+            totalItems++;
+          }
+        }
+      }
+    }
+
+    if(totalItems > 0) showCart();
+    else hideCart();
+
+  }
+
+  //alter selected or deselected for days of week
+  function alterSelection(element, id){
+
+
+    var isSelected = false;
+    for(var i = 0; i < element.classList.length; i++){
+      if(element.classList[i] == "selected"){
+        element.classList.remove("selected");
+        isSelected = true;
+      }
+    }
+    if(!isSelected)
+        element.classList.add("selected");
+
+
+
+    //check for modifying day availality @ top
+    if(id != 'none'){
+      let day = id.substring(11); //11th char in id is the day
+
+      if(isDay(day) && daysSelected.indexOf(day) > -1){
+        daysSelected.splice(daysSelected.indexOf(day), 1);
+      }
+      else if(isDay(day)) daysSelected.push(day);
+    }
+
+    if(daysSelected.length == 0){
+      //hide item selections
+      document.getElementById("pastaSelections").style.display = 'none';
+      document.getElementById("soupSelections").style.display = 'none';
+      //deselect all...
+      deslectDays();
+    }
+    else{
+      //show item selections
+      document.getElementById("pastaSelections").style.display = 'flex';
+      document.getElementById("soupSelections").style.display = 'flex';
+
+      //add in day selections next to each item...
+      addInDaySelections();
+
+      //show cart?
+      countItemsSelected();
+    }
+
+
+
+  }
+
+  //check if M W or f
+  function isDay(day){
+    let days = ['M', 'W', 'F'];
+    let match = false;
+    for( var i = 0; i < days.length; i++){
+      if(days[i] == day) match = true;
+    }
+
+    return match;
+  }
+
+  //add in day selections next to each item...
+  function addInDaySelections(){
+    //modays
+    addInDaySelection('mon', 'M');
+    //Wednesdays
+    addInDaySelection('wed', 'W');
+    //fridays
+    addInDaySelection('fri', 'F');
+  }
+
+  //deselect all day options
+  function deslectDays(){
+    deselectDay('mon');
+    deselectDay('wed');
+    deselectDay('fri');
+
+    hideCart();
+  }
+
+  function deselectDay(day){
+    var days = document.getElementsByClassName(day);
+    for(var i = 0; i < days.length; i++){
+      if(days[i].classList != undefined){
+            days[i].classList.remove("selected");
+      }
+    }
+  }
+
+  //given a day, add or remove it from options
+  function addInDaySelection(day, d){
+    if(daysSelected.indexOf(d) > -1)
+    {
+      var dayBtns = document.getElementsByClassName(day);
+      for(var i = 0; i < dayBtns.length; i++){
+        dayBtns[i].style.display = 'flex';
+      }
+    }
+    else
+    {
+      var dayBtns = document.getElementsByClassName(day);
+      for(var i = 0; i < dayBtns.length; i++){
+        dayBtns[i].style.display = 'none';
+      }
+    }
+  }
+
+  //prompt user to either checkout or keep shopping when an item is added to cart
+  function promptCheckout(){
+    document.getElementById('checkoutPrompt').style.display = 'block';
+    document.getElementById('dim').style.display = 'block';
+
+    //add cart to display
+    document.getElementById('cart').style.display = 'block';
+  }
+
+  //close checkout prompt
+  function closeCheckoutPromt(){
+    document.getElementById('checkoutPrompt').style.display = 'none';
+    document.getElementById('dim').style.display = 'none';
+  }
+
+  //display cart
+  function showCart(){
+    document.getElementById('cart').style.display = 'block';
+  }
+  function hideCart(){
+    document.getElementById('cart').style.display = 'none';
+  }
+
+
+  //open side nav menu
+  function openMenu(){
+
+    let fullWidth = 40;
+
+    if(window.innerWidth < 768){
+      fullWidth = 70;
+    }
+
+    document.getElementById('sideNavItems').style.display = 'none';
+    document.getElementById('sideNavBar').style.display = 'block';
+    document.getElementById('sideNavBar').style.width = 0;
+
+    let width  = 0;
+    var slideInInterval = setInterval(function(){
+      width++;
+      document.getElementById('sideNavBar').style.width = width + 'vw';
+      if(width >= fullWidth) {
+        clearInterval(slideInInterval);
+        document.getElementById('sideNavItems').style.display = 'flex';
+      }
+    }, 10);
+  }
+
+  //close side nav menu
+  function closeMenu(){
+
+    let fullWidth = 40;
+
+    if(window.innerWidth < 768){
+      fullWidth = 70;
+    }
+
+    document.getElementById('sideNavItems').style.display = 'none';
+    let width  = fullWidth;
+    var slideOutInterval = setInterval(function(){
+      width--;
+      document.getElementById('sideNavBar').style.width = width + 'vw';
+      if(width <= 0) {
+        clearInterval(slideOutInterval);
+        document.getElementById('sideNavBar').style.display = 'none';
+      }
+    }, 10);
+  }
+
+
+
+  //fade out given element - decrement opacity until 0
+  function fadeOut(id){
+    let opacity = 1;
+    var fadeOutInterval = setInterval(function(){
+      opacity -= 0.01;
+      if(opacity <= 0) { console.log('clear'); clearInterval(fadeOutInterval);  };
+      document.getElementById(id).style.opacity = opacity;
+
+    }, 10);
+  }
+  //fade In given element - increment opacity until 1
+  function fadeIn(id){
+    let opacity = 0;
+    var fadeInInterval = setInterval(function(){
+      opacity += 0.01
+      if(opacity >= 1) clearInterval(fadeInInterval);
+      document.getElementById(id).style.opacity = opacity;
+    }, 10);
+  }
+
+
+
+</script>

@@ -49,6 +49,7 @@ menuItemTxt{
   font-size: 1.5em;
   font-weight: bold;
   cursor: pointer;
+  display: flex;
 }
 menuItemTxt:hover{
   color:dodgerblue;
@@ -136,6 +137,7 @@ txtLink:hover{
 .prompt{
   background-color: white;
   position: fixed;
+  border-radius: 20px;
   top:25vh;
   left: 25vw;
   height: 50vh;
@@ -179,6 +181,64 @@ dim{
 
 .transBG{
   background-color: rgba(250, 249, 245, 0.8 )
+}
+
+menuItemTxt day{
+
+  height: 3vh;
+  width: 3vh;
+  font-size: 0.5em;
+
+}
+
+menuItemTxt padBetween{
+  width: 2vh;
+  height: 2vh;
+}
+
+weekDays{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+day{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  height: 5vh;
+  width: 5vh;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+}
+
+day:hover{
+  border-style: solid;
+  border-color: dodgerblue;
+  color: black;
+  background-color: white;
+}
+
+day.selected{
+  border-style: solid;
+  border-color: lightgreen;
+  color: black;
+  background-color: white;
+}
+
+.mon{}
+.wed{}
+.fri{}
+
+
+
+padBetween{
+  width: 5vh;
+  height: 5vh;
 }
 
 
@@ -344,9 +404,9 @@ cart{
 }
 
 .cartBtn{
-  background-color: white; 
-  padding: 2vh; 
-  border-radius: 50%; 
+  background-color: white;
+  padding: 2vh;
+  border-radius: 50%;
 }
 
 .cartBtn:hover{
