@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title> Tailored Quisine </title>
+    <!-- JS -->
+    <!-- JS -->
+    <script type="text/javascript" src="script.js?v=1"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="style.css?version=1.61">
     <!-- Font -->
@@ -190,101 +193,5 @@
     //onclick for menu items... prompt checkout or keep shopping
     initMenuItemsOnClick();
   }
-
-  //onclick for menu items... prompt checkout or keep shopping
-  function initMenuItemsOnClick(){
-    var menuItems = document.getElementsByTagName('menuItemTxt');
-
-    for(var i = 0; i < menuItems.length; i++){
-      menuItems[i].onclick = function(){promptCheckout()};
-    }
-
-  }
-
-  //prompt user to either checkout or keep shopping when an item is added to cart
-  function promptCheckout(){
-    document.getElementById('checkoutPrompt').style.display = 'block';
-    document.getElementById('dim').style.display = 'block';
-
-    //add cart to display
-    document.getElementById('cart').style.display = 'block';
-  }
-
-  //close checkout prompt
-  function closeCheckoutPromt(){
-    document.getElementById('checkoutPrompt').style.display = 'none';
-    document.getElementById('dim').style.display = 'none';
-  }
-
-
-
-  //open side nav menu
-  function openMenu(){
-
-    let fullWidth = 40;
-
-    if(window.innerWidth < 768){
-      fullWidth = 70;
-    }
-
-    document.getElementById('sideNavItems').style.display = 'none';
-    document.getElementById('sideNavBar').style.display = 'block';
-    document.getElementById('sideNavBar').style.width = 0;
-
-    let width  = 0;
-    var slideInInterval = setInterval(function(){
-      width++;
-      document.getElementById('sideNavBar').style.width = width + 'vw';
-      if(width >= fullWidth) {
-        clearInterval(slideInInterval);
-        document.getElementById('sideNavItems').style.display = 'flex';
-      }
-    }, 10);
-  }
-
-  //close side nav menu
-  function closeMenu(){
-
-    let fullWidth = 40;
-
-    if(window.innerWidth < 768){
-      fullWidth = 70;
-    }
-
-    document.getElementById('sideNavItems').style.display = 'none';
-    let width  = fullWidth;
-    var slideOutInterval = setInterval(function(){
-      width--;
-      document.getElementById('sideNavBar').style.width = width + 'vw';
-      if(width <= 0) {
-        clearInterval(slideOutInterval);
-        document.getElementById('sideNavBar').style.display = 'none';
-      }
-    }, 10);
-  }
-
-
-
-  //fade out given element - decrement opacity until 0
-  function fadeOut(id){
-    let opacity = 1;
-    var fadeOutInterval = setInterval(function(){
-      opacity -= 0.01;
-      if(opacity <= 0) { console.log('clear'); clearInterval(fadeOutInterval);  };
-      document.getElementById(id).style.opacity = opacity;
-
-    }, 10);
-  }
-  //fade In given element - increment opacity until 1
-  function fadeIn(id){
-    let opacity = 0;
-    var fadeInInterval = setInterval(function(){
-      opacity += 0.01
-      if(opacity >= 1) clearInterval(fadeInInterval);
-      document.getElementById(id).style.opacity = opacity;
-    }, 10);
-  }
-
-
 
 </script>
