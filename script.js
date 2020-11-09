@@ -83,8 +83,17 @@ function initSigninSignupBtns(){
     document.getElementById('singupContainer').style.display = 'flex';
   };
   document.getElementById('signinBtn').onclick=() => {
-
+    document.getElementById('dim').style.display = 'block';
+    document.getElementById('singinContainer').style.display = 'flex';
   };
+
+
+  //close sign up...
+  document.getElementById('signupCloseBtn').onclick=() => {
+    document.getElementById('dim').style.display = 'none';
+    document.getElementById('singupContainer').style.display = 'none';
+  };
+
 }
 
 //init carosel - swap images every few seconds
@@ -133,6 +142,64 @@ function initCreateAccountInputs(){
     else confPass.type = 'password';
   };
 
+}
+
+//init on input for login...
+function initLoginMenu(){
+  //password visibility
+  document.getElementById('loginPassVisibility').onclick = () => {
+    var pass = document.getElementById('login-pass-input');
+    if(pass.type == 'password')
+      pass.type = 'text';
+    else pass.type = 'password';
+  };
+
+  //close menu...
+  document.getElementById('signinCloseBtn').onclick = () => {
+    document.getElementById('singinContainer').style.display = 'none';
+    document.getElementById('dim').style.display = 'none';
+  };
+
+
+  //check inputs before displaying login btn
+  document.getElementById('login-email-input').oninput = () => {
+    validateLoginMenu();
+  };
+  document.getElementById('login-pass-input').oninput = () => {
+    validateLoginMenu();
+  };
+
+
+}
+
+//validate login menu
+function validateLoginMenu(){
+  let loginEmail = document.getElementById('login-email-input').value;
+  let loginPass = document.getElementById('login-pass-input').value;
+  let infoText = '';
+  let goodEmail = true;
+  let goodPassword = true;
+
+  if(loginEmail.length > 0){
+    if(!(loginEmail.indexOf('@') > 0 && loginEmail.indexOf('.') > 0)){
+      goodEmail = false;
+      infoText = 'Invalid Email';
+    }
+  }
+  else{
+    goodEmail = false;
+  }
+  if(loginPass.length == 0){
+    goodPassword = false;
+  }
+
+  if(goodEmail && goodPassword){
+    document.getElementById('loginMenuBtnArea').style.display = 'flex';
+  }
+  else{
+    document.getElementById('loginMenuBtnArea').style.display = 'none';
+    document.getElementById('loginInputInfoText').innerHTML = infoText;
+  }
 }
 
 

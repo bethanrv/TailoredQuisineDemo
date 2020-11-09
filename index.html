@@ -6,9 +6,9 @@
     <title> Tailored Quisine </title>
 
     <!-- JS -->
-    <script type="text/javascript" src="script.js?v=1"></script>
+    <script type="text/javascript" src="script.js?v=2"></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css?version=1.3">
+    <link rel="stylesheet" href="style.css?version=1.4">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -33,8 +33,8 @@
     <sideNav id="sideNavBar" style="display:none; background-image:url('https://iili.io/3EMP0Q.md.jpg');" >
       <img onclick="closeMenu()" class="icon" src="https://iili.io/31dCu4.png" style="cursor:pointer;" alt="close menu icon">
       <div id="sideNavItems" style="display: flex; flex-direction: column; align-items:left; padding-left: 4vh; ">
-        <p class="boldTxt"> Order A Meal </p>
-        <p class="boldTxt"> Order Recurring Meals </p>
+        <p onclick="window.open('./single-order.html')" class="boldTxt"> Order A Meal </p>
+        <p onclick="window.open('./schedule-order.html')" class="boldTxt"> Order Recurring Meals </p>
         <p class="boldTxt"> Order A Custom Meal </p>
         <p class="boldTxt"> Shop Health Products </p>
       </div>
@@ -48,7 +48,9 @@
     <!-- sign up container -->
     <floatingContainer id="singupContainer" style="display:none;">
 
-      <div class="growBtn" style="display:flex; align-self:flex-end; padding-right:4vh;"> <p> x </p> </div>
+      <div style="display:flex; align-self:flex-end; padding:3vh; margin:0;">
+        <img id="signupCloseBtn" class="closeBtn" src="https://iili.io/F3dhEF.png" alt="close create account menu"/>
+      </div>
 
       <h2> Create An Account </h2>
 
@@ -78,6 +80,43 @@
 
       <circleButton id="loginBtnArea" style="display:none;">
         <img class="createAccountNextBtn" src="https://iili.io/FdwTfR.png" alt='login button'>
+      </circleButton>
+
+      <padTop> </padTop>
+
+
+    </floatingContainer>
+
+    <!-- sign in container -->
+    <floatingContainer id="singinContainer" style="display:none;">
+
+      <div style="display:flex; align-self:flex-end; padding:3vh; margin:0;">
+        <img id="signinCloseBtn" class="closeBtn" src="https://iili.io/F3dhEF.png" alt="close sign in menu"/>
+      </div>
+
+      <h2> Login </h2>
+
+      <padTop> </padTop>
+
+      <inputContainer>
+        <input id="login-email-input" class="loginInput" type="text" placeholder="Email Address"></input>
+        <img src="https://iili.io/FdjM91.png" class="passVisibility" alt="password visibility button" style="opacity: 0; cursor:default;"></img>
+      </inputContainer>
+
+
+      <padTop> </padTop>
+
+      <inputContainer>
+        <input id="login-pass-input" class="loginInput" type="password" placeholder="Password"></input>
+        <img src="https://iili.io/FdjM91.png" id="loginPassVisibility" class="passVisibility" alt="password visibility button"></img>
+      </inputContainer>
+
+      <padTop> </padTop>
+
+      <p id="loginInputInfoText" class="accountInfoText"> </p>
+
+      <circleButton id="loginMenuBtnArea" style="display:none;">
+        <img class="loginNextBtn" src="https://iili.io/FdwTfR.png" alt='login button'>
       </circleButton>
 
       <padTop> </padTop>
@@ -212,6 +251,9 @@
 
     //init create account inputs
     initCreateAccountInputs();
+
+    //init login menu function
+    initLoginMenu();
 
     //init sign in/up
     initSigninSignupBtns();
