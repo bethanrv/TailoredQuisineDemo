@@ -25,8 +25,8 @@
       </div>
 
       <div style="display:flex;">
-        <txtLink> Sign Up </txtLink>
-        <txtLink> Sign In </txtLink>
+        <txtLink id="signupBtn"> Sign Up </txtLink>
+        <txtLink id="signinBtn"> Sign In </txtLink>
       </div>
     </topNav>
 
@@ -39,6 +39,51 @@
         <p class="boldTxt"> Shop Health Products </p>
       </div>
     </sideNav>
+
+    <!-- dim behind login/signup -->
+    <dim id='dim'>
+    </dim>
+
+
+    <!-- sign up container -->
+    <floatingContainer id="singupContainer" style="display:none;">
+
+      <div class="growBtn" style="display:flex; align-self:flex-end; padding-right:4vh;"> <p> x </p> </div>
+
+      <h2> Create An Account </h2>
+
+      <padTop> </padTop>
+
+      <inputContainer>
+        <input id="email-input" class="createAccountInput" type="text" placeholder="Email Address"></input>
+        <img src="https://iili.io/FdjM91.png" class="passVisibility" alt="password visibility button" style="opacity: 0; cursor:default;"></img>
+      </inputContainer>
+
+
+      <padTop> </padTop>
+
+      <inputContainer>
+        <input id="pass-input" class="createAccountInput" type="password" placeholder="Password"></input>
+        <img src="https://iili.io/FdjM91.png" id="passVisibilityFirst" class="passVisibility" alt="password visibility button"></img>
+      </inputContainer>
+
+      <padTop> </padTop>
+
+      <inputContainer>
+        <input id="pass-confirm-input" class="createAccountInput" type="password" placeholder="Confirm Password"></input>
+        <img src="https://iili.io/FdjM91.png" id="passVisibilityConf" class="passVisibility" alt="password visibility button"></img>
+      </inputContainer>
+
+      <p id="createAccountInputInfoText" class="accountInfoText"> </p>
+
+      <circleButton id="loginBtnArea" style="display:none;">
+        <img class="createAccountNextBtn" src="https://iili.io/FdwTfR.png" alt='login button'>
+      </circleButton>
+
+      <padTop> </padTop>
+
+
+    </floatingContainer>
 
     <header >
       <flexContainer class="borderedTxt transBG" >
@@ -164,6 +209,12 @@
 
     //make carosel switch images
     initCarosel();
+
+    //init create account inputs
+    initCreateAccountInputs();
+
+    //init sign in/up
+    initSigninSignupBtns();
 
   }
 

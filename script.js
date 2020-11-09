@@ -76,6 +76,17 @@ function initMainFoods(){
   }
 }
 
+//init sign up and sign in buttons
+function initSigninSignupBtns(){
+  document.getElementById('signupBtn').onclick=() => {
+    document.getElementById('dim').style.display = 'block';
+    document.getElementById('singupContainer').style.display = 'flex';
+  };
+  document.getElementById('signinBtn').onclick=() => {
+
+  };
+}
+
 //init carosel - swap images every few seconds
 function initCarosel(){
   setInterval(function(){
@@ -96,6 +107,73 @@ function swapCaroselImg(){
   // }, 1500);
 }
 
+
+//init oninputs for create accout
+function initCreateAccountInputs(){
+
+  //validation on inputs...
+  var createAccountInputs = document.getElementsByClassName('createAccountInput');
+  for(var i = 0; i < createAccountInputs.length; i++){
+    createAccountInputs[i].oninput = () => {validateCreateAccountInputs()};
+  }
+
+  //password visibility btn on click
+  //first pass...
+  document.getElementById('passVisibilityFirst').onclick = () => {
+    var firstPass = document.getElementById('pass-input');
+    if(firstPass.type == 'password')
+      firstPass.type = 'text';
+    else firstPass.type = 'password';
+  };
+  //conf pass
+  document.getElementById('passVisibilityConf').onclick = () => {
+    var confPass = document.getElementById('pass-confirm-input');
+    if(confPass.type == 'password')
+      confPass.type = 'text';
+    else confPass.type = 'password';
+  };
+
+}
+
+
+//validate create account info...
+function validateCreateAccountInputs(){
+
+  var email_input = document.getElementById('email-input').value;
+  var pass_input = document.getElementById('pass-input').value;
+  var pass_confirm_input = document.getElementById('pass-confirm-input').value;
+
+  var infoText = '';
+  var goodEmail = true;
+  var goodPassword = true;
+
+  if(email_input.indexOf('@') < 0){
+    infoText = 'Enter Valid Email';
+    goodEmail = false;
+  }
+  else if(email_input.indexOf('.') < 0){
+    infoText = 'Enter Valid Email';
+    goodEmail = false;
+  }
+  else if(pass_input.length == 0 || pass_confirm_input.length == 0){
+    goodPassword = false;
+  }
+  else if(pass_input != pass_confirm_input){
+    infoText = 'Passwords Do Not Match';
+    goodPassword = false;
+  }
+
+
+  if(goodEmail && goodPassword){ //show next button
+    document.getElementById('loginBtnArea').style.display = 'block';
+  }
+  else{
+    document.getElementById('loginBtnArea').style.display = 'none';
+  }
+
+  document.getElementById('createAccountInputInfoText').innerHTML = infoText;
+
+}
 
 //fade out given element - decrement opacity until 0
 function fadeOut(id){
