@@ -309,7 +309,21 @@ function initDayOfWeekOnClick(){
       id = daysOfWeek[i].id;
     }
 
-    daysOfWeek[i].onclick = function(){alterSelection(this, id)};
+    daysOfWeek[i].onclick = function(){alterSelection(this, id, 'schedule')};
+  }
+}
+
+//init day of week Selection for single order scheduling
+function initDayOfWeekOnClickSingle(){
+  var daysOfWeek = document.getElementsByTagName('day');
+
+  for(var i = 0; i < daysOfWeek.length; i++){
+    let id = 'none';
+    if(daysOfWeek[i].id != undefined){ //for day selectors on top... sets availality for remaining days below
+      id = daysOfWeek[i].id;
+    }
+
+    daysOfWeek[i].onclick = function(){alterSelection(this, id, 'single')};
   }
 }
 
@@ -355,7 +369,7 @@ function countItemsSelected(){
 }
 
 //alter selected or deselected for days of week
-function alterSelection(element, id){
+function alterSelection(element, id, type){
 
 
   var isSelected = false;
@@ -365,10 +379,29 @@ function alterSelection(element, id){
       isSelected = true;
     }
   }
-  if(!isSelected)
+  if(!isSelected){
+
+      //if single order... unselect other days
+      if(type == 'single'){
+
+        var daysOfWeek = document.getElementsByTagName('day');
+
+        for(var i = 0; i < daysOfWeek.length; i++){
+          let id = 'none';
+          if(daysOfWeek[i].id != undefined){ 
+            daysOfWeek[i].classList.remove("selected")
+          }
+        }
+      }
+
+      //add selected to element
       element.classList.add("selected");
+  }
+
+  
 
 
+  if(type != 'schedule') return; //stop here unless using for schedule order page
 
   //check for modifying day availality @ top
   if(id != 'none'){
@@ -458,4 +491,190 @@ function addInDaySelection(day, d){
       dayBtns[i].style.display = 'none';
     }
   }
+}
+
+
+
+//initialize cart checkout functions... hover / remove
+function initCartItemsFunctions(){
+  //get list of item removers
+  let itemRemovers = document.getElementsByClassName('removeItemIcon');
+
+  /* Attach functions to removers
+     Hover - red strike thru on corresponding item
+     Click - remove corresponding item */
+
+  for(var i = 0; i < itemRemovers.length; i++){
+
+    //store corresponding cart item
+    let cartItemTxtID = itemRemovers[i].id.substring(0, itemRemovers[i].id.indexOf('Remover')) + "Txt";
+    let cartItemTxt = document.getElementById(cartItemTxtID);
+
+    //store corresponding cart item area (includes txt and cancel btn)
+    let cartItemArea = document.getElementById(itemRemovers[i].id.substring(0, itemRemovers[i].id.indexOf('Remover')));
+
+    //add hover event
+    itemRemovers[i].onmouseover = () => {
+      cartItemTxt.style.textDecoration = "line-through";
+      cartItemTxt.style.textDecorationColor = "red";
+    };
+    itemRemovers[i].onmouseleave = () => {
+      cartItemTxt.style.textDecoration = "none";
+    };
+
+    //add click event
+    itemRemovers[i].onclick = () => {
+      cartItemArea.style.display = "none";
+    };
+
+
+
+
+  }
+}
+
+//init onclick for review cart items
+function initReviewCartItemRemove(){
+  //get list of item removers
+  let itemRemovers = document.getElementsByClassName('removeItemIconSmall');
+
+  /* Attach functions to removers
+     Hover - red strike thru on corresponding item
+     Click - remove corresponding item */
+
+  for(var i = 0; i < itemRemovers.length; i++){
+
+    //store corresponding cart item
+    let cartItemTxtID = itemRemovers[i].id.substring(0, itemRemovers[i].id.indexOf('Remover')) + "Txt";
+    let cartItemTxt = document.getElementById(cartItemTxtID);
+
+    //store corresponding cart item area (includes txt and cancel btn)
+    let cartItemArea = document.getElementById(itemRemovers[i].id.substring(0, itemRemovers[i].id.indexOf('Remover')));
+
+    //add hover event
+    itemRemovers[i].onmouseover = () => {
+      cartItemTxt.style.textDecoration = "line-through";
+      cartItemTxt.style.textDecorationColor = "red";
+    };
+    itemRemovers[i].onmouseleave = () => {
+      cartItemTxt.style.textDecoration = "none";
+    };
+
+    //add click event
+    itemRemovers[i].onclick = () => {
+      cartItemArea.style.display = "none";
+    };
+
+
+
+
+  }
+}
+
+//review user info on click.... change clicked element to input field + cancel/confirm btns
+function initReviewUserInfoOnClick(){
+
+  //get review text elements
+  let reviewUserInfoTxtElements = document.getElementsByClassName('reviewUserInputTxt');
+
+
+  //for each text element, add on click to switch to input form
+  for(var i = 0; i < reviewUserInfoTxtElements.length; i++){
+    let txtElemID = reviewUserInfoTxtElements[i].id;
+    reviewUserInfoTxtElements[i].onclick = () => {editUserInputReview(txtElemID)};
+  }
+
+  //get confirm btns
+  let confirmBtns = document.getElementsByClassName('confirmBtn');
+
+  for(var i = 0; i < confirmBtns.length; i++){
+    let confirmBtnID = confirmBtns[i].id;
+    confirmBtns[i].onclick = () => {confirmReviewUserInput(confirmBtnID)};
+  }
+
+  //get cancel btns
+  let cancelBtns = document.getElementsByClassName('cancelBtn');
+
+  for(var i = 0; i < cancelBtns.length; i++){
+    let cancelBtnID = cancelBtns[i].id;
+    cancelBtns[i].onclick = () => {cancelReviewUserInput(cancelBtnID)};
+  }
+
+}
+
+//confirm review user input change
+function confirmReviewUserInput(id){
+  revertUserInputReview();
+}
+
+//cancel user review input change...
+function cancelReviewUserInput(id){
+  revertUserInputReview();
+}
+
+//revert user input in review
+//collapse inputs and  add back in txt
+function revertUserInputReview(){
+  //get review text elements
+  let reviewUserInfoTxtElements = document.getElementsByClassName('reviewUserInputTxt');
+
+  //get review input elements
+  let reviewUserInfoInputElements = document.getElementsByClassName('reviewUserInfoInput');
+
+  //get cancel/confirm btns
+  let reviewUserInfoBtns = document.getElementsByTagName('dualBtn');
+
+
+
+  for(var i = 0; i < reviewUserInfoTxtElements.length; i++){
+    reviewUserInfoTxtElements[i].style.display = 'block';
+    reviewUserInfoInputElements[i].style.display = 'none';
+    reviewUserInfoBtns[i].style.opacity = 0;
+  }
+
+}
+
+//switch user info reveiew elememt to input form
+function editUserInputReview(id){
+
+  //revert open inputs first
+  revertUserInputReview();
+
+  //remove text element
+  document.getElementById(id).style.display = "none";
+
+  //add in input field
+  document.getElementById(id.substring(0, id.indexOf('Txt')) + "Input").style.display = 'block';
+
+  //add in conf/cancel btns
+  document.getElementById(id.substring(0, id.indexOf('Txt')) + "Btns").style.opacity = 1;
+}
+
+//init on click for billing items - only one selected at a time - has seleceted class
+function initBillingOptionOnClick(){
+
+  //billing option elements...
+  let billingOptions = document.getElementsByClassName('billingOption');
+
+  for(var i=0; i < billingOptions.length; i++){
+    let elementID = billingOptions[i].id;
+    billingOptions[i].onclick = () => {alterBillingSelection(elementID)};
+  }
+
+}
+
+//make sure only one billing option is selected....
+function alterBillingSelection(selectedElementID){
+
+  //clear selection class from each billing option
+  let billingOptions = document.getElementsByClassName('billingOption');
+
+  for(var i=0; i < billingOptions.length; i++){
+    billingOptions[i].classList.remove("selected");
+  }
+
+  //set selected for given element
+  let selectedElement = document.getElementById(selectedElementID);
+  selectedElement.classList.add("selected");
+
 }

@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title> Tailored Quisine </title>
     <!-- JS -->
-    <!-- JS -->
-    <script type="text/javascript" src="script.js?v=1"></script>
+    <script type="text/javascript" src="script.js?v=2"></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css?version=1.61">
+    <link rel="stylesheet" href="style.css?version=1.7">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   </head>
   <body style="background-image:url('https://iili.io/3E7bxp.jpg'); margin-left:5%; margin-right:5%;">
@@ -182,6 +183,294 @@
 
 
 
+    <!-- Checkout Area... -->
+
+    <!-- Checkout Header -->
+    <!-- Checkout Area -->
+    <centeredContainer >
+      <div class="" style="border-radius: 20px; background-image:url('https://iili.io/3E7eHb.jpg'); background-repeat: repeat;">
+        <centeredContainer style="padding-top:0; padding-bottom:5vh; text-align: center;">
+          <h2 class="cursive" style="font-size:2.5em; color:white;"> Checkout </h2>
+          <p style="margin:0; font-weight: bold; font-size: 1.5em; justify-content:center; padding-left:4vh; padding-right:4vh; color:white;">
+           Review Your Order & Enter Your Info
+         </p>
+
+        </centeredContainer>
+      </div>
+    </centeredContainer>
+
+    <!-- Cart Items Review Area -->
+    <div style="display:flex; justify-content:center; padding-top: 5vh;">
+      <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+        <h2> Your Order </h2>
+
+        <div style="display:flex; justify-content: left; flex-direction:column; padding-left:4vh;">
+
+            <cartItemTxt id="cartItem1"> 
+              <p id="cartItem1Txt"> Cajun Seafood Gumbo $7 Half  </p>
+              <pad></pad>
+              <i id="cartItem1Remover" class="material-icons removeItemIcon"> cancel </i>
+            </cartItemTxt>
+            
+            <cartItemTxt id="cartItem2"> 
+              <p id="cartItem2Txt"> From Scratch Macaroni $12 </p>
+              <pad></pad>
+              <i id="cartItem2Remover" class="material-icons removeItemIcon"> cancel </i>  
+            </cartItemTxt>
+            
+            <cartItemTxt id="cartItem3"> 
+              <p id="cartItem3Txt"> Fettuccini Alfredo $12 </p> 
+              <pad></pad>
+              <i id="cartItem3Remover" class="material-icons removeItemIcon"> cancel </i>
+            </cartItemTxt>
+            
+        </div>
+
+        <h2> Total: $31.00 </h2>
+
+        <!-- Back and proceed btns -->
+        <dualBtnContainer>
+
+          <button style="font-size: 1.5em;"> Go Back </button>
+          <button style="font-size: 1.5em;"> Next Step </button>
+
+        </dualBtnContainer>
+
+      </centeredContainer>
+    </div> <!-- end cart items area -->
+
+
+    <!-- Schedule Order Area -->
+    <div style="display:flex; justify-content:center; padding-top: 5vh;">
+      <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+       
+        <h2> Schedule Your Order </h2>
+
+        <p style="margin:1vh;"> Select A Day </p>
+
+        <weekSelectContainer style="display: flex; align-items: center; padding-bottom: 3vh;">
+          <p style="margin:0;"> Week Of November 15th</p>
+          <pad style="width: 2vh;"></pad>
+        <i class="material-icons weekNavIcon"> arrow_forward </i>
+        </weekSelectContainer>
+        
+        <weekDays style='padding-bottom: 4vh;'>
+          <day id="daySelectorM">Mon</day>
+          <padBetween> </padBetween>
+          <day id="daySelectorW">Wed</day>
+          <padBetween> </padBetween>
+          <day id="daySelectorF">Fri</day>
+        </weekDays>
+
+        <!-- Back and proceed btns -->
+        <dualBtnContainer>
+
+          <button style="font-size: 1.5em;"> Go Back </button>
+          <button style="font-size: 1.5em;"> Next Step </button>
+
+        </dualBtnContainer>
+
+      </centeredContainer>
+    </div> <!-- end schedule area -->
+
+
+    <!-- User info input area -->
+    <div style="display:flex; justify-content:center; padding-top: 5vh;">
+      <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+       
+        <h2> Your Info </h2>
+
+        <inputContainerFlexbox>
+
+          <labelContainer>
+            <label for="name">Name</label>
+            <label for="email">Email</label>
+            <label for="phone">Phone</label>
+            <label for="address">Address</label>
+          </labelContainer>
+
+          <inputContainerFlex>
+            <input type="text" name="name" placeholder="...">
+            <input type="email" name="email" placeholder="...">
+            <input type="tel" name="phone" placeholder="...">
+            <input type="text" name="address" placeholder="...">
+          </inputContainerFlex>
+
+        </inputContainerFlexbox> 
+ 
+
+        <!-- Back and proceed btns -->
+        <dualBtnContainer>
+
+          <button style="font-size: 1.5em;"> Go Back </button>
+          <button style="font-size: 1.5em;"> Checkout </button>
+
+        </dualBtnContainer>
+
+      </centeredContainer>
+    </div> <!-- end user info input area -->
+
+
+    <!-- Billing info input area -->
+    <div style="display:flex; justify-content:center; padding-top: 5vh;">
+      <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+       
+        <h2> Billing Info </h2>
+
+        <p style="margin: 0;"> Payment Options </p>
+
+        <div class="billingOptionContainer">
+          <p id="creditOption" class="billingOption selected"> Credit Card </p>
+          <p id="paypalOption" class="billingOption"> PayPal </p>
+          <p id="cashappOption" class="billingOption"> Cashapp </p>
+        </div>     
+
+        <inputContainerFlexbox>
+
+          <labelContainer>
+            <label for="card-name">Card Name</label>
+            <label for="card-num">Card #</label>
+            <label for="card-date">Exp. Date</label>
+            <label for="card-security"> CSC Code </label>
+          </labelContainer>
+
+          <inputContainerFlex>
+            <input type="text" name="card-name" placeholder="...">
+            <input type="email" name="card-num" placeholder="...">
+            <input type="tel" name="card-date" placeholder="...">
+            <input type="text" name="card-security" placeholder="...">
+          </inputContainerFlex>
+
+        </inputContainerFlexbox> 
+ 
+
+        <!-- Back and proceed btns -->
+        <dualBtnContainer>
+
+          <button style="font-size: 1.5em;"> Go Back </button>
+          <button style="font-size: 1.5em;"> Review Order </button>
+
+        </dualBtnContainer>
+
+      </centeredContainer>
+    </div> <!-- end billing info input area -->
+
+
+
+    <!-- confirm/review area -->
+    <div style="display:flex; justify-content:center; padding-top: 5vh;">
+      <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+       
+        <h2> Review Your Order </h2>
+
+
+        <!-- items review -->
+        <p class="revivewSectionHead"> Items </p>
+
+        <div style="display:flex; justify-content: left; flex-direction:column; padding-left:4vh; ">
+
+            <cartItemTxt id="reviewItem1"> 
+              <p id="reviewItem1Txt" class="cartItemReviewItem" > Cajun Seafood Gumbo $7 Half  </p>
+              <pad></pad>
+              <i id="reviewItem1Remover" class="material-icons removeItemIconSmall"> cancel </i>
+            </cartItemTxt>
+            
+            <cartItemTxt id="reviewItem2"> 
+              <p id="reviewItem2Txt" class="cartItemReviewItem"> From Scratch Macaroni $12 </p>
+              <pad></pad>
+              <i id="reviewItem2Remover" class="material-icons removeItemIconSmall"> cancel </i>  
+            </cartItemTxt>
+            
+            <cartItemTxt id="reviewItem3"> 
+              <p id="reviewItem3Txt" class="cartItemReviewItem"> Fettuccini Alfredo $12 </p> 
+              <pad></pad>
+              <i id="reviewItem3Remover" class="material-icons removeItemIconSmall"> cancel </i>
+            </cartItemTxt>
+            
+        </div>
+
+        <h2 style="font-size: 1.25em;"> Total: $31.00 </h2>
+
+
+        <!-- Your Info -->
+        <p class="revivewSectionHead" style="padding-top: 3vh;"> Your Info </p>
+
+        <inputContainerFlexbox>
+
+          <labelContainer class="reviewLabelContainer">
+            <label for="name">Name: </label>
+            <label for="email">Email: </label>
+            <label for="phone">Phone: </label>
+            <label for="address">Address: </label>
+          </labelContainer>
+
+          <inputContainerFlex>
+
+            <p id="reviewNameTxt" class="reviewUserInputTxt"> John Smith </p>
+
+            
+            <input id="reviewNameInput" class="reviewUserInfoInput" type="text" name="name" placeholder="...">
+
+            
+
+            <p id="reviewEmailTxt" class="reviewUserInputTxt"> jsmith@yahoo.com </p>
+
+            <input id="reviewEmailInput" class="reviewUserInfoInput" type="email" name="email" placeholder="...">
+
+            <p id="reviewPhoneTxt" class="reviewUserInputTxt"> 555-555-5555 </p>
+
+            <input id="reviewPhoneInput" class="reviewUserInfoInput" type="tel" name="phone" placeholder="...">
+
+            <p id="reviewAddressTxt" class="reviewUserInputTxt"> 1600 Pennsylvania Ave, DC 20001 </p>
+
+            <input id="reviewAddressInput" class="reviewUserInfoInput" type="text" name="address" placeholder="...">
+            
+           
+          </inputContainerFlex>
+
+
+
+          <twoBtnContainer style="padding-left: 2vh;">
+            <dualBtn id="reviewNameBtns">
+              <i id="reviewNameConfirm" class="material-icons green expands confirmBtn"> check_circle </i>
+              <i id="reviewNameCancel" class="material-icons red expands cancelBtn"> cancel </i>
+            </dualBtn>
+
+            <dualBtn id="reviewEmailBtns">
+              <i id="reviewEmailConfirm" class="material-icons green expands confirmBtn"> check_circle </i>
+              <i id="reviewEmailCancel" class="material-icons red expands cancelBtn"> cancel </i>
+            </dualBtn>
+
+            <dualBtn id="reviewPhoneBtns">
+              <i id="reviewPhoneConfirm" class="material-icons green expands confirmBtn"> check_circle </i>
+              <i id="reviewPhoneCancel" class="material-icons red expands cancelBtn"> cancel </i>
+            </dualBtn>
+
+            <dualBtn id="reviewAddressBtns">
+              <i id="reviewAddressConfirm" class="material-icons green expands confirmBtn"> check_circle </i>
+              <i id="reviewAddressCancel" class="material-icons red expands cancelBtn"> cancel </i>
+            </dualBtn>
+          </twoBtnContainer>
+
+        </inputContainerFlexbox> 
+
+
+
+        
+ 
+
+        <!-- Back and proceed btns -->
+        <dualBtnContainer>
+
+          <button style="font-size: 1.5em;"> Go Back </button>
+          <button style="font-size: 1.5em;"> Confirm Order </button>
+
+        </dualBtnContainer>
+
+      </centeredContainer>
+    </div> <!-- end user info input area -->
+
+
   </body>
 </html>
 <script type="text/javascript">
@@ -192,6 +481,21 @@
   window.onload = function(){
     //onclick for menu items... prompt checkout or keep shopping
     initMenuItemsOnClick();
+
+    //onclick + hover for cart items
+    initCartItemsFunctions();
+
+    //init for day of week order selection
+    initDayOfWeekOnClickSingle();
+
+    //init billing options onclick
+    initBillingOptionOnClick();
+
+    //init onlcick for item removal in final review
+    initReviewCartItemRemove();
+
+    //init review user info on clicks
+    initReviewUserInfoOnClick();
   }
 
 </script>

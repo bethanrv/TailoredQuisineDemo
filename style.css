@@ -101,6 +101,8 @@ inputContainer{
   justify-content: center;
 }
 
+
+
 inputContainer img{
   width: 2vh;
   height: 2vh;
@@ -141,6 +143,51 @@ menuItemTxt:hover{
   color:dodgerblue;
   text-decoration: underline;
 }
+cartItemTxt{
+  font-size: 1.5em;
+  font-weight: bold;
+  display: flex;
+  padding-bottom: 1vh;
+  justify-content: left;
+  align-items: center;
+  text-decoration-color: red;
+}
+
+cartItemTxt pad{
+  width: 2vw;
+  height: 2vw;
+}
+
+.cartItemReviewItem{
+  font-size: 0.75em; 
+  margin-bottom:0;
+  font-weight: 600;
+}
+
+.removeItemIcon{
+  color: red;
+}
+
+.removeItemIconSmall{
+  color: red;
+  padding-top: 2.2vh;
+}
+
+.weekNavIcon{
+  font-size: 1em;
+}
+
+.weekNavIcon:hover{
+  font-size: 1.75em;
+  cursor:pointer;
+}
+
+.revivewSectionHead{
+  margin: 0; 
+  font-weight: bold; 
+  text-decoration:underline;
+}
+
 
 menuItemDesc{
   padding-top: 1vh;
@@ -316,6 +363,71 @@ day.selected{
   background-color: white;
 }
 
+inputContainerFlexbox{
+  display: flex;
+  align-items: center;
+}
+
+
+inputContainerFlex{
+  display: flex;
+  flex-direction: column;
+  padding-left: 2vw;
+}
+
+inputContainerFlex input{
+  height: 5vh;
+  margin-bottom: 3vh;
+  width: 45vw;
+}
+
+inputContainerFlex p{
+  margin: 2.5vh;
+}
+
+inputContainerFlex p:hover{
+  color:dodgerblue;
+  text-decoration: underline;
+  text-decoration-color: dodgerblue;
+}
+
+.reviewLabelContainer{
+  padding-top: 5vh;
+}
+
+
+labelContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding-top: 2vh;
+}
+
+labelContainer label{
+  height: 5vh;
+  margin-bottom: 3.75vh
+}
+
+
+.reviewUserInfoInput{
+  display: none;
+}
+
+
+twoBtnContainer{
+  display: flex;
+  flex-direction: column;
+  padding-top: 5vh;
+}
+
+twoBtnContainer dualBtn{
+  padding-bottom: 5vh;
+}
+
+dualBtn{
+  opacity: 0;
+}
+
 .mon{}
 .wed{}
 .fri{}
@@ -370,6 +482,7 @@ txtPadding{
 .borderShrink{
   width: 100%;
 }
+
 
 
 centeredContainer{
@@ -506,6 +619,24 @@ pad{
   height: 3vh;
 }
 
+.billingOptionContainer{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.billingOptionContainer p{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.billingOptionContainer p.selected{
+  text-decoration: underline;
+  color: dodgerblue;
+  text-decoration-color: dodgerblue;
+}
+
+
 
 /*
   Responsive Design Styling
@@ -517,6 +648,8 @@ pad{
   Resizing for mobile
 */
 @media (max-width:768px){
+
+
 
   .largeBtn{
     width: 40vw;
@@ -545,6 +678,12 @@ pad{
 */
 
 @media (max-width:340px){
+
+  .reviewLabelContainer{
+    padding-top: 0vh;
+  }
+
+
   .logo{
     width: 70vh;
     height: 70vh;
@@ -555,6 +694,8 @@ pad{
   Resizing for desktop
 */
 @media (min-width:1200px){
+
+
   .logo{
     width: 30vw;
     height: 30vw;
@@ -589,4 +730,23 @@ pad{
     width: 40%;
     align-items: center;
   }
+  inputContainerFlex input{
+    width: 22vw;
+  }
+
+
+}
+
+.green{
+  color: green;
+}
+.red{
+  color: red;
+}
+
+.expands{
+  font-size: 1em;
+}
+.expands:hover{
+  font-size: 1.75em;
 }
