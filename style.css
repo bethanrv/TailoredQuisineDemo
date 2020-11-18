@@ -413,6 +413,10 @@ labelContainer label{
   display: none;
 }
 
+.reviewBillingInfoInput{
+  display: none;
+}
+
 
 twoBtnContainer{
   display: flex;

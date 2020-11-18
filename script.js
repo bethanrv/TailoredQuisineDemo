@@ -396,6 +396,11 @@ function alterSelection(element, id, type){
 
       //add selected to element
       element.classList.add("selected");
+
+      //add selected to corresponding day in review section
+      let correspondingDayID = id + 'Review';
+      document.getElementById(correspondingDayID).classList.add('selected');
+
   }
 
   
@@ -602,6 +607,22 @@ function initReviewUserInfoOnClick(){
 
 }
 
+/*/init review billing info ... conf/cancel btns
+function initReviewBillingInfoOnClick(){
+  //get text elements
+  let reviewBillingTextElements = document.getElementsByClassName("reviewBillingInputTxt");
+
+
+  //onclick for text elems... switch to input form
+  for(var i = 0; i < reviewBillingTextElements.length; i++){
+    let reviewBillingElementID = reviewBillingInputTxt[i].id; 
+    reviewBillingInputTxt[i].onclick = () => {editBillingInfoReview(reviewBillingElementID)};    
+  }
+
+
+
+} */
+
 //confirm review user input change
 function confirmReviewUserInput(id){
   revertUserInputReview();
@@ -676,5 +697,16 @@ function alterBillingSelection(selectedElementID){
   //set selected for given element
   let selectedElement = document.getElementById(selectedElementID);
   selectedElement.classList.add("selected");
+
+  //select corresponding element in review section
+  let correspondingPaymentID = '';
+  if(selectedElementID.indexOf('Review') == -1){
+    correspondingPaymentID = selectedElementID + 'Review';
+  }
+  else{
+    correspondingPaymentID = selectedElementID.substring(0, selectedElementID.indexOf('Review'));
+  }
+  document.getElementById(correspondingPaymentID).classList.add("selected");
+
 
 }

@@ -392,8 +392,26 @@
         <h2 style="font-size: 1.25em;"> Total: $31.00 </h2>
 
 
+        <!-- day selection review -->
+        <p class="revivewSectionHead" style="padding-top: 3vh; padding-bottom: 3vh;"> Delivery Schedule </p>
+
+        <weekSelectContainer style="display: flex; align-items: center; padding-bottom: 3vh;">
+          <p style="margin:0;"> Week Of November 15th</p>
+          <pad style="width: 2vh;"></pad>
+        <i class="material-icons weekNavIcon"> arrow_forward </i>
+        </weekSelectContainer>
+        
+        <weekDays style='padding-bottom: 4vh;'>
+          <day id="daySelectorMReview">Mon</day>
+          <padBetween> </padBetween>
+          <day id="daySelectorWReview">Wed</day>
+          <padBetween> </padBetween>
+          <day id="daySelectorFReview">Fri</day>
+        </weekDays>
+
+
         <!-- Your Info -->
-        <p class="revivewSectionHead" style="padding-top: 3vh;"> Your Info </p>
+        <p class="revivewSectionHead" style="padding-top: 3vh; "> Your Info </p>
 
         <inputContainerFlexbox>
 
@@ -451,6 +469,83 @@
               <i id="reviewAddressCancel" class="material-icons red expands cancelBtn"> cancel </i>
             </dualBtn>
           </twoBtnContainer>
+
+        </inputContainerFlexbox> 
+
+
+
+        <!-- Billing Info review -->
+        <p class="revivewSectionHead" style="padding-top: 3vh; "> Billing Info </p>
+
+        <div class="billingOptionContainer">
+          <p id="creditOptionReview" class="billingOption selected"> Credit Card </p>
+          <p id="paypalOptionReview" class="billingOption"> PayPal </p>
+          <p id="cashappOptionReview" class="billingOption"> Cashapp </p>
+        </div>  
+
+        <inputContainerFlexbox>
+
+          <labelContainer style="padding-top: 6vh;">
+            <label for="card-name">Card Name</label>
+            <label for="card-num">Card #</label>
+            <label for="card-date">Exp. Date</label>
+            <label for="card-security"> CSC Code </label>
+          </labelContainer>
+
+          <inputContainerFlex>
+
+
+
+            <p id="reviewCardNameTxt" class="reviewBillingInputTxt"> John Smith </p>
+
+            
+            <input id="reviewCardNameInput" class="reviewBillingInfoInput" type="text" name="card-name" placeholder="...">
+
+            
+
+            <p id="reviewCardNumTxt" class="reviewBillingInputTxt"> 1234-5678-90123-4567 </p>
+
+            <input id="reviewCardNumInput" class="reviewBillingInfoInput" type="number" name="card-num" placeholder="...">
+
+            <p id="reviewCardDateTxt" class="reviewBillingInputTxt"> 1/20 </p>
+
+            <input id="reviewCardDateInput" class="reviewBillingInfoInput" type="tel" name="card-date" placeholder="...">
+
+            <p id="reviewCardSecurityTxt" class="reviewBillingInputTxt"> 123 </p>
+
+            <input id="reviewCardSecurityInput" class="reviewBillingInfoInput" type="text" name="card-security" placeholder="...">
+            
+           
+          </inputContainerFlex>
+
+
+
+          <twoBtnContainer style="padding-left: 2vh;">
+            <dualBtn id="reviewCardNameBtns">
+              <i id="reviewCardNameConfirm" class="material-icons green expands confirmBtn"> check_circle </i>
+              <i id="reviewCardNameCancel" class="material-icons red expands cancelBtn"> cancel </i>
+            </dualBtn>
+
+            <dualBtn id="reviewCardNumBtns">
+              <i id="reviewCardNumConfirm" class="material-icons green expands confirmBtn"> check_circle </i>
+              <i id="reviewCardNumCancel" class="material-icons red expands cancelBtn"> cancel </i>
+            </dualBtn>
+
+            <dualBtn id="reviewCardDateBtns">
+              <i id="reviewCardDateConfirm" class="material-icons green expands confirmBtn"> check_circle </i>
+              <i id="reviewCardDateCancel" class="material-icons red expands cancelBtn"> cancel </i>
+            </dualBtn>
+
+            <dualBtn id="reviewCardSecurityBtns">
+              <i id="reviewCardSecurityConfirm" class="material-icons green expands confirmBtn"> check_circle </i>
+              <i id="reviewCardSecurityCancel" class="material-icons red expands cancelBtn"> cancel </i>
+            </dualBtn>
+          </twoBtnContainer>
+
+
+    
+
+          
 
         </inputContainerFlexbox> 
 
