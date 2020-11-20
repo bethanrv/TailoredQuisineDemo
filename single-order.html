@@ -411,11 +411,11 @@
 
 
         <!-- Your Info -->
-        <p class="revivewSectionHead" style="padding-top: 3vh; "> Your Info </p>
+        <p class="revivewSectionHead" style="padding-top: 4vh; padding-bottom: 0;"> Your Info </p>
 
-        <inputContainerFlexbox>
+        <inputContainerFlexbox style="padding-left: 4vh;">
 
-          <labelContainer class="reviewLabelContainer">
+          <labelContainer class="reviewLabelContainer" style="">
             <label for="name">Name: </label>
             <label for="email">Email: </label>
             <label for="phone">Phone: </label>
@@ -543,16 +543,7 @@
           </twoBtnContainer>
 
 
-    
-
-          
-
         </inputContainerFlexbox> 
-
-
-
-        
- 
 
         <!-- Back and proceed btns -->
         <dualBtnContainer>
@@ -563,8 +554,54 @@
         </dualBtnContainer>
 
       </centeredContainer>
-    </div> <!-- end user info input area -->
+    </div> <!-- end review info input area -->
 
+
+
+    <!-- Order Details For Reference -->
+    <div style="display:flex; justify-content:center; padding-top: 5vh;">
+      <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+        <h2> Order Details </h2>
+
+
+        <p> Order ID: 0107</p>
+
+
+        <!-- items -->
+        <div style="display:flex; justify-content: left; flex-direction:column; padding-left:4vh; width: 75%;">
+
+            <p class="revivewSectionHead"> Items </p>
+
+            <p id="cartItem1Txt"> Cajun Seafood Gumbo $7 Half  </p>
+          
+            <p id="cartItem2Txt"> From Scratch Macaroni $12 </p>
+
+            <p id="cartItem3Txt"> Fettuccini Alfredo $12 </p> 
+
+            <h2 style="font-size: 1.5em;"> Total: $31.00 </h2>
+
+        </div>
+
+
+        <!-- Your Info -->
+        <div style="display:flex; justify-content: left; flex-direction:column; padding-top: 4vh; padding-left:4vh; width: 75%;">
+
+            <p class="revivewSectionHead"> Your Info </p>
+
+            <p> Name: John Smith </p>
+            <p> Email: jsmith@yahoo.com </p>
+            <p> Phone: 555-555-5555 </p>
+            <p> Address: 13 Street Ave, Springfield PA 23455 </p>
+
+        </div>
+
+         <button style="font-size: 1.5em;"> Copy Info </button>
+
+       
+        
+
+      </centeredContainer>
+    </div> <!-- end cart items area -->
 
   </body>
 </html>
