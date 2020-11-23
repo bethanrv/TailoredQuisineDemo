@@ -363,6 +363,60 @@ day.selected{
   background-color: white;
 }
 
+weekDaysScheduleReview{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+dayReviewStatic{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75em;
+  font-weight: bold;
+  height: 3vh;
+  width: 3vh;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+}
+
+dayReview{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75em;
+  font-weight: bold;
+  height: 3vh;
+  width: 3vh;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+}
+
+dayReviewStatic.selected{
+  border-style: solid;
+  border-color: lightgreen;
+  color: black;
+  background-color: white;
+}
+
+dayReview.selected{
+  border-style: solid;
+  border-color: lightgreen;
+  color: black;
+  background-color: white;
+}
+
+.scheduleTotalsByDayArea p{
+  padding: 0;
+  margin: 0;
+  padding-bottom: 2vh;
+}
+
 inputContainerFlexbox{
   display: flex;
   align-items: center;
@@ -395,6 +449,11 @@ inputContainerFlex p:hover{
   padding-top: 5vh;
 }
 
+.reviewOrderHeader{
+  font-size: 1.5em;
+  text-decoration: underline;
+}
+
 
 labelContainer{
   display: flex;
@@ -417,6 +476,30 @@ labelContainer label{
   display: none;
 }
 
+.scheduleWeeksText{}
+
+.scheduleWeeksText:hover{
+  color: dodgerblue;
+  text-decoration: underline;
+}
+
+.deliveryFreqOptions{
+  padding-top: 0.5vh;
+  padding-left: 2vh;
+}
+
+.deliveryFreqOptions p{
+  padding: 0;
+  margin: 0;
+  height: 5vh;
+}
+
+.deliveryFreqChecks input{
+  padding: 0;
+  margin: 0;
+  width: 3vh;
+  height: 5vh;
+}
 
 twoBtnContainer{
   display: flex;

@@ -379,6 +379,8 @@ function alterSelection(element, id, type){
       isSelected = true;
     }
   }
+
+  let correspondingDayID = id;
   if(!isSelected){
 
       //if single order... unselect other days
@@ -392,13 +394,15 @@ function alterSelection(element, id, type){
             daysOfWeek[i].classList.remove("selected")
           }
         }
+
+        correspondingDayID += 'Review';
       }
 
       //add selected to element
       element.classList.add("selected");
 
       //add selected to corresponding day in review section
-      let correspondingDayID = id + 'Review';
+      console.log(correspondingDayID)
       document.getElementById(correspondingDayID).classList.add('selected');
 
   }
@@ -709,4 +713,130 @@ function alterBillingSelection(selectedElementID){
   document.getElementById(correspondingPaymentID).classList.add("selected");
 
 
+}
+
+//init schedule orders - select weeks on click
+function initWeeksSchedulingChecks(){
+  //only allow one to be checked
+
+  //get week checks
+  let weekCheckboxes = document.getElementsByClassName('scheduleWeeksCheckboxes');
+
+  //get week txt options
+  let weekText = document.getElementsByClassName('scheduleWeeksText');
+
+  for(var i = 0; i < weekCheckboxes.length; i++){
+    let elementID = weekCheckboxes[i].id;
+
+    weekCheckboxes[i].onclick = () => {alterScheduleWeeksSelection(elementID)};
+    weekText[i].onclick = () => {alterScheduleWeeksSelection(elementID)};
+  }
+
+} 
+
+
+//show custom week selection input
+function showCustomWeekSelection(){
+  document.getElementById('customWeeksInputArea').style.display = 'flex';
+
+}
+
+//hide custom week selection input
+function hideCustomWeekSelection(){
+  document.getElementById('customWeeksInputArea').style.display = 'none';
+}
+
+
+//alter schedule orders # of weeks selection
+function alterScheduleWeeksSelection(id){
+
+  if(id.indexOf('custom') > -1) {showCustomWeekSelection(); }
+  else hideCustomWeekSelection();
+
+
+  //revert week selection checks
+  revertScheduleOrdersWeeks();
+
+  //set given elem to checked
+  document.getElementById(id).checked = true;
+
+}
+
+//set all week selections to unchecked
+function revertScheduleOrdersWeeks(){
+  let weekCheckboxes = document.getElementsByClassName('scheduleWeeksCheckboxes');
+
+  for(var i = 0; i < weekCheckboxes.length; i++){
+    weekCheckboxes[i].checked = false;
+  }
+
+}
+
+//init input for custom # of weeks
+function initCustomWeeksInput(){
+  let customWeekInput = document.getElementById('customWeeksInput');
+  let customWeekCheck = document.getElementById('customWeekInputCheck');
+  customWeekInput.oninput = () => {customWeekCheck.style.display = 'block'};
+}
+
+
+
+//init schedule item days review
+function initScheduleItemDaysReview(){
+  //get day review elems
+  let dayReviewSelections = document.getElementsByTagName('dayReview');
+
+  for(var i = 0; i < dayReviewSelections.length; i++){
+    let element = dayReviewSelections[i];
+    dayReviewSelections[i].onclick = () => {alterDayReviewSelection(element)};
+  }
+}
+
+//alter selected for day item review
+function alterDayReviewSelection(element){
+  if(element.classList.contains('selected'))
+    element.classList.remove('selected');
+  else element.classList.add('selected');
+}
+
+// review create account checkbox onclick
+function initReviewCreateAccountCheckbox(){
+  document.getElementById('sceduleReviewYourInfoCreateAccount').onclick = () => {
+    alterPasswordInputArea(document.getElementById('sceduleReviewYourInfoCreateAccount').checked);
+  };
+}
+
+//alter password input area 
+function alterPasswordInputArea(checked){
+  if(checked)
+    document.getElementById('reviewPasswordArea').style.display = 'flex';
+  else{
+    document.getElementById('reviewPasswordArea').style.display = 'none';
+    document.getElementById('scheduleReviewCreateAccountConfirm').style.display = 'none'; 
+    document.getElementById('scheduleReviewPasswordInfo').style.display = 'none';
+  }
+
+}
+
+//init review password input for schedule orders review
+function initReviewPasswordInput(){
+  let confirmInput = document.getElementById('reviewCreateAccountPasswordConfirm');
+  confirmInput.oninput = () => {
+    //check passwords
+    let password = document.getElementById('reviewCreateAccountPassword').value;
+    let confirmPassword = document.getElementById('reviewCreateAccountPasswordConfirm').value;
+    if(checkPasswords(password, confirmPassword)){
+      document.getElementById('scheduleReviewCreateAccountConfirm').style.display = 'block'; 
+      document.getElementById('scheduleReviewPasswordInfo').style.display = 'none';
+    }
+    else{
+      document.getElementById('scheduleReviewPasswordInfo').style.display = 'block';
+      document.getElementById('scheduleReviewCreateAccountConfirm').style.display = 'none'; 
+    }
+  };
+}
+
+//check passwords
+function checkPasswords(pass, confPass){
+  return pass == confPass && pass.length > 5;
 }
