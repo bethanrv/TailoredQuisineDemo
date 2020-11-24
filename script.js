@@ -329,6 +329,7 @@ function initDayOfWeekOnClickSingle(){
 
 //onclick for item days...
 function countItemsSelected(){
+
   var mons = document.getElementsByClassName('mon');
   var weds = document.getElementsByClassName('wed');
   var fris = document.getElementsByClassName('fri');
@@ -362,6 +363,7 @@ function countItemsSelected(){
       }
     }
   }
+
 
   if(totalItems > 0) showCart();
   else hideCart();
@@ -402,8 +404,10 @@ function alterSelection(element, id, type){
       element.classList.add("selected");
 
       //add selected to corresponding day in review section
-      console.log(correspondingDayID)
-      document.getElementById(correspondingDayID).classList.add('selected');
+      try{
+        document.getElementById(correspondingDayID).classList.add('selected');
+      }
+      catch{}
 
   }
 
@@ -414,7 +418,7 @@ function alterSelection(element, id, type){
 
   //check for modifying day availality @ top
   if(id != 'none'){
-    let day = id.substring(11); //11th char in id is the day
+    let day = id.substring(11); //11th char in id is the day of week
 
     if(isDay(day) && daysSelected.indexOf(day) > -1){
       daysSelected.splice(daysSelected.indexOf(day), 1);
@@ -430,6 +434,8 @@ function alterSelection(element, id, type){
     deslectDays();
   }
   else{
+
+
     //show item selections
     document.getElementById("pastaSelections").style.display = 'flex';
     document.getElementById("soupSelections").style.display = 'flex';
@@ -840,3 +846,6 @@ function initReviewPasswordInput(){
 function checkPasswords(pass, confPass){
   return pass == confPass && pass.length > 5;
 }
+
+
+

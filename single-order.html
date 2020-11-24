@@ -6,6 +6,7 @@
     <title> Tailored Quisine </title>
     <!-- JS -->
     <script type="text/javascript" src="script.js?v=2"></script>
+    <script type="text/javascript" src="single-order.js?v=1"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="style.css?version=1.7">
     <!-- Font -->
@@ -45,7 +46,7 @@
       <div style="display: flex; justify-content: center;  align-items: center; flex-direction: column;">
         <h2 id="promptedAddedTxt"> Added Item To Cart </h2>
         <h2> Total - $7 </h2>
-        <button style="font-size: 2em; border-color:black;"> Checkout </button>
+        <button style="font-size: 2em; border-color:black;" onclick="navigateToCheckout();"> Checkout </button>
         <pad></pad>
         <button onclick="closeCheckoutPromt();" style="font-size: 2em; border-color:black;"> Keep Shopping </button>
       </div>
@@ -66,7 +67,7 @@
 
 
     <!-- Header - Place Your Order - Select -->
-    <centeredContainer >
+    <centeredContainer id="menuHeader">
       <div class="" style="border-radius: 20px; background-image:url('https://iili.io/3E7eHb.jpg'); background-repeat: repeat;">
         <centeredContainer style="padding-top:0; padding-bottom:5vh; text-align: center;">
           <h2 class="cursive" style="font-size:2.5em; color:white;"> Place Your Order </h2>
@@ -79,7 +80,7 @@
     </centeredContainer>
 
     <!-- Seasonal Soups Selection -->
-    <div style="display:flex; justify-content:center; padding-bottom:4vh; padding-top:4vh;">
+    <div id="soupSelection" style="display:flex; justify-content:center; padding-bottom:4vh; padding-top:4vh;">
       <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
         <h2> Seasonal Soups - Made Daily </h2>
         <menuDesc  style="padding-bottom:0vh;"> Delivered Frozen - Needs To Be Heated On Stove By Responsible Party Over Age 16 </menuDesc>
@@ -149,7 +150,7 @@
 
 
     <!-- Fresh Pastas Selection -->
-    <div style="display:flex; justify-content:center;">
+    <div id="pastaSelection" style="display:flex; justify-content:center;">
       <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
         <h2> Fresh Pastas - Made Daily </h2>
         <menuDesc> Turning The Region's Bounty Into Modern Interpretations Of Classic Italian Fare </menuDesc>
@@ -187,7 +188,7 @@
 
     <!-- Checkout Header -->
     <!-- Checkout Area -->
-    <centeredContainer >
+    <centeredContainer id="checkoutHeader" style="display: none;">
       <div class="" style="border-radius: 20px; background-image:url('https://iili.io/3E7eHb.jpg'); background-repeat: repeat;">
         <centeredContainer style="padding-top:0; padding-bottom:5vh; text-align: center;">
           <h2 class="cursive" style="font-size:2.5em; color:white;"> Checkout </h2>
@@ -200,7 +201,7 @@
     </centeredContainer>
 
     <!-- Cart Items Review Area -->
-    <div style="display:flex; justify-content:center; padding-top: 5vh;">
+    <div id="checkoutCartItems" style="display:none; justify-content:center; padding-top: 5vh;">
       <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
         <h2> Your Order </h2>
 
@@ -231,8 +232,8 @@
         <!-- Back and proceed btns -->
         <dualBtnContainer>
 
-          <button style="font-size: 1.5em;"> Go Back </button>
-          <button style="font-size: 1.5em;"> Next Step </button>
+          <button style="font-size: 1.5em;" onclick="navigateBackToMenu();"> Go Back </button>
+          <button style="font-size: 1.5em;" onclick="navigateToScheduleOrder();"> Next Step </button>
 
         </dualBtnContainer>
 
@@ -241,7 +242,7 @@
 
 
     <!-- Schedule Order Area -->
-    <div style="display:flex; justify-content:center; padding-top: 5vh;">
+    <div id="checkoutScheduleOrder" style="display:none; justify-content:center; padding-top: 5vh;">
       <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
        
         <h2> Schedule Your Order </h2>
@@ -265,8 +266,8 @@
         <!-- Back and proceed btns -->
         <dualBtnContainer>
 
-          <button style="font-size: 1.5em;"> Go Back </button>
-          <button style="font-size: 1.5em;"> Next Step </button>
+          <button style="font-size: 1.5em;" onclick="navigateBackToCartItems();"> Go Back </button>
+          <button style="font-size: 1.5em;" onclick="navigateToUserInfoInput();"> Next Step </button>
 
         </dualBtnContainer>
 
@@ -275,7 +276,7 @@
 
 
     <!-- User info input area -->
-    <div style="display:flex; justify-content:center; padding-top: 5vh;">
+    <div id="userInfoInputArea" style="display:none; justify-content:center; padding-top: 5vh;">
       <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
        
         <h2> Your Info </h2>
@@ -302,8 +303,8 @@
         <!-- Back and proceed btns -->
         <dualBtnContainer>
 
-          <button style="font-size: 1.5em;"> Go Back </button>
-          <button style="font-size: 1.5em;"> Checkout </button>
+          <button style="font-size: 1.5em;" onclick="navigateBackToScheduleOrder();"> Go Back </button>
+          <button style="font-size: 1.5em;" onclick="navigateToBillingInfoInput();"> Checkout </button>
 
         </dualBtnContainer>
 
@@ -312,7 +313,7 @@
 
 
     <!-- Billing info input area -->
-    <div style="display:flex; justify-content:center; padding-top: 5vh;">
+    <div id="billingInfoInput" style="display:none; justify-content:center; padding-top: 5vh;">
       <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
        
         <h2> Billing Info </h2>
@@ -347,8 +348,8 @@
         <!-- Back and proceed btns -->
         <dualBtnContainer>
 
-          <button style="font-size: 1.5em;"> Go Back </button>
-          <button style="font-size: 1.5em;"> Review Order </button>
+          <button style="font-size: 1.5em;" onclick="navigateBackToUserInfoInput();"> Go Back </button>
+          <button style="font-size: 1.5em;" onclick="navigateToReviewOrder();"> Review Order </button>
 
         </dualBtnContainer>
 
@@ -358,7 +359,7 @@
 
 
     <!-- confirm/review area -->
-    <div style="display:flex; justify-content:center; padding-top: 5vh;">
+    <div id="orderReviewArea" style="display:none; justify-content:center; padding-top: 5vh;">
       <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
        
         <h2> Review Your Order </h2>
@@ -548,8 +549,8 @@
         <!-- Back and proceed btns -->
         <dualBtnContainer>
 
-          <button style="font-size: 1.5em;"> Go Back </button>
-          <button style="font-size: 1.5em;"> Confirm Order </button>
+          <button style="font-size: 1.5em;" onclick="navigateBackToBillingInfoInput();"> Go Back </button>
+          <button style="font-size: 1.5em;" onclick="navigateToOrderDetailsArea();"> Confirm Order </button>
 
         </dualBtnContainer>
 
@@ -559,7 +560,7 @@
 
 
     <!-- Order Details For Reference -->
-    <div style="display:flex; justify-content:center; padding-top: 5vh;">
+    <div id="orderDetailsArea" style="display:none; justify-content:center; padding-top: 5vh;">
       <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
         <h2> Order Details </h2>
 
