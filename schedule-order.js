@@ -19,6 +19,9 @@ function navigateToCheckout(){
   //cart
   hideCart();
 
+  //hide checkout prompt on bottom
+  hideBottomCheckoutPrompt();
+
   //scroll to top
   window.scrollTo(0,0);
 
@@ -125,6 +128,7 @@ function navigateBackToMenuItems(){
   document.getElementById('pastaSelections').style.display = 'flex';
 
   showCart();
+  showBottomCheckoutPrompt();
 
 }
 
@@ -151,4 +155,30 @@ function fadeOutCheckout(){
 
   //details
   document.getElementById('checkoutOrderDetails').style.display = 'none';
+}
+
+//onclick for menu item titles -select all days for that item 
+function initMenuItemTitleOnclick(){
+
+  //get all title elements...
+  let titleElements = document.getElementsByTagName('menuItemTitle');
+
+  //add onclick for each... select all days in corresponding day selector
+  for(var i = 0; i < titleElements.length; i++){
+    let titleID = titleElements[i].id;
+    titleElements[i].onclick = () => {selectAllDaysForItem(titleID)};
+  }
+}
+
+//select all days for a given item
+function selectAllDaysForItem(itemID){
+  let itemDays = document.getElementById(itemID +'Days').getElementsByTagName('day');
+
+
+  for(var i = 0; i < itemDays.length; i++){
+    console.log(itemDays[i])
+
+    if(!itemDays[i].classList.contains('selected')) 
+      itemDays[i].classList.add('selected');
+  }
 }

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title> Tailored Quisine </title>
     <!-- JS -->
-    <script type="text/javascript" src="script.js?v=2"></script>
-    <script type="text/javascript" src="single-order.js?v=1"></script>
+    <script type="text/javascript" src="script.js?v=3"></script>
+    <script type="text/javascript" src="single-order.js?v=2"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="style.css?version=1.7">
     <!-- Font -->
@@ -33,7 +33,7 @@
     <sideNav id="sideNavBar" style="display:none; background-image:url('https://iili.io/3EMP0Q.md.jpg');" >
       <img onclick="closeMenu()" class="icon" src="https://iili.io/31dCu4.png" style="cursor:pointer;" alt="close menu icon">
       <div id="sideNavItems" style="display: flex; flex-direction: column; align-items:left; padding-left: 4vh; ">
-        <p class="boldTxt"> Order A Meal </p>
+        <p class="boldTxt"> Home </p>
         <p class="boldTxt"> Order Recurring Meals </p>
         <p class="boldTxt"> Order A Custom Meal </p>
         <p class="boldTxt"> Shop Health Products </p>
@@ -45,7 +45,7 @@
     <div id='checkoutPrompt' style="" class="prompt">
       <div style="display: flex; justify-content: center;  align-items: center; flex-direction: column;">
         <h2 id="promptedAddedTxt"> Added Item To Cart </h2>
-        <h2> Total - $7 </h2>
+        <h2> Total - $31 </h2>
         <button style="font-size: 2em; border-color:black;" onclick="navigateToCheckout();"> Checkout </button>
         <pad></pad>
         <button onclick="closeCheckoutPromt();" style="font-size: 2em; border-color:black;"> Keep Shopping </button>
@@ -179,6 +179,14 @@
               About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
             </menuItemDesc>
           </div>
+      </centeredContainer>
+    </div>
+
+    <!-- extra checkout button on bottom of menu area -->
+    <div id="checkoutPromptBottom" style="display:none; justify-content:center; padding-top: 4vh;">
+      <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+        <h2> Ready To Checkout? </h2>
+        <button style="font-size: 1.5em;" onclick="navigateToCheckout();">Checkout</button>
       </centeredContainer>
     </div>
 
@@ -596,10 +604,11 @@
 
         </div>
 
-         <button style="font-size: 1.5em;"> Copy Info </button>
+        <button style="font-size: 1.5em;"> Copy Info </button>
 
-       
-        
+        <pad> </pad>
+
+        <button style="font-size: 1.5em; " onclick="window.open('./index.html');"> Home </button>        
 
       </centeredContainer>
     </div> <!-- end cart items area -->

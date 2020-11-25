@@ -6,6 +6,9 @@ function navigateToCheckout(){
 
 	hideCart();
 
+	//hide bottom checkout prompt
+	document.getElementById('checkoutPromptBottom').style.display = 'none';
+
 	document.getElementById('checkoutPrompt').style.display = 'none';
 	document.getElementById('dim').style.display = 'none';
 
@@ -33,6 +36,11 @@ function navigateBackToMenu(){
 	document.getElementById('menuHeader').style.display = 'flex';
 	document.getElementById('soupSelection').style.display = 'flex';
 	document.getElementById('pastaSelection').style.display = 'flex';
+	document.getElementById('checkoutPromptBottom').style.display = 'flex';
+
+	document.getElementById('checkoutHeader').style.display = 'none';
+
+	document.getElementById('checkoutCartItems').style.display = 'none';
 }
 
 //close checkout areas

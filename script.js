@@ -280,6 +280,9 @@ function promptCheckout(){
 
   //add cart to display
   document.getElementById('cart').style.display = 'block';
+
+  //add bottom checkout prompt
+  document.getElementById('checkoutPromptBottom').style.display = 'flex';
 }
 
 //close checkout prompt
@@ -365,9 +368,19 @@ function countItemsSelected(){
   }
 
 
-  if(totalItems > 0) showCart();
-  else hideCart();
+  if(totalItems > 0) {showCart(); showBottomCheckoutPrompt();}
+  else {hideCart(); hideBottomCheckoutPrompt();}
 
+}
+
+//show checkout prompt on bottom
+function showBottomCheckoutPrompt(){
+  document.getElementById('checkoutPromptBottom').style.display = 'flex';
+}
+
+//hide checkout prompt on bottom
+function hideBottomCheckoutPrompt(){
+  document.getElementById('checkoutPromptBottom').style.display = 'none';
 }
 
 //alter selected or deselected for days of week

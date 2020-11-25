@@ -143,6 +143,12 @@ menuItemTxt:hover{
   color:dodgerblue;
   text-decoration: underline;
 }
+
+menuItemTxt menuItemTitle:hover{
+  color:dodgerblue;
+  text-decoration: underline;
+}
+
 cartItemTxt{
   font-size: 1.5em;
   font-weight: bold;

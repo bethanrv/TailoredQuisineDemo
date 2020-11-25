@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title> Tailored Quisine </title>
     <!-- JS -->
-    <script type="text/javascript" src="script.js?v=2"></script>
+    <script type="text/javascript" src="script.js?v=3"></script>
     <!-- JS -->
-    <script type="text/javascript" src="schedule-order.js?v=1"></script>
+    <script type="text/javascript" src="schedule-order.js?v=2"></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css?version=1.61">
+    <link rel="stylesheet" href="style.css?version=1.7">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
@@ -34,8 +34,8 @@
     <sideNav id="sideNavBar" style="display:none; background-image:url('https://iili.io/3EMP0Q.md.jpg');" >
       <img onclick="closeMenu()" class="icon" src="https://iili.io/31dCu4.png" style="cursor:pointer;" alt="close menu icon">
       <div id="sideNavItems" style="display: flex; flex-direction: column; align-items:left; padding-left: 4vh; ">
+        <p class="boldTxt"> Home </p>
         <p class="boldTxt"> Order A Meal </p>
-        <p class="boldTxt"> Order Recurring Meals </p>
         <p class="boldTxt"> Order A Custom Meal </p>
         <p class="boldTxt"> Shop Health Products </p>
       </div>
@@ -120,8 +120,8 @@
 
           <div style="display:flex; justify-content: left; flex-direction:column; padding-left:4vh;">
             <menuItemTxt>
-              1. Tomato & Turmeric $7 Half - $14 Full
-              <weekDays>
+              <menuItemTitle id="soupMenuItem1">1. Tomato & Turmeric $7 Half - $14 Full</menuItemTitle>
+              <weekDays id="soupMenuItem1Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -134,8 +134,8 @@
               Homemade Macaroni Baked In A Decadent House Cheese Blend Of Gouda, Sharp Cheddar, & A Touch Of Love From Our Kitchen To Yours
             </menuItemDesc>
 
-            <menuItemTxt> 2. Cream Of Crab $7 Half - $14 Full
-              <weekDays>
+            <menuItemTxt> <menuItemTitle id="soupMenuItem2"> 2. Cream Of Crab $7 Half - $14 Full </menuItemTitle>
+              <weekDays id="soupMenuItem2Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -148,8 +148,11 @@
               Homemade Macaroni Baked In A Decadent House Cheese Blend Of Gouda, Sharp Cheddar, & A Touch Of Love From Our Kitchen To Yours
             </menuItemDesc>
 
-            <menuItemTxt> 3. Lobster Bisque $7 Half - $14 Full
-              <weekDays>
+            <menuItemTxt> 
+              <menuItemTitle id="soupMenuItem3">
+              3. Lobster Bisque $7 Half - $14 Full
+              </menuItemTitle>
+              <weekDays id="soupMenuItem3Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -162,8 +165,11 @@
               Homemade Macaroni Baked In A Decadent House Cheese Blend Of Gouda, Sharp Cheddar, & A Touch Of Love From Our Kitchen To Yours
             </menuItemDesc>
 
-            <menuItemTxt> 4. Chicken or Crab Curry Pumpkin $7 Half - $14 Full
-              <weekDays>
+            <menuItemTxt>
+              <menuItemTitle id="soupMenuItem4">
+              4. Chicken or Crab Curry Pumpkin $7 Half - $14 Full
+              </menuItemTitle>
+              <weekDays id="soupMenuItem4Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -176,8 +182,11 @@
               Classic Alfredo Fresh Pasta Noodles Tossed & Flash-Simmered In A Light Butter & Cream Sauce Topped With Pepper & Parmesan Cheese
             </menuItemDesc>
 
-            <menuItemTxt> 5. Cream Of Corn & Crab Chowder $7 Half - $14 Full
-              <weekDays>
+            <menuItemTxt> 
+              <menuItemTitle id="soupMenuItem5">
+              5. Cream Of Corn & Crab Chowder $7 Half - $14 Full
+              </menuItemTitle>
+              <weekDays id="soupMenuItem5Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -190,8 +199,11 @@
               About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
             </menuItemDesc>
 
-            <menuItemTxt> 6. Cajun Seafood Gumbo $7 Half - $14 Full
-              <weekDays>
+            <menuItemTxt> 
+              <menuItemTitle id="soupMenuItem6">
+              6. Cajun Seafood Gumbo $7 Half - $14 Full
+              </menuItemTitle>
+              <weekDays id="soupMenuItem6Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -204,8 +216,11 @@
               About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
             </menuItemDesc>
 
-            <menuItemTxt> 7. Full Flavored Veggie Broth $7 Half - $14 Full ( + Healthy )
-              <weekDays>
+            <menuItemTxt> 
+              <menuItemTitle id="soupMenuItem7">
+              7. Full Flavored Veggie Broth $7 Half - $14 Full ( + Healthy )
+              </menuItemTitle>
+              <weekDays id="soupMenuItem7Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -218,8 +233,11 @@
               About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
             </menuItemDesc>
 
-            <menuItemTxt> 8. Black Bean Enchilada $6 Half - $12 Full
-              <weekDays>
+            <menuItemTxt> 
+              <menuItemTitle id="soupMenuItem8">
+              8. Black Bean Enchilada $6 Half - $12 Full
+              </menuItemTitle>
+              <weekDays id="soupMenuItem8Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -232,8 +250,11 @@
               About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
             </menuItemDesc>
 
-            <menuItemTxt> 9. Vegan Potato Kale $5 Half - $10 Full
-              <weekDays>
+            <menuItemTxt> 
+              <menuItemTitle id="soupMenuItem9">
+              9. Vegan Potato Kale $5 Half - $10 Full
+              </menuItemTitle>
+              <weekDays id="soupMenuItem9Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -246,8 +267,11 @@
               About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
             </menuItemDesc>
 
-            <menuItemTxt> 10. Spicy Thai Coconut $6 Half - $12 Full
-              <weekDays>
+            <menuItemTxt> 
+              <menuItemTitle id="soupMenuItem10">
+              10. Spicy Thai Coconut $6 Half - $12 Full
+              </menuItemTitle>
+              <weekDays id="soupMenuItem10Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -267,6 +291,7 @@
 
 
 
+
     <!-- Fresh Pastas Selection -->
     <div id="pastaSelections" style="display:flex; justify-content:center; display:none;">
       <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
@@ -280,8 +305,11 @@
           <h2> Select From... </h2>
 
           <div style="display:flex; justify-content: left; flex-direction:column; padding-left:4vh;">
-            <menuItemTxt> 1. House Noodle Spigot $12
-              <weekDays>
+            <menuItemTxt> 
+              <menuItemTitle id="pastaMenuItem1">
+              1. House Noodle Spigot $12
+              </menuItemTitle>
+              <weekDays id="pastaMenuItem1Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -293,8 +321,11 @@
             <menuItemDesc>
               Homemade Macaroni Baked In A Decadent House Cheese Blend Of Gouda, Sharp Cheddar, & A Touch Of Love From Our Kitchen To Yours
             </menuItemDesc>
-            <menuItemTxt> 2. From Scratch Macaroni $12
-              <weekDays>
+            <menuItemTxt>
+              <menuItemTitle  id="pastaMenuItem2">
+               2. From Scratch Macaroni $12
+             </menuItemTitle>
+              <weekDays id="pastaMenuItem2Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -306,8 +337,11 @@
             <menuItemDesc>
               Homemade Macaroni Baked In A Decadent House Cheese Blend Of Gouda, Sharp Cheddar, & A Touch Of Love From Our Kitchen To Yours
             </menuItemDesc>
-            <menuItemTxt> 3. Fettuccini Alfredo $12
-              <weekDays>
+            <menuItemTxt>
+              <menuItemTitle id="pastaMenuItem3">
+               3. Fettuccini Alfredo $12
+             </menuItemTitle>
+              <weekDays id="pastaMenuItem3Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -319,8 +353,11 @@
             <menuItemDesc>
               Classic Alfredo Fresh Pasta Noodles Tossed & Flash-Simmered In A Light Butter & Cream Sauce Topped With Pepper & Parmesan Cheese
             </menuItemDesc>
-            <menuItemTxt> 4. From Scratch Spinach Dip Ravioli $16
-              <weekDays>
+            <menuItemTxt> 
+              <menuItemTitle id="pastaMenuItem4">
+               4. From Scratch Spinach Dip Ravioli $16
+              </menuItemTitle>
+              <weekDays id="pastaMenuItem4Days">
                 <padBetween> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
@@ -333,6 +370,15 @@
               About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)
             </menuItemDesc>
           </div>
+      </centeredContainer>
+    </div>
+
+
+     <!-- extra checkout button on bottom of menu area -->
+    <div id="checkoutPromptBottom" style="display:none; justify-content:center; padding-top: 4vh;">
+      <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+        <h2> Ready To Checkout? </h2>
+        <button style="font-size: 1.5em;" onclick="navigateToCheckout();">Checkout</button>
       </centeredContainer>
     </div>
 
@@ -862,7 +908,9 @@
 
         </div>
 
-         <button style="font-size: 1.5em;"> Copy Info </button>
+        <button style="font-size: 1.5em;"> Copy Info </button>
+        <pad> </pad>
+        <button style="font-size: 1.5em;" onclick="window.open('./index.html');"> Home </button>        
 
        
         
@@ -880,8 +928,9 @@
     //onclick for Days
     initDayOfWeekOnClick();
 
-    //init cart control flow
-    initScheduleCartControl();
+    //init onclick for menu item titles - select all days for that item
+    initMenuItemTitleOnclick();
+
 
     //init schedule weeks on click
     initWeeksSchedulingChecks();
