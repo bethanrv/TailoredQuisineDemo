@@ -18,7 +18,7 @@
   <body style="background-image:url('https://iili.io/3E7bxp.jpg'); margin-left:5%; margin-right:5%;">
 
     <!-- nav bar on top of screen -->
-    <topNav>
+    <topNav draggable="true" ondrag="openMenu()">
       <div style="display:flex;">
         <img onclick="openMenu()" class="icon" src="https://iili.io/30DYl4.png" style="cursor:pointer;" alt="menu icon">
         <p class="cursive"> Tailored Quisine 101</p>
@@ -30,7 +30,7 @@
       </div>
     </topNav>
 
-    <sideNav id="sideNavBar" style="display:none; background-image:url('https://iili.io/3EMP0Q.md.jpg');" >
+    <sideNav id="sideNavBar" style="display:none; background-image:url('https://iili.io/3EMP0Q.md.jpg');" draggable="true" ondrag="closeMenu()">
       <img onclick="closeMenu()" class="icon" src="https://iili.io/31dCu4.png" style="cursor:pointer;" alt="close menu icon">
       <div id="sideNavItems" style="display: flex; flex-direction: column; align-items:left; padding-left: 4vh; ">
         <p onclick="window.open('./single-order.html')" class="boldTxt"> Order A Meal </p>

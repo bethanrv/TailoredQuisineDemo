@@ -165,7 +165,7 @@ cartItemTxt pad{
 }
 
 .cartItemReviewItem{
-  font-size: 0.75em; 
+  font-size: 0.75em;
   margin-bottom:0;
   font-weight: 600;
 }
@@ -189,8 +189,8 @@ cartItemTxt pad{
 }
 
 .revivewSectionHead{
-  margin: 0; 
-  font-weight: bold; 
+  margin: 0;
+  font-weight: bold;
   text-decoration:underline;
 }
 
@@ -793,6 +793,7 @@ pad{
     width: 30vw;
     height: 30vw;
   }
+
   logoContainer{
     width: 43%;
     height: 43%;
@@ -827,6 +828,31 @@ pad{
     width: 22vw;
   }
 
+
+}
+
+/*
+  Resizing for tablet/half screen
+*/
+@media (max-width:1199px){
+  .largeBtn{
+    width: 40vw;
+  }
+
+  logoContainer{
+    justify-content: center;
+    width: 100%;
+    padding-left: 0;
+    padding-top: 5vh;
+  }
+  flexContainer{
+    align-items: center;
+    width: 100%;
+  }
+  flexContainerFull{
+    align-items: center;
+    width: 100%;
+  }
 
 }
 
