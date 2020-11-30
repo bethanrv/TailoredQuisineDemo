@@ -44,26 +44,223 @@
     </header>
 
     <!-- Manage Orders Tab -->
-    <div class="center">
-      <flexContainerFull class="borderedTxt transBG" style="padding:4vh;">
+    <div class="center" style="width:90vw;">
+      <flexContainerFull class="borderedTxt transBG center" style="padding:4vh; width:100%;">
         <p style="text-decoration:underline;"> Manage Orders </p>
 
         <p> Viewing Orders For The Week Of  </p>
 
+        <!-- order time range -->
         <div class="center">
           <i class="material-icons clickable" style="padding-right:2vh;"> arrow_back </i>
           <p> 11/29 Through 12/5 </p>
           <i class="material-icons clickable" style="padding-left:2vh;"> arrow_forward </i>
         </div>
 
+        <!-- order filter -->
         <div class="center">
           <p style="padding-right:2vh;"> Filter: </p>
           <select style="font-size:1.25em;">
-            <option value='none'  selected> none </option>
+            <option value='all'  selected> All </option>
             <option value='sent'> Sent </option>
             <option value='pending'> Pending </option>
           </select>
        </div>
+
+
+
+       <!-- order header: Monday 11/30, day of week + date -->
+        <orderHeader id="orderHeaderMonday" onclick="toggleOrdersByDay('Monday');">
+            <p style="margin:0; text-decoration:underline;">  Monday 11/30 </p>
+            <i id="orderHeaderMondayDropUp" class="material-icons" style="padding-top: 0.5vh; padding-left:1vh;" > arrow_drop_up </i>
+            <i id="orderHeaderMondayDropDown" class="material-icons" style="padding-top: 0.5vh; padding-left:1vh; display:none;" > arrow_drop_down </i>
+        </orderHeader>
+
+       <!-- order list... monday -->
+       <div id="orderListMonday" style="width:100%; ">
+         <!-- order example... -->
+         <orderContainer>
+           <orderToggleContainer id="order48Toggle">
+              <p> Order #48 </p>
+              <i id="order48ToggleUp" class="material-icons" style="padding-top:1vh;"> arrow_drop_up </i>
+              <i id="order48ToggleDown" class="material-icons" style="padding-top:1vh; display:none;"> arrow_drop_down </i>
+           </orderToggleContainer>
+
+           <orderInfoContainer id="order48Info">
+             <p> Status: Sent </p>
+             <p> Customer Info </p>
+             <!-- order customer info -->
+             <div id="order48CustomerInfo">
+               <p class="tab"> Name: John Smith</p>
+               <p class="tab"> Address: 15 Place Ave, Washington PA, 19253</p>
+               <p class="tab"> Phone: 555-555-5555</p>
+               <p class="tab"> Email: jsmith@email.com</p>
+            </div>
+
+            <!-- order items -->
+            <p> Items </p>
+            <p class="tab"> Fettuccini Alfredo - $12</p>
+            <p class="tab"> Thai Coconut Soup (Half) - $7</p>
+            <p class="tab"> Total - $19</p>
+          </orderInfoContainer>
+         </orderContainer>
+
+         <!-- order example 2... -->
+         <orderContainer>
+           <orderToggleContainer id="order49Toggle">
+              <p> Order #49 </p>
+              <i id="order49ToggleUp" class="material-icons" style="padding-top:1vh;"> arrow_drop_up </i>
+              <i id="order49ToggleDown" class="material-icons" style="padding-top:1vh; display:none;"> arrow_drop_down </i>
+           </orderToggleContainer>
+
+           <orderInfoContainer id="order49Info">
+             <p> Status: Sent </p>
+             <p> Customer Info </p>
+             <!-- order customer info -->
+             <div id="order49CustomerInfo">
+               <p class="tab"> Name: Joe Wells</p>
+               <p class="tab"> Address: 2 Street Road, Columbus OH, 42350</p>
+               <p class="tab"> Phone: 555-555-5555</p>
+               <p class="tab"> Email: jwalls@email.com</p>
+            </div>
+
+            <!-- order items -->
+            <p> Items </p>
+            <p class="tab"> Lobster Bisque (Full) $14</p>
+            <p class="tab"> Total - $14</p>
+          </orderInfoContainer>
+         </orderContainer>
+       </div> <!-- close mondays orders -->
+
+
+
+       <!-- order header: Wed 12/2, day of week + date -->
+        <orderHeader id="orderHeaderWednesday" onclick="toggleOrdersByDay('Wednesday');">
+            <p style="margin:0; text-decoration:underline;"> Wednesday 12/2 </p>
+            <i id="orderHeaderWednesdayDropUp" class="material-icons" style="padding-top: 0.5vh; padding-left:1vh;" > arrow_drop_up </i>
+            <i id="orderHeaderWednesdayDropDown" class="material-icons" style="padding-top: 0.5vh; padding-left:1vh; display:none;" > arrow_drop_down </i>
+        </orderHeader>
+
+       <!-- order list... wed -->
+       <div id="orderListWednesday" style="width:100%; ">
+         <!-- order example... -->
+         <orderContainer>
+           <orderToggleContainer id="order50Toggle">
+              <p> Order #50 </p>
+              <i id="order50ToggleUp" class="material-icons" style="padding-top:1vh;"> arrow_drop_up </i>
+              <i id="order50ToggleDown" class="material-icons" style="padding-top:1vh; display:none;"> arrow_drop_down </i>
+           </orderToggleContainer>
+
+           <orderInfoContainer id="order50Info">
+             <p> Status: Sent </p>
+             <p> Customer Info </p>
+             <!-- order customer info -->
+             <div id="order50CustomerInfo">
+               <p class="tab"> Name: Mary Rodgers</p>
+               <p class="tab"> Address: 3 Drive Place, Springfield PA, 19324</p>
+               <p class="tab"> Phone: 555-555-5555</p>
+               <p class="tab"> Email: mrodgers@email.com</p>
+            </div>
+
+            <!-- order items -->
+            <p> Items </p>
+            <p class="tab"> Cream Of Corn & Crab Chowder (Full) - $14</p>
+            <p class="tab"> Total - $14</p>
+          </orderInfoContainer>
+         </orderContainer>
+
+         <!-- order example 2... -->
+         <orderContainer>
+           <orderToggleContainer id="order51Toggle">
+              <p> Order #51 </p>
+              <i id="order51ToggleUp" class="material-icons" style="padding-top:1vh;"> arrow_drop_up </i>
+              <i id="order51ToggleDown" class="material-icons" style="padding-top:1vh; display:none;"> arrow_drop_down </i>
+           </orderToggleContainer>
+
+           <orderInfoContainer id="order51Info">
+             <p> Status: Sent </p>
+             <p> Customer Info </p>
+             <!-- order customer info -->
+             <div id="order51CustomerInfo">
+               <p class="tab"> Name: Joe Wells</p>
+               <p class="tab"> Address: 2 Street Road, Columbus OH, 42350</p>
+               <p class="tab"> Phone: 555-555-5555</p>
+               <p class="tab"> Email: jwalls@email.com</p>
+            </div>
+
+            <!-- order items -->
+            <p> Items </p>
+            <p class="tab"> Cajun Seafood Gumbo (Full) $14</p>
+            <p class="tab"> Total - $14</p>
+          </orderInfoContainer>
+         </orderContainer>
+       </div> <!-- close wed orders -->
+
+
+       <!-- order header: fri 12/4, day of week + date -->
+        <orderHeader id="orderHeaderFriday" onclick="toggleOrdersByDay('Friday');">
+            <p style="margin:0; text-decoration:underline;"> Friday 12/4 </p>
+            <i id="orderHeaderFridayDropUp" class="material-icons" style="padding-top: 0.5vh; padding-left:1vh;" > arrow_drop_up </i>
+            <i id="orderHeaderFridayDropDown" class="material-icons" style="padding-top: 0.5vh; padding-left:1vh; display:none;" > arrow_drop_down </i>
+        </orderHeader>
+
+
+       <!-- order list... fri -->
+       <div id="orderListFriday" style="width:100%; ">
+         <!-- order example... -->
+         <orderContainer>
+           <orderToggleContainer id="order52Toggle">
+              <p> Order #52 </p>
+              <i id="order52ToggleUp" class="material-icons" style="padding-top:1vh;"> arrow_drop_up </i>
+              <i id="order52ToggleDown" class="material-icons" style="padding-top:1vh; display:none;"> arrow_drop_down </i>
+           </orderToggleContainer>
+
+           <orderInfoContainer id="order52Info">
+             <p> Status: Sent </p>
+             <p> Customer Info </p>
+             <!-- order customer info -->
+             <div id="order52CustomerInfo">
+               <p class="tab"> Name: Sue Williams</p>
+               <p class="tab"> Address: 56 Road Circle, Townsvile OH, 45606</p>
+               <p class="tab"> Phone: 555-555-5555</p>
+               <p class="tab"> Email: swills@email.com</p>
+            </div>
+
+            <!-- order items -->
+            <p> Items </p>
+            <p class="tab"> Full Flavored Veggie Broth (Full) - $14</p>
+            <p class="tab"> Total - $14</p>
+          </orderInfoContainer>
+         </orderContainer>
+
+         <!-- order example 2... -->
+         <orderContainer>
+           <orderToggleContainer id="order53Toggle">
+              <p> Order #53 </p>
+              <i id="order53ToggleUp" class="material-icons" style="padding-top:1vh;"> arrow_drop_up </i>
+              <i id="order53ToggleDown" class="material-icons" style="padding-top:1vh; display:none;"> arrow_drop_down </i>
+           </orderToggleContainer>
+
+           <orderInfoContainer id="order53Info">
+             <p> Status: Sent </p>
+             <p> Customer Info </p>
+             <!-- order customer info -->
+             <div id="order53CustomerInfo">
+               <p class="tab"> Name: Madison Taylor</p>
+               <p class="tab"> Address: 22 First Road, Philadelphia OH, 42350</p>
+               <p class="tab"> Phone: 555-555-5555</p>
+               <p class="tab"> Email: mtay@email.com</p>
+            </div>
+
+            <!-- order items -->
+            <p> Items </p>
+            <p class="tab"> Black Bean Enchilada (Half) $5</p>
+            <p class="tab"> Vegan Potato Kale (Half) $6</p>
+            <p class="tab"> Total - $11</p>
+          </orderInfoContainer>
+         </orderContainer>
+       </div> <!-- close fri orders -->
+
 
       </flexContainerFull>
     </div>
@@ -73,3 +270,9 @@
 
 <!-- JS -->
 <script type="text/javascript" src="script.js?v=2"></script>
+<script type="text/javascript" src="admin.js?v=2"></script>
+<script>
+  window.onload = () => {
+    initOrderToggles();
+  };
+</script>

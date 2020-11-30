@@ -26,6 +26,10 @@ button{
   cursor:pointer;
 }
 
+.tab{
+  padding-left: 3vh;
+}
+
 .closeBtn{
   height: 4vh;
   width: 4vh;
@@ -739,6 +743,32 @@ pad{
   text-decoration-color: dodgerblue;
 }
 
+
+orderHeader{
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  font-size: 1.25em;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+orderContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 4vw;
+  justify-content: left;
+  padding-bottom: 4vh;
+}
+
+orderContainer p{
+  margin: 0.5vh;
+}
+
+orderToggleContainer{
+  display: flex;
+}
 
 
 
