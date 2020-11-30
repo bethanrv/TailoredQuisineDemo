@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title> Admin Portal </title>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css?version=1.4">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+  <body style="background-image:url('https://iili.io/3E7bxp.jpg'); margin-left:5%; margin-right:5%;">\
+
+    <!-- nav bar on top of screen -->
+    <topNav draggable="true" ondrag="openMenu()">
+      <div style="display:flex;">
+        <img onclick="openMenu()" class="icon" src="https://iili.io/30DYl4.png" style="cursor:pointer;" alt="menu icon">
+        <p class="cursive"> Tailored Quisine 101</p>
+      </div>
+    </topNav>
+    <sideNav id="sideNavBar" style="display:none; background-image:url('https://iili.io/3EMP0Q.md.jpg');" draggable="true" ondrag="closeMenu()">
+      <img onclick="closeMenu()" class="icon" src="https://iili.io/31dCu4.png" style="cursor:pointer;" alt="close menu icon">
+      <div id="sideNavItems" style="display: flex; flex-direction: column; align-items:left; padding-left: 4vh; ">
+        <p class="boldTxt"> Manage Orders </p>
+        <p class="boldTxt"> Edit Menu </p>
+        <p class="boldTxt"> User Messages </p>
+        <p class="boldTxt"> Restriction Settings  </p>
+      </div>
+    </sideNav>
+
+    <!-- Admin Page Header -->
+    <header style="padding-top:4vh; padding-bottom:4vh;">
+      <flexContainer class="borderedTxt transBG center"style="width:auto; height:10vh;">
+          <h2 style="padding:3vh;" > Administrator Portal </h2>
+      </flexContainer>
+    </header>
+
+    <!-- Manage Orders Tab -->
+    <div class="center">
+      <flexContainerFull class="borderedTxt transBG" style="padding:4vh;">
+        <p style="text-decoration:underline;"> Manage Orders </p>
+
+        <p> Viewing Orders For The Week Of  </p>
+
+        <div class="center">
+          <i class="material-icons clickable" style="padding-right:2vh;"> arrow_back </i>
+          <p> 11/29 Through 12/5 </p>
+          <i class="material-icons clickable" style="padding-left:2vh;"> arrow_forward </i>
+        </div>
+
+        <div class="center">
+          <p style="padding-right:2vh;"> Filter: </p>
+          <select style="font-size:1.25em;">
+            <option value='none'  selected> none </option>
+            <option value='sent'> Sent </option>
+            <option value='pending'> Pending </option>
+          </select>
+       </div>
+
+      </flexContainerFull>
+    </div>
+
+  </body>
+</html>
+
+<!-- JS -->
+<script type="text/javascript" src="script.js?v=2"></script>
