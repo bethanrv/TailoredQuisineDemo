@@ -246,3 +246,48 @@ function checkAddItemInputs(){
 
   document.getElementById('addItemAddBtn').style.display = 'block';
 }
+
+
+
+//close tabs - close all tabs
+function closeTabs(){
+  let tabs = document.getElementsByClassName('adminTab');
+
+  for(var i = 0; i < tabs.length; i++){
+    tabs[i].style.display = 'none';
+  }
+}
+
+//function open tab - given Name
+function openTab(tab){
+  closeTabs();
+  document.getElementById(tab).style.display = 'flex';
+}
+
+
+//initialize reply buttons for user Messages
+function initReplyBtns(){
+  let replyBtns = document.getElementsByClassName('replyBtn');
+
+  for(var i = 0;  i < replyBtns.length; i++){
+    let id = replyBtns[i].id;
+    replyBtns[i].onclick = () => {promptReply(id)};
+  }
+
+  let cancelBtns =  document.getElementsByClassName('replyCancel');
+  for(var i = 0;  i < cancelBtns.length; i++){
+    let id = cancelBtns[i].id;
+    cancelBtns[i].onclick = () => {cancelReply(id)};
+  }
+}
+
+function promptReply(id){
+  document.getElementById(id).style.display = 'none';
+  document.getElementById(id.substring(0, id.indexOf('Msg')) + 'ReplyInput').style.display = 'flex';
+}
+
+function cancelReply(id){
+  id = id.substring(0, id.indexOf('Cancel'));
+  document.getElementById(id + 'MsgBtn').style.display = 'flex';
+  document.getElementById(id + 'ReplyInput').style.display = 'none';
+}

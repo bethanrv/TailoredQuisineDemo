@@ -29,10 +29,10 @@
     <sideNav id="sideNavBar" style="display:none; background-image:url('https://iili.io/3EMP0Q.md.jpg');" draggable="true" ondrag="closeMenu()">
       <img onclick="closeMenu()" class="icon" src="https://iili.io/31dCu4.png" style="cursor:pointer;" alt="close menu icon">
       <div id="sideNavItems" style="display: flex; flex-direction: column; align-items:left; padding-left: 4vh; ">
-        <p class="boldTxt"> Manage Orders </p>
-        <p class="boldTxt"> Edit Menu </p>
-        <p class="boldTxt"> User Messages </p>
-        <p class="boldTxt"> Restriction Settings  </p>
+        <p class="boldTxt" onclick="openTab('manageTab'); closeMenu()"> Manage Orders </p>
+        <p class="boldTxt " onclick="openTab('menuTab'); closeMenu()"> Edit Menu </p>
+        <p class="boldTxt" onclick="openTab('messageTab'); closeMenu()"> User Messages </p>
+        <p class="boldTxt" onclick="openTab('restrictionsTab'); closeMenu()"> Restriction Settings  </p>
       </div>
     </sideNav>
 
@@ -44,7 +44,7 @@
     </header>
 
     <!-- Manage Orders Tab -->
-    <div id="manageTab" class="center" style="width:90vw;">
+    <div id="manageTab" class="center adminTab" style="width:90vw;">
       <flexContainerFull class="borderedTxt transBG center" style="padding:4vh; width:100%;">
         <p style="text-decoration:underline;"> Manage Orders </p>
 
@@ -267,7 +267,7 @@
 
 
     <!-- edit menu tab -->
-    <div id="menuTab" class="center" style="width:90vw;">
+    <div id="menuTab" class="center adminTab" style="width:90vw; display:none;">
       <flexContainerFull class="borderedTxt transBG center" style="padding:4vh; width:100%;">
           <p style="text-decoration:underline;"> Edit Menu </p>
 
@@ -434,6 +434,68 @@
     <dim id="dim">
     </dim>
 
+    <!-- messageTab -->
+    <div id="messageTab" class="center adminTab" style="width:90vw; display:none;">
+      <flexContainerFull class="borderedTxt transBG center" style="padding:4vh; width:100%;">
+        <p style="text-decoration:underline;"> Messages </p>
+
+        <p class="leftText underline"> 12/1 </p>
+
+        <messageList>
+          <message>
+            <p> Question: </p>
+            <p class="tab"> David B. Said, </p>
+            <p class="tab"> How can I update my order? </p>
+            <i id="message1MsgBtn" class="tab material-icons clickable replyBtn"> message </i>
+            <replyContainer id="message1ReplyInput" style="display:none;">
+              <p> Reply: </p>
+              <input type="text" id="" style="font-size:1.2em"/>
+              <p id="message1CancelReply" class="clickable replyCancel" style="display:flex; align-items:center;"> Cancel <pad></pad> <i class=" material-icons clickable"> close </i> </p>
+              <p class="clickable" style="display:flex; align-items:center;"> Send <pad></pad> <i class="material-icons clickable"> send </i> </p>
+            </replyContainer>
+          </message>
+          <message>
+            <p> Custom Request: </p>
+            <p class="tab"> Navi Q. Requests, </p>
+            <p class="tab"> I'd a large like a frozen salad with kale and salmon. Is that something you can send? </p>
+            <i class="tab material-icons clickable replyBtn"> message </i>
+          </message>
+        </messageList>
+
+        <p class="leftText underline"> 11/29 </p>
+
+        <messageList>
+          <message>
+            <p> Question: </p>
+            <p class="tab"> Shari C. Said, </p>
+            <p class="tab"> How can I change my address? </p>
+            <i class="tab material-icons clickable replyBtn"> message </i>
+          </message>
+        </messageList>
+
+        <p class="leftText underline"> 11/26 </p>
+
+        <messageList>
+          <message>
+            <p> Question: </p>
+            <p class="tab"> Baron Q. Said, </p>
+            <p class="tab"> Do you deliver to Springfield Ohio? </p>
+            <i class="tab material-icons clickable replyBtn"> message </i>
+          </message>
+          <message>
+            <p> Custom Request: </p>
+            <p class="tab"> Toni D. Requests, </p>
+            <p class="tab"> Could you cook a seafood dish like lobster or crab? </p>
+            <i class="tab material-icons clickable replyBtn"> message </i>
+          </message>
+        </messageList>
+
+
+        <p class="linkTxt"> Show More </p>
+
+      </flexContainerFull>
+    </div>
+
 
   </body>
 </html>
@@ -446,5 +508,6 @@
     initOrderToggles();
     initMenuEditing();
     initMenuItemRemovers();
+    initReplyBtns();
   };
 </script>

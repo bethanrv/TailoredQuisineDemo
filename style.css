@@ -846,6 +846,37 @@ orderToggleContainer{
   width: 80%;
 }
 
+messageList{
+  width: 90%;
+}
+messageList message{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 2vh;
+}
+
+message p{
+  margin: 0.5vh;
+  font-size: 1.2em;
+}
+
+replyContainer{
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  justify-content: flex-start;
+  padding-left: 5vh;
+}
+
+.hoverstrike{}
+
+.hoverstrike:hover{
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
+
 
 /*
   Responsive Design Styling
