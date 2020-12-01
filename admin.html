@@ -44,7 +44,7 @@
     </header>
 
     <!-- Manage Orders Tab -->
-    <div class="center" style="width:90vw;">
+    <div id="manageTab" class="center" style="width:90vw;">
       <flexContainerFull class="borderedTxt transBG center" style="padding:4vh; width:100%;">
         <p style="text-decoration:underline;"> Manage Orders </p>
 
@@ -263,7 +263,131 @@
 
 
       </flexContainerFull>
-    </div>
+    </div> <!--  close manageTab-->
+
+
+    <!-- edit menu tab -->
+    <div id="menuTab" class="center" style="width:90vw;">
+      <flexContainerFull class="borderedTxt transBG center" style="padding:4vh; width:100%;">
+          <p style="text-decoration:underline;"> Edit Menu </p>
+
+          <button style="font-size:1.25em;"> Add Menu Item </button>
+          <pad></pad>
+          <button id="showMenuRemoversBtn" style="font-size:1.25em;" onclick="showMenuItemRemovers()"> Remove Menu Item(s) </button>
+          <button id="hideMenuRemoversBtn" style="font-size:1.25em; display:none;" onclick="hideMenuItemRemovers()"> Cancel </button>
+
+          <!-- edit soups -->
+          <p class="leftText underline" style="width:80%;"> Soups </p>
+
+          <!-- edit soup name -->
+          <div id="soup1Area" style="width:80%;" class="left" >
+            <div id="soup1Remover" class="removerArea" style="padding-right:4vh; display:none;">
+              <i id="soup1RemoverBtn" class="material-icons red clickable itemRemover"> cancel </i>
+            </div>
+            <div id="soup1RemoveConfirmer" class="removeConfirmArea" style="display:none;">
+              <button style="font-size:1em;"> Remove </button>
+              <pad></pad>
+              <button id="soup1RemoveConfirmerCancel" style="font-size:1em;" class="removeConfirmCancel"> Cancel </button>
+            </div>
+            <div id="soup1Info">
+              <p id="soup1Name" class="leftText menuItemAdmin"> 1. Tomato & Turmeric </p>
+              <div id="soup1NameInputArea" style="display:none;" class="leftInputArea">
+                <p class="inputLabel"> Name: </p>
+                <input type="text" id="soup1NameInput" class="" value="Tomato & Tumeric"/>
+                <i id="soup1NameInputCheck" class="material-icons inputConfirmBtn"> check_circle </i>
+              </div>
+
+              <!-- edit soup price -->
+              <p id="soup1Price" class="leftText menuPriceAdmin"> $7 Half - $14 Full </p>
+              <div id="soup1PriceInputArea" style="display:none;" class="leftInputArea">
+                <p class="inputLabel"> Half: </p>
+                <input type="text" id="soup1PriceInputHalf" class="leftInput" value="$7"/>
+                <p class="inputLabel" style="padding-left:2vh;"> Full: </p>
+                <input type="text" id="soup1PriceInputFull" class="leftInput" value="$14"/>
+                <i id="soup1PriceInputCheck" class="material-icons inputConfirmBtn"> check_circle </i>
+              </div>
+
+              <!-- edit soup desc -->
+              <p id="soup1Desc" class="leftText menuDescAdmin"> Homemade Macaroni Baked In A Decadent House Cheese Blend Of Gouda, Sharp Cheddar, & A Touch Of Love From Our Kitchen To Yours </p>
+              <div id="soup1DescInputArea" style="display:none; " class="leftInputArea">
+                <p class="inputLabel" style="padding-left:0vh;"> Description: </p>
+                <input type="text" id="soup1DescInput" class="leftInputFull" value="Homemade Macaroni Baked In A Decadent House Cheese Blend Of Gouda, Sharp Cheddar, & A Touch Of Love From Our Kitchen To Yours"/>
+                <i id="soup1DescInputCheck" class="material-icons inputConfirmBtn"> check_circle </i>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <p class="leftText menuItemAdmin"> 2. Cream Of Crab </p>
+          <p class="leftText menuPriceAdmin"> $7 Half - $14 Full </p>
+          <p class="leftText menuDescAdmin"> Homemade Macaroni Baked In A Decadent House Cheese Blend Of Gouda, Sharp Cheddar, & A Touch Of Love From Our Kitchen To Yours </p>
+
+
+
+          <p class="leftText menuItemAdmin"> 3. Lobster Bisque </p>
+          <p class="leftText menuPriceAdmin"> $7 Half - $14 Full </p>
+          <p class="leftText menuDescAdmin"> Homemade Macaroni Baked In A Decadent House Cheese Blend Of Gouda, Sharp Cheddar, & A Touch Of Love From Our Kitchen To Yours </p>
+
+          <p class="leftText menuItemAdmin"> 4. Chicken or Crab Curry Pumpkin </p>
+          <p class="leftText menuPriceAdmin"> $7 Half - $14 Full </p>
+          <p class="leftText menuDescAdmin"> Classic Alfredo Fresh Pasta Noodles Tossed & Flash-Simmered In A Light Butter & Cream Sauce Topped With Pepper & Parmesan Cheese </p>
+
+
+
+          <p class="leftText menuItemAdmin"> 5. Cream Of Corn & Crab Chowder  </p>
+          <p class="leftText menuPriceAdmin"> $7 Half - $14 Full </p>
+          <p class="leftText menuDescAdmin">About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both) </p>
+
+          <p class="leftText menuItemAdmin"> 6. Cajun Seafood Gumbo  </p>
+          <p class="leftText menuPriceAdmin"> $7 Half - $14 Full </p>
+          <p class="leftText menuDescAdmin"> About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)</p>
+
+          <p class="leftText menuItemAdmin">7. Full Flavored Veggie Broth ( + Healthy )</p>
+          <p class="leftText menuPriceAdmin"> $7 Half - $14 Full </p>
+          <p class="leftText menuDescAdmin">About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)</p>
+
+          <p class="leftText menuItemAdmin">8. Black Bean Enchilada </p>
+          <p class="leftText menuPriceAdmin"> $6 Half - $12 Full </p>
+          <p class="leftText menuDescAdmin">  About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)</p>
+
+          <p class="leftText menuItemAdmin">9. Vegan Potato Kale </p>
+          <p class="leftText menuPriceAdmin"> $5 Half - $10 Full </p>
+          <p class="leftText menuDescAdmin">About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)</p>
+
+
+          <p class="leftText menuItemAdmin">10. Spicy Thai Coconut </p>
+          <p class="leftText menuPriceAdmin"> $6 Half - $12 Full </p>
+          <p class="leftText menuDescAdmin">About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)</p>
+
+
+
+
+
+          <p class="leftText underline" style="width:80%;"> Pastas </p>
+
+          <p class="leftText menuItemAdmin">1. House Noodle Spigot </p>
+          <p class="leftText menuPriceAdmin"> $12 </p>
+          <p class="leftText menuDescAdmin">Homemade Macaroni Baked In A Decadent House Cheese Blend Of Gouda, Sharp Cheddar, & A Touch Of Love From Our Kitchen To Yours</p>
+
+          <p class="leftText menuItemAdmin">2. From Scratch Macaroni</p>
+          <p class="leftText menuPriceAdmin"> $12 </p>
+          <p class="leftText menuDescAdmin">Homemade Macaroni Baked In A Decadent House Cheese Blend Of Gouda, Sharp Cheddar, & A Touch Of Love From Our Kitchen To Yours</p>
+
+          <p class="leftText menuItemAdmin">3. Fettuccini Alfredo</p>
+          <p class="leftText menuPriceAdmin"> $12 </p>
+          <p class="leftText menuDescAdmin">Classic Alfredo Fresh Pasta Noodles Tossed & Flash-Simmered In A Light Butter & Cream Sauce Topped With Pepper & Parmesan Cheese</p>
+
+          <p class="leftText menuItemAdmin">4. From Scratch Spinach Dip Ravioli </p>
+          <p class="leftText menuPriceAdmin"> $16 </p>
+          <p class="leftText menuDescAdmin">About As Classic As It Gets. It's Filled With Spinach, Gruyere, Gouda, & Parmesan, & Served With Either Garlic Cream Sauce Or House Made Tomato Sauce. (Pro Tip: Get Both)</p>
+
+          <p class="leftText underline " style="width:80%;"> Spices </p>
+
+          <p class="leftText underline" style="width:80%;"> Health Products </p>
+      </flexContainerFull>
+    </div><!--  close menutab-->
 
   </body>
 </html>
@@ -274,5 +398,7 @@
 <script>
   window.onload = () => {
     initOrderToggles();
+    initMenuEditing();
+    initMenuItemRemovers();
   };
 </script>

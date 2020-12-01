@@ -12,10 +12,20 @@
   font-family: 'Dancing Script', cursive;
 }
 
+.red{
+  color:red;
+}
+
 .center{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.left{
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }
 
 button{
@@ -770,6 +780,65 @@ orderToggleContainer{
   display: flex;
 }
 
+.inputConfirmBtn{
+  padding-left: 2vh;
+  color:green;
+}
+
+.leftText{
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  padding-left: 4vh;
+}
+
+.leftInputArea{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 80%;
+  font-size: 1.2em;
+  padding-left: 5vh;
+  padding-bottom: 1vh;
+}
+
+.leftInput{
+  height: 3vh;
+}
+
+.leftInputFull{
+  height: 3vh;
+  width: 100%;
+}
+
+.inputLabel{
+  font-size: 1em;
+  padding-right: 2vh;
+  padding-left: 0;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+.menuItemAdmin{
+  font-size: 1.2em;
+  padding-left: 0vh;
+  width: 80%;
+}
+
+.menuPriceAdmin{
+  font-size: 1.2em;
+  padding-left: 4vh;
+  width: 80%;
+  margin:0;
+}
+
+.menuDescAdmin{
+  font-size: 1.2em;
+  padding-left: 4vh;
+  width: 80%;
+}
 
 
 /*

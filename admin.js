@@ -66,3 +66,130 @@ function expandOrder(id){
   toggleUp.style.display = 'block';
   toggleDown.style.display = 'none';
 }
+
+
+/*
+  menu editing on clicks... show/hide input area
+*/
+function initMenuEditing(){
+
+  //get checks/confirm btns to finish edit
+  let checks = document.getElementsByClassName('inputConfirmBtn');
+  for(var i = 0; i < checks.length; i++){
+    let id = checks[i].id;
+    checks[i].onclick = () => { confirmEdit(id); };
+  }
+
+  //get menu item titles
+  let titles = document.getElementsByClassName('menuItemAdmin');
+  for(var i = 0; i < titles.length; i++){
+    let id = titles[i].id;
+    titles[i].onclick = () => {editTitle(id)};
+  }
+
+  //get price text
+  let prices = document.getElementsByClassName('menuPriceAdmin');
+  for(var i = 0; i < prices.length; i++){
+    let id = prices[i].id;
+    prices[i].onclick = () => {editPrice(id)};
+  }
+
+  //get price text
+  let descs = document.getElementsByClassName('menuDescAdmin');
+  for(var i = 0; i < descs.length; i++){
+    let id = descs[i].id;
+    descs[i].onclick = () => {editDesc(id)};
+  }
+
+
+}
+
+//edit Desc - show price input
+function editDesc(id){
+  document.getElementById(id).style.display = 'none';//hide text
+  document.getElementById(id + 'InputArea').style.display = 'flex';//show input
+}
+
+//edit price - show price input
+function editPrice(id){
+  document.getElementById(id).style.display = 'none';//hide text
+  document.getElementById(id + 'InputArea').style.display = 'flex';//show input
+}
+
+//edit title of menu item - show input and hide text
+function editTitle(id){
+  document.getElementById(id).style.display = 'none';//hide text
+  document.getElementById(id + 'InputArea').style.display = 'flex';//show input
+}
+
+//confirm title edit - change title and hide input area
+function confirmEdit(id){
+  id = id.substring(0, id.indexOf('Input'));
+  document.getElementById(id + 'InputArea').style.display = 'none';//hide input
+  document.getElementById(id).style.display = 'flex';//show title
+}
+
+
+// show menu item removers
+function showMenuItemRemovers(){
+  //get remover areas
+  let removers = document.getElementsByClassName('removerArea');
+  for(var i = 0; i < removers.length; i++){
+    removers[i].style.display = 'flex';
+  }
+
+  document.getElementById('showMenuRemoversBtn').style.display = 'none';
+  document.getElementById('hideMenuRemoversBtn').style.display = 'block';
+
+}
+
+// hide menu item removers
+function hideMenuItemRemovers(){
+  //get remover areas
+  let removers = document.getElementsByClassName('removerArea');
+  for(var i = 0; i < removers.length; i++){
+    removers[i].style.display = 'none';
+  }
+
+  document.getElementById('hideMenuRemoversBtn').style.display = 'none';
+  document.getElementById('showMenuRemoversBtn').style.display = 'block';
+}
+
+//menu item remover onclick...
+function initMenuItemRemovers(){
+  //get itemRemovers
+  let removers = document.getElementsByClassName('itemRemover');
+  for(var i = 0; i < removers.length; i++){
+    let id = removers[i].id;
+    removers[i].onclick = () => { promptRemoveItem(id)};
+  }
+
+  //get cancel Btns
+  let cancelBtns = document.getElementsByClassName('removeConfirmCancel');
+  for(var i = 0; i < cancelBtns.length; i++){
+    let id = cancelBtns[i].id;
+    cancelBtns[i].onclick = () => { cancelRemoveItem(id)};
+  }
+}
+
+//prompt remove item...
+function promptRemoveItem(id){
+
+  //show prompt
+  document.getElementById(id.substring(0, id.indexOf('Remover')) + 'RemoveConfirmer').style.display = 'flex';
+
+  //hide item info
+  document.getElementById(id.substring(0, id.indexOf('Remover')) + 'Info').style.display = 'none';
+
+}
+
+//cancel remove item...
+function cancelRemoveItem(id){
+
+  //hide prompt
+  document.getElementById(id.substring(0, id.indexOf('Remove')) + 'RemoveConfirmer').style.display = 'none';
+
+  //show item info
+  document.getElementById(id.substring(0, id.indexOf('Remove')) + 'Info').style.display = 'block';
+
+}
