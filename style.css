@@ -309,6 +309,12 @@ txtLink:hover{
   display: none;
 }
 
+.rightBtn{
+  display: flex;
+  width: 90%;
+  justify-content: flex-end;
+}
+
 dim{
   position: fixed;
   top:0;

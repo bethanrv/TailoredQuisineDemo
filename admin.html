@@ -271,7 +271,7 @@
       <flexContainerFull class="borderedTxt transBG center" style="padding:4vh; width:100%;">
           <p style="text-decoration:underline;"> Edit Menu </p>
 
-          <button style="font-size:1.25em;"> Add Menu Item </button>
+          <button style="font-size:1.25em;" onclick="addMenuItem()"> Add Menu Item </button>
           <pad></pad>
           <button id="showMenuRemoversBtn" style="font-size:1.25em;" onclick="showMenuItemRemovers()"> Remove Menu Item(s) </button>
           <button id="hideMenuRemoversBtn" style="font-size:1.25em; display:none;" onclick="hideMenuItemRemovers()"> Cancel </button>
@@ -388,6 +388,52 @@
           <p class="leftText underline" style="width:80%;"> Health Products </p>
       </flexContainerFull>
     </div><!--  close menutab-->
+
+    <floatingContainer id="addMenuItemFormArea" style="display:none; height:auto;">
+
+      <div class="rightBtn" style="padding-top:2vh;">
+        <i class="material-icons clickable" onclick="cancelAddMenuItem()"> close </i>
+      </div>
+
+      <h2> Add An Item </h2>
+
+      <p> Select Catagory</p>
+      <select id="addItemFieldTypeSelect" style="font-size:1.25em;" oninput="updateAddItemFields()">
+        <option selected value="soup"> Soup </option>
+        <option value="pasta"> Pasta </option>
+        <option value="spice"> Spice </option>
+        <option value="health"> Health </option>
+      </select>
+
+      <div class="center" style="display:flex; align-items:center; padding-left: 4vh; padding-bottom: 2vh; padding-top: 2vh; width:90%;">
+
+        <div style="padding-right: 2vh;">
+          <p id="addItemNameTxt"> Name: </p>
+          <p id="addItemPriceTxt" style="display:none;"> Price: </p>
+          <p id="addItemPriceHalfTxt"> Price Half: </p>
+          <p id="addItemPriceFullTxt"> Price Full: </p>
+          <p id="addItemDescriptionTxt"> Description: </p>
+        </div>
+
+        <div style="width:70%;">
+          <input class="addItemInputElement" oninput="checkAddItemInputs()"  style="width:80%;" id="addItemNameInput" type="text" name="name"/>
+          <input class="addItemInputElement" oninput="checkAddItemInputs()"  style="width:80%;" id="addItemPriceInput" style="display:none;" type="number" name="price"/>
+          <input class="addItemInputElement" oninput="checkAddItemInputs()"  style="width:80%;" id="addItemPriceHalfInput" type="number" name="priceHalf"/>
+          <input class="addItemInputElement" oninput="checkAddItemInputs()"  style="width:80%;" id="addItemPriceFullInput" type="number" name="priceFull"/>
+          <input class="addItemInputElement" oninput="checkAddItemInputs()"  style="width:80%;" id="addItemDescriptionInput" type="text" name="desc"/>
+        </div>
+
+      </div>
+
+      <button id="addItemAddBtn" style="font-size:1.5em; display:none;"> Add </button>
+      <pad> </pad>
+
+
+    </floatingContainer>
+
+    <dim id="dim">
+    </dim>
+
 
   </body>
 </html>

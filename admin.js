@@ -193,3 +193,56 @@ function cancelRemoveItem(id){
   document.getElementById(id.substring(0, id.indexOf('Remove')) + 'Info').style.display = 'block';
 
 }
+
+//open add menu item prompt
+function addMenuItem(){
+  document.getElementById('addMenuItemFormArea').style.display = 'flex';
+  document.getElementById('dim').style.display = 'block';
+}
+
+//cancel add menu item - close popup
+function cancelAddMenuItem(){
+  document.getElementById('addMenuItemFormArea').style.display = 'none';
+  document.getElementById('dim').style.display = 'none';
+}
+
+
+//update add item fields - show only appropriate input fields
+function updateAddItemFields(){
+  let inputType = document.getElementById('addItemFieldTypeSelect').value;
+  console.log(inputType)
+
+  if(inputType == 'soup'){
+    document.getElementById('addItemPriceTxt').style.display = 'none';
+    document.getElementById('addItemPriceInput').style.display = 'none';
+
+    document.getElementById('addItemPriceHalfTxt').style.display = 'flex';
+    document.getElementById('addItemPriceHalfInput').style.display = 'flex';
+
+    document.getElementById('addItemPriceFullTxt').style.display = 'flex';
+    document.getElementById('addItemPriceFullInput').style.display = 'flex';
+  }
+  else{
+    document.getElementById('addItemPriceTxt').style.display = 'flex';
+    document.getElementById('addItemPriceInput').style.display = 'flex';
+
+    document.getElementById('addItemPriceHalfTxt').style.display = 'none';
+    document.getElementById('addItemPriceHalfInput').style.display = 'none';
+
+    document.getElementById('addItemPriceFullTxt').style.display = 'none';
+    document.getElementById('addItemPriceFullInput').style.display = 'none';
+  }
+
+}
+
+//check to see if all add item input elements have a value
+function checkAddItemInputs(){
+
+  var inputs = document.getElementsByClassName('addItemInputElement');
+
+  for(var i = 0; i < inputs.length; i++){
+    if(inputs[i].value === "") return;
+  }
+
+  document.getElementById('addItemAddBtn').style.display = 'block';
+}
