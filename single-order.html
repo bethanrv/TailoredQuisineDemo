@@ -215,24 +215,24 @@
 
         <div style="display:flex; justify-content: left; flex-direction:column; padding-left:4vh;">
 
-            <cartItemTxt id="cartItem1"> 
+            <cartItemTxt id="cartItem1">
               <p id="cartItem1Txt"> Cajun Seafood Gumbo $7 Half  </p>
               <pad></pad>
               <i id="cartItem1Remover" class="material-icons removeItemIcon"> cancel </i>
             </cartItemTxt>
-            
-            <cartItemTxt id="cartItem2"> 
+
+            <cartItemTxt id="cartItem2">
               <p id="cartItem2Txt"> From Scratch Macaroni $12 </p>
               <pad></pad>
-              <i id="cartItem2Remover" class="material-icons removeItemIcon"> cancel </i>  
+              <i id="cartItem2Remover" class="material-icons removeItemIcon"> cancel </i>
             </cartItemTxt>
-            
-            <cartItemTxt id="cartItem3"> 
-              <p id="cartItem3Txt"> Fettuccini Alfredo $12 </p> 
+
+            <cartItemTxt id="cartItem3">
+              <p id="cartItem3Txt"> Fettuccini Alfredo $12 </p>
               <pad></pad>
               <i id="cartItem3Remover" class="material-icons removeItemIcon"> cancel </i>
             </cartItemTxt>
-            
+
         </div>
 
         <h2> Total: $31.00 </h2>
@@ -252,24 +252,78 @@
     <!-- Schedule Order Area -->
     <div id="checkoutScheduleOrder" style="display:none; justify-content:center; padding-top: 5vh;">
       <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
-       
+
         <h2> Schedule Your Order </h2>
 
-        <p style="margin:1vh;"> Select A Day </p>
+        <p style="margin:1vh; padding-bottom:4vh;"> Select A Day To Have Your Order Sent </p>
 
         <weekSelectContainer style="display: flex; align-items: center; padding-bottom: 3vh;">
-          <p style="margin:0;"> Week Of November 15th</p>
+          <p style="margin:0;"> Week Of November 29th</p>
           <pad style="width: 2vh;"></pad>
-        <i class="material-icons weekNavIcon"> arrow_forward </i>
         </weekSelectContainer>
-        
+
         <weekDays style='padding-bottom: 4vh;'>
-          <day id="daySelectorM">Mon</day>
+          <!--<dayContainer>
+            <day id="daySelectorM" class="disabled">Mon</day>
+            <p> 11/30 </p>
+          </dayContainer>
+          <padBetween> </padBetween> -->
+          <dayContainer>
+            <day id="daySelectorW">Wed </day>
+            <p> 12/2 </p>
+          </dayContainer>
           <padBetween> </padBetween>
-          <day id="daySelectorW">Wed</day>
-          <padBetween> </padBetween>
-          <day id="daySelectorF">Fri</day>
+          <dayContainer>
+            <day id="daySelectorF">Fri</day>
+            <p> 12/4 </p>
+          <dayContainer>
         </weekDays>
+
+        <weekSelectContainer style="display: flex; align-items: center; padding-bottom: 3vh;">
+          <p style="margin:0;"> Week Of December 6th</p>
+          <pad style="width: 2vh;"></pad>
+        </weekSelectContainer>
+
+        <weekDays style='padding-bottom: 4vh;'>
+          <dayContainer>
+            <day id="daySelectorM">Mon</day>
+            <p> 12/7 </p>
+          </dayContainer>
+          <padBetween> </padBetween>
+          <dayContainer>
+            <day id="daySelectorW">Wed</day>
+            <p> 12/9 </p>
+          </dayContainer>
+          <padBetween> </padBetween>
+          <dayContainer>
+            <day id="daySelectorF">Fri</day>
+            <p> 12/11 </p>
+          </dayContainer>
+        </weekDays>
+
+        <weekSelectContainer id="week12-13Head" style="display: none; align-items: center; padding-bottom: 3vh;">
+          <p style="margin:0;"> Week Of December 13th</p>
+          <pad style="width: 2vh;"></pad>
+        </weekSelectContainer>
+
+        <weekDays id="week12-13Days" style='padding-bottom: 4vh; display:none;'>
+          <dayContainer>
+            <day id="daySelectorM">Mon</day>
+            <p> 12/14 </p>
+          </dayContainer>
+          <padBetween> </padBetween>
+          <dayContainer>
+            <day id="daySelectorW">Wed</day>
+            <p> 12/16 </p>
+          </dayContainer>
+          <padBetween> </padBetween>
+          <dayContainer>
+            <day id="daySelectorF">Fri</day>
+            <p> 12/18 </p>
+          </dayContainer>
+        </weekDays>
+
+        <p style="padding-bottom:4vh;" class="linkTxt" onclick="showNextWeekDays();"> Show Next Week </p>
 
         <!-- Back and proceed btns -->
         <dualBtnContainer>
@@ -286,7 +340,7 @@
     <!-- User info input area -->
     <div id="userInfoInputArea" style="display:none; justify-content:center; padding-top: 5vh;">
       <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
-       
+
         <h2> Your Info </h2>
 
         <inputContainerFlexbox>
@@ -305,11 +359,38 @@
             <input type="text" name="address" placeholder="...">
           </inputContainerFlex>
 
-        </inputContainerFlexbox> 
- 
+        </inputContainerFlexbox>
+
+        <div style="padding-bottom: 0vh; display: flex; align-items: center;">
+          <input id="sceduleReviewYourInfoCreateAccount" style="height: 4vh; width: 4vh;" type="checkbox" name="">
+          <pad> </pad>
+          <p style="font-size: 1em;"> Create Account For Easy Order Access? </p>
+        </div>
+
+        <inputContainerFlexbox id='reviewPasswordArea' style="display: none; padding-bottom: 0; margin: 0;">
+          <labelContainer>
+            <label for="password">Password</label>
+            <label for="password">Confirm Password</label>
+          </labelContainer>
+
+          <inputContainerFlex>
+            <input id="reviewCreateAccountPassword" type="password" name="password" placeholder="...">
+            <input id="reviewCreateAccountPasswordConfirm" type="password" name="confirmPassword" placeholder="...">
+          </inputContainerFlex>
+        </inputContainerFlexbox>
+
+        <div id="scheduleReviewPasswordInfo" style="margin: 0; display: none;">
+          <!-- create account confirm -->
+          <p style="margin: 0; color:red;"> Passwords Must Match </p>
+        </div>
+
+        <div id="scheduleReviewCreateAccountConfirm" style="display: none;">
+          <button> Create Account </button>
+        </div>
+
 
         <!-- Back and proceed btns -->
-        <dualBtnContainer>
+        <dualBtnContainer style="padding-top:3vh;">
 
           <button style="font-size: 1.5em;" onclick="navigateBackToScheduleOrder();"> Go Back </button>
           <button style="font-size: 1.5em;" onclick="navigateToBillingInfoInput();"> Checkout </button>
@@ -323,7 +404,7 @@
     <!-- Billing info input area -->
     <div id="billingInfoInput" style="display:none; justify-content:center; padding-top: 5vh;">
       <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
-       
+
         <h2> Billing Info </h2>
 
         <p style="margin: 0;"> Payment Options </p>
@@ -332,7 +413,7 @@
           <p id="creditOption" class="billingOption selected"> Credit Card </p>
           <p id="paypalOption" class="billingOption"> PayPal </p>
           <p id="cashappOption" class="billingOption"> Cashapp </p>
-        </div>     
+        </div>
 
         <inputContainerFlexbox>
 
@@ -350,8 +431,8 @@
             <input type="text" name="card-security" placeholder="...">
           </inputContainerFlex>
 
-        </inputContainerFlexbox> 
- 
+        </inputContainerFlexbox>
+
 
         <!-- Back and proceed btns -->
         <dualBtnContainer>
@@ -369,7 +450,7 @@
     <!-- confirm/review area -->
     <div id="orderReviewArea" style="display:none; justify-content:center; padding-top: 5vh;">
       <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
-       
+
         <h2> Review Your Order </h2>
 
 
@@ -378,24 +459,24 @@
 
         <div style="display:flex; justify-content: left; flex-direction:column; padding-left:4vh; ">
 
-            <cartItemTxt id="reviewItem1"> 
+            <cartItemTxt id="reviewItem1">
               <p id="reviewItem1Txt" class="cartItemReviewItem" > Cajun Seafood Gumbo $7 Half  </p>
               <pad></pad>
               <i id="reviewItem1Remover" class="material-icons removeItemIconSmall"> cancel </i>
             </cartItemTxt>
-            
-            <cartItemTxt id="reviewItem2"> 
+
+            <cartItemTxt id="reviewItem2">
               <p id="reviewItem2Txt" class="cartItemReviewItem"> From Scratch Macaroni $12 </p>
               <pad></pad>
-              <i id="reviewItem2Remover" class="material-icons removeItemIconSmall"> cancel </i>  
+              <i id="reviewItem2Remover" class="material-icons removeItemIconSmall"> cancel </i>
             </cartItemTxt>
-            
-            <cartItemTxt id="reviewItem3"> 
-              <p id="reviewItem3Txt" class="cartItemReviewItem"> Fettuccini Alfredo $12 </p> 
+
+            <cartItemTxt id="reviewItem3">
+              <p id="reviewItem3Txt" class="cartItemReviewItem"> Fettuccini Alfredo $12 </p>
               <pad></pad>
               <i id="reviewItem3Remover" class="material-icons removeItemIconSmall"> cancel </i>
             </cartItemTxt>
-            
+
         </div>
 
         <h2 style="font-size: 1.25em;"> Total: $31.00 </h2>
@@ -409,7 +490,7 @@
           <pad style="width: 2vh;"></pad>
         <i class="material-icons weekNavIcon"> arrow_forward </i>
         </weekSelectContainer>
-        
+
         <weekDays style='padding-bottom: 4vh;'>
           <day id="daySelectorMReview">Mon</day>
           <padBetween> </padBetween>
@@ -435,10 +516,10 @@
 
             <p id="reviewNameTxt" class="reviewUserInputTxt"> John Smith </p>
 
-            
+
             <input id="reviewNameInput" class="reviewUserInfoInput" type="text" name="name" placeholder="...">
 
-            
+
 
             <p id="reviewEmailTxt" class="reviewUserInputTxt"> jsmith@yahoo.com </p>
 
@@ -451,8 +532,8 @@
             <p id="reviewAddressTxt" class="reviewUserInputTxt"> 1600 Pennsylvania Ave, DC 20001 </p>
 
             <input id="reviewAddressInput" class="reviewUserInfoInput" type="text" name="address" placeholder="...">
-            
-           
+
+
           </inputContainerFlex>
 
 
@@ -479,7 +560,7 @@
             </dualBtn>
           </twoBtnContainer>
 
-        </inputContainerFlexbox> 
+        </inputContainerFlexbox>
 
 
 
@@ -490,7 +571,7 @@
           <p id="creditOptionReview" class="billingOption selected"> Credit Card </p>
           <p id="paypalOptionReview" class="billingOption"> PayPal </p>
           <p id="cashappOptionReview" class="billingOption"> Cashapp </p>
-        </div>  
+        </div>
 
         <inputContainerFlexbox>
 
@@ -507,10 +588,10 @@
 
             <p id="reviewCardNameTxt" class="reviewBillingInputTxt"> John Smith </p>
 
-            
+
             <input id="reviewCardNameInput" class="reviewBillingInfoInput" type="text" name="card-name" placeholder="...">
 
-            
+
 
             <p id="reviewCardNumTxt" class="reviewBillingInputTxt"> 1234-5678-90123-4567 </p>
 
@@ -523,8 +604,8 @@
             <p id="reviewCardSecurityTxt" class="reviewBillingInputTxt"> 123 </p>
 
             <input id="reviewCardSecurityInput" class="reviewBillingInfoInput" type="text" name="card-security" placeholder="...">
-            
-           
+
+
           </inputContainerFlex>
 
 
@@ -552,7 +633,7 @@
           </twoBtnContainer>
 
 
-        </inputContainerFlexbox> 
+        </inputContainerFlexbox>
 
         <!-- Back and proceed btns -->
         <dualBtnContainer>
@@ -582,10 +663,10 @@
             <p class="revivewSectionHead"> Items </p>
 
             <p id="cartItem1Txt"> Cajun Seafood Gumbo $7 Half  </p>
-          
+
             <p id="cartItem2Txt"> From Scratch Macaroni $12 </p>
 
-            <p id="cartItem3Txt"> Fettuccini Alfredo $12 </p> 
+            <p id="cartItem3Txt"> Fettuccini Alfredo $12 </p>
 
             <h2 style="font-size: 1.5em;"> Total: $31.00 </h2>
 
@@ -608,7 +689,7 @@
 
         <pad> </pad>
 
-        <button style="font-size: 1.5em; " onclick="window.open('./index.html');"> Home </button>        
+        <button style="font-size: 1.5em; " onclick="window.open('./index.html');"> Home </button>
 
       </centeredContainer>
     </div> <!-- end cart items area -->
@@ -638,6 +719,11 @@
 
     //init review user info on clicks
     initReviewUserInfoOnClick();
+
+    //onclick for checkbox - create account
+    initReviewCreateAccountCheckbox();
+    //init onclick for password confirm
+    initReviewPasswordInput();
   }
 
 </script>

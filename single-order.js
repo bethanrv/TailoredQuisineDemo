@@ -108,3 +108,15 @@ function navigateToOrderDetailsArea(){
 	document.getElementById('orderDetailsArea').style.display = 'flex';
 	document.getElementById('orderReviewArea').style.display = 'none';
 }
+
+
+//show next week days for order schedule
+function showNextWeekDays(){
+	//get next week from db
+
+
+	//design eg....
+	document.getElementById('week12-13Head').style.display = 'flex';
+	document.getElementById('week12-13Days').style.display = 'flex';
+
+}

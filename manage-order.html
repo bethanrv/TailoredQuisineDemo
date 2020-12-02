@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title> Tailored Quisine </title>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css?version=1.4">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+  <body style="background-image:url('https://iili.io/3E7bxp.jpg'); margin-left:5%; margin-right:5%;">
+
+    <!-- nav bar on top of screen -->
+    <topNav draggable="true" ondrag="openMenu()">
+      <div style="display:flex;">
+        <img onclick="openMenu()" class="icon" src="https://iili.io/30DYl4.png" style="cursor:pointer;" alt="menu icon">
+        <p class="cursive"> Tailored Quisine 101</p>
+      </div>
+    </topNav>
+
+    <sideNav id="sideNavBar" style="display:none; background-image:url('https://iili.io/3EMP0Q.md.jpg');" draggable="true" ondrag="closeMenu()">
+      <img onclick="closeMenu()" class="icon" src="https://iili.io/31dCu4.png" style="cursor:pointer;" alt="close menu icon">
+      <div id="sideNavItems" style="display: flex; flex-direction: column; align-items:left; padding-left: 4vh; ">
+        <p onclick="window.open('./index.html')" class="boldTxt"> Home </p>
+        <p onclick="window.open('./single-order.html')" class="boldTxt"> Order A Meal </p>
+        <p onclick="window.open('./schedule-order.html')" class="boldTxt"> Order Recurring Meals </p>
+        <p class="boldTxt"> Order A Custom Meal </p>
+        <p class="boldTxt"> Shop Health Products </p>
+      </div>
+    </sideNav>
+
+
+
+
+    <!-- header -->
+    <header style="padding-top:8vh; padding-bottom:4vh;">
+      <flexContainer class="borderedTxt transBG center"style="width:auto; height:10vh;">
+          <h2 style="padding:3vh;" > Manage Your Order </h2>
+      </flexContainer>
+    </header>
+
+
+    <!-- sign in area -->
+    <div class="center" style="width:90vw;">
+      <flexContainerFull class="borderedTxt transBG center" style="padding:4vh; width:100%;">
+        <p style="text-decoration:underline;"> Login </p>
+
+        <div style="display:flex; align-items:center; ">
+          <pad style="width:4vh;"></pad>
+          <p> Email: </p>
+          <pad></pad>
+          <input type="email" style="font-size:1.25em; height:4vh;"/>
+        </div>
+        <div style="display:flex; align-items:center; ">
+          <p> Password: </p>
+          <pad></pad>
+          <input type="password" style="font-size:1.25em; height:4vh;"/>
+        </div>
+
+        <button style="font-size:1.25em;"> Login </button>
+
+        <p style="padding-top: 2vh;" class="linkTxt" onclick="openSendPassContainer()"> Don't Have An Account? </p>
+
+      </flexContainerFull>
+    </div>
+
+
+    <!-- floating container for email  -->
+    <floatingContainer id='sendPasswordContainer' style="display:none;">
+
+      <div style="width:90%; display:flex; justify-content:flex-end;">
+        <i class="material-icons clickable" onclick="closeSendPassContainer()"> close </i>
+      </div>
+
+      <p style="padding:2vh;"> Enter The Email You Used To Make Your Order </p>
+      <div style="display:flex; align-items:center; ">
+        <pad style="width:4vh;"></pad>
+        <p> Email: </p>
+        <pad></pad>
+        <input type="email" style="font-size:1.25em; height:4vh;"/>
+      </div>
+      <button style="font-size:1.25em; margin:2vh; display:flex; align-items:center;">
+        <p style="padding-right: 2vh;"> Send Password  </p>
+        <i class="material-icons" > send </i>
+      </button>
+    </floatingContainer>
+    <dim id="dim"> </dim>
+
+
+  </body>
+</html>
+
+<!-- JS -->
+<script type="text/javascript" src="script.js?v=2"></script>
+<script type="text/javascript" src="manage-order.js?v=1"></script>
+
+<script type="text/javascript">
+
+
+  //on page load...
+  window.onload = function(){
+
+
+  }
+
+</script>
