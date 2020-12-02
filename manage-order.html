@@ -50,7 +50,7 @@
 
 
     <!-- sign in area -->
-    <div class="center" style="width:90vw;">
+    <div id="signInArea" class="center" style="width:90vw;">
       <flexContainerFull class="borderedTxt transBG center" style="padding:4vh; width:100%;">
         <p style="text-decoration:underline;"> Login </p>
 
@@ -66,7 +66,7 @@
           <input type="password" style="font-size:1.25em; height:4vh;"/>
         </div>
 
-        <button style="font-size:1.25em;"> Login </button>
+        <button style="font-size:1.25em;" onclick="login()"> Login </button>
 
         <p style="padding-top: 2vh;" class="linkTxt" onclick="openSendPassContainer()"> Don't Have An Account? </p>
 
@@ -95,6 +95,48 @@
     </floatingContainer>
     <dim id="dim"> </dim>
 
+
+    <!-- manage area -->
+    <div id="manageOrdersArea" class="center" style="width:90vw; display:none;">
+      <flexContainerFull class="borderedTxt transBG center" style="padding:4vh; width:100%;">
+        <p style="text-decoration:underline;"> Your Orders </p>
+
+        <div style="width:90%; display:flex; justify-content:flex-start; align-items:center;">
+
+          <div style="display:flex; flex-direction:column;">
+            <p> Name:  </p>
+            <p> Phone:  </p>
+            <p> Email:  </p>
+            <p> Address:  </p>
+          </div>
+          <div style="display:flex; flex-direction:column; padding-left:2vh;">
+            <p> John Smith  </p>
+            <p> 555-555-5555  </p>
+            <p> jsmith@email.com  </p>
+            <p> 12 place st. Wayne, WV 89265  </p>
+          </div>
+        </div>
+
+
+        <p style="width:90%;" class="underline"> Monday 12/7 </p>
+
+        <div style="width:80%; display:flex; flex-direction: column; justify-content:flex-start;">
+          <p> From Scratch Macaroni $12 </p>
+          <p> Fettuccini Alfredo $12 </p>
+          <p> Total $24 </p>
+          <p> Status: Paid And Shiped </p>
+        </div>
+
+        <p style="width:90%;" class="underline"> Wednesdays - Each Week </p>
+
+        <div style="width:80%; display:flex; flex-direction: column; justify-content:flex-start;">
+          <p> From Scratch Spinach Dip Ravioli $16 </p>
+          <p> Total $16 </p>
+          <p> Status: Paid - Will Ship Wednesday </p>
+        </div>
+
+      </flexContainerFull>
+    </div>
 
   </body>
 </html>
