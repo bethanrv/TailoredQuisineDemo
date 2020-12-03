@@ -877,6 +877,11 @@ replyContainer{
   text-decoration-color: red;
 }
 
+.navTitle{}
+
+.mobileOnly{
+  display: block;
+}
 
 /*
   Responsive Design Styling
@@ -889,7 +894,7 @@ replyContainer{
 */
 @media (max-width:768px){
 
-
+  
 
   .largeBtn{
     width: 40vw;
@@ -909,8 +914,20 @@ replyContainer{
     align-items: center;
     width: 100%;
   }
+   txtLink{
+    display:none;
+  }
+
+  .navTitle{
+    font-size: 1.5em;
+  }
 
 
+}
+@media (min-width:769px){
+  .mobileOnly{
+    display: none;
+  }
 }
 
 /*
@@ -923,6 +940,7 @@ replyContainer{
     padding-top: 0vh;
   }
 
+ 
 
   .logo{
     width: 70vh;

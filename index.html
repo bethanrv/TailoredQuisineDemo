@@ -19,9 +19,9 @@
 
     <!-- nav bar on top of screen -->
     <topNav draggable="true" ondrag="openMenu()">
-      <div style="display:flex;">
+      <div style="display:flex; align-items: center;">
         <img onclick="openMenu()" class="icon" src="https://iili.io/30DYl4.png" style="cursor:pointer;" alt="menu icon">
-        <p class="cursive"> Tailored Quisine 101</p>
+        <p class="cursive navTitle"> Tailored Quisine 101</p>
       </div>
 
       <div style="display:flex;">
@@ -38,6 +38,8 @@
         <p class="boldTxt"> Order A Custom Meal </p>
         <p class="boldTxt"> Shop Health Products </p>
         <p onclick="window.open('./manage-order.html')" class="boldTxt"> Manage Your Order </p>
+        <p class="boldTxt mobileOnly"> Sign Up </p>
+        <p class="boldTxt mobileOnly"> Sign In </p>
       </div>
     </sideNav>
 
