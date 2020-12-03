@@ -883,6 +883,13 @@ replyContainer{
   display: block;
 }
 
+.sideNavItemsContainer{
+  display: flex; 
+  flex-direction: column; 
+  align-items:left; 
+  padding-left: 4vh; 
+}
+
 /*
   Responsive Design Styling
 */
@@ -920,6 +927,10 @@ replyContainer{
 
   .navTitle{
     font-size: 1.5em;
+  }
+
+  .sideNavItemsContainer p{
+    font-size: 1.2em;
   }
 
 
