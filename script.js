@@ -339,6 +339,7 @@ function initDayOfWeekOnClickSingle(){
       id = daysOfWeek[i].id;
     }
 
+    let value = daysOfWeek[i].value;
     daysOfWeek[i].onclick = function(){alterSelection(this, id, 'single')};
   }
 }
@@ -414,6 +415,16 @@ function alterSelection(element, id, type){
       //if single order... unselect other days
       if(type == 'single'){
 
+        //show btns
+        document.getElementById('singleOrderScheduleBtns').style.display = 'flex';
+
+        //show day selected in text
+        updateDaySelectedText(id);
+        updateReviewDaySelectors(id);
+        document.getElementById('scheduleDaySelectionText').style.display = 'block';
+
+
+
         var daysOfWeek = document.getElementsByTagName('day');
 
         for(var i = 0; i < daysOfWeek.length; i++){
@@ -476,6 +487,73 @@ function alterSelection(element, id, type){
 
 
 }
+
+let dayOfWeekSelected;
+function updateReviewDaySelectors(id){
+  if(id.substring(id.indexOf('-')-3,id.indexOf('-')-2) == "M"){
+    console.log(document.getElementsByClassName('reviewDaySelectorMon')[0])
+    document.getElementsByClassName('reviewDaySelectorMon')[0].classList.add('selected');
+    dayOfWeekSelected = 'Monday';
+  }
+  else if(id.substring(id.indexOf('-')-3,id.indexOf('-')-2) == "W"){
+    document.getElementsByClassName('reviewDaySelectorWed')[0].classList.add('selected');
+    dayOfWeekSelected = 'Wednesday';
+  }
+  else if(id.substring(id.indexOf('-')-3,id.indexOf('-')-2) == "F"){
+    document.getElementsByClassName('reviewDaySelectorFri')[0].classList.add('selected');
+    dayOfWeekSelected = 'Friday';
+  }
+  console.log(id.substring(id.indexOf('-')-3,id.indexOf('-')-2))
+}
+
+function updateDaySelectedText(id){
+  //use id to get day and date
+  let info = id.substring(id.indexOf('-')-3);
+
+  let date = info.substring(1);
+
+  let day = info.charAt(0);
+
+  let dateTxt = getDateInText(date, day);
+
+  //set text in html
+  document.getElementById('scheduleDaySelectionText').innerHTML = "You've Selected: " + dateTxt;
+  document.getElementById('detailsShippingDayTxt').innerHTML = 'Shipping On: ' + dateTxt;
+  document.getElementById('reviewOrderScheduleTxt').innerHTML = 'Shipping On: ' + dateTxt;
+
+}
+
+const getDateInText = ( (date, day) => {
+  let month = date.substring(0, date.indexOf('-'));
+  let monthTxt;
+  if(month == '1') monthTxt = 'January';
+  else if(month == '2') monthTxt = 'Febuary';
+  else if(month == '3') monthTxt = 'March';
+  else if(month == '4') monthTxt = 'April';
+  else if(month == '5') monthTxt = 'May';
+  else if(month == '6') monthTxt = 'June';
+  else if(month == '7') monthTxt = 'July';
+  else if(month == '8') monthTxt = 'August';
+  else if(month == '9') monthTxt = 'September';
+  else if(month == '10') monthTxt = 'October';
+  else if(month == '11') monthTxt = 'November';
+  else if(month == '12') monthTxt = 'December';
+
+  let dayPostfix = 'th'; //eg. 4th, 5th, ...
+  let dayTxt = date.substring(date.indexOf('-')+1);
+  if(dayTxt == '1') dayPostfix = 'st';
+  else if(dayTxt == '2') dayPostfix = 'nd';
+  else if(dayTxt == '3') dayPostfix = 'rd';
+
+  let dayOfWeekTxt;
+  if(day == 'M') dayOfWeekTxt = 'Monday, ';
+  else if(day == 'W') dayOfWeekTxt = 'Wednesday, ';
+  else if(day == 'F') dayOfWeekTxt = 'Friday, ';
+
+
+
+  return dayOfWeekTxt + ' ' +  monthTxt + ' ' + dayTxt + dayPostfix;
+});
 
 //check if M W or f
 function isDay(day){

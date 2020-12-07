@@ -120,3 +120,78 @@ function showNextWeekDays(){
 	document.getElementById('week12-13Days').style.display = 'flex';
 
 }
+
+
+//user input - validate all fields
+function initUserInfoFormValidation(){
+
+	let nameField = document.getElementById('userInputName').oninput = () => {validateInfoForm()};
+	let emailField = document.getElementById('userInputEmail').oninput = () => {validateInfoForm()};
+	let phoneField = document.getElementById('userInputPhone').oninput = () => {};
+	let addressField = document.getElementById('userInputAddress').oninput = () => {validateInfoForm()};
+
+
+
+
+
+	
+}
+
+
+var inputCount = 0;
+function validateInfoForm(){
+	inputCount++;
+
+	if(inputCount >= 3){
+		let nameField = document.getElementById('userInputName').value;
+		let emailField = document.getElementById('userInputEmail').value;
+		let phoneField = document.getElementById('userInputPhone').value;
+		let addressField = document.getElementById('userInputAddress').value;
+
+		if(nameField.length > 0){
+			if(nameField.split(' ').length < 2) return 'invalid name: too short';
+		}
+		else return 'invalid: no name';
+
+		if(emailField.length > 0){
+			if(!(emailField.includes('@') && emailField.includes('.'))) return 'invlaid email'
+		}
+		else return 'invalid: no email'
+
+		if(!addressField.length > 0){
+			return 'invalid: no address';
+		}
+
+		//still here? valid! - show new btn
+		document.getElementById('infoFormNextBtn').style.display = 'block';
+	}
+}
+
+
+let reviewEditStatus = false;
+function reviewEditOrderSchedule(day){
+	
+	if(reviewEditStatus){
+		document.getElementById('reviewEditOrderscheduleBtn').innerHTML = 'Edit';
+		document.getElementById('reviewEditDaySelection').style.display = 'none';
+		reviewEditStatus = !reviewEditStatus;
+	}
+	else{
+		document.getElementById('reviewEditOrderscheduleBtn').innerHTML = 'Done';	
+		document.getElementById('reviewEditDaySelection').style.display = 'block';
+		if(day == 'Monday'){
+			document.getElementsByClassName('reviewDaySelectorMon')[0].classList.add("selected");
+		}
+		else if(day == 'Wednesday'){
+			document.getElementsByClassName('reviewDaySelectorWed')[0].classList.add("selected");
+		}
+		else if(day == 'Friday'){
+			document.getElementsByClassName('reviewDaySelectorFri')[0].classList.add("selected");
+		}
+		reviewEditStatus = !reviewEditStatus;
+	}
+
+
+
+
+}

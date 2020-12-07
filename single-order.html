@@ -44,6 +44,9 @@
     <!-- checkout prompt -->
     <div id='checkoutPrompt' style="" class="prompt">
       <div style="display: flex; justify-content: center;  align-items: center; flex-direction: column;">
+        <div style="width: 94%; display: flex; justify-content: flex-end; padding-top: 2vh;">
+          <i class="material-icons clickable" onclick="closeCheckoutPromt();"> close </i>
+        </div>
         <h2 id="promptedAddedTxt"> Added Item To Cart </h2>
         <h2> Total - $31 </h2>
         <button style="font-size: 2em; border-color:black;" onclick="navigateToCheckout();"> Checkout </button>
@@ -269,12 +272,12 @@
           </dayContainer>
           <padBetween> </padBetween> -->
           <dayContainer>
-            <day id="daySelectorW">Wed </day>
+            <day id="daySelectorW12-2" >Wed </day>
             <p> 12/2 </p>
           </dayContainer>
           <padBetween> </padBetween>
           <dayContainer>
-            <day id="daySelectorF">Fri</day>
+            <day id="daySelectorF12-4" >Fri</day>
             <p> 12/4 </p>
           <dayContainer>
         </weekDays>
@@ -286,17 +289,17 @@
 
         <weekDays style='padding-bottom: 4vh;'>
           <dayContainer>
-            <day id="daySelectorM">Mon</day>
+            <day id="daySelectorM12-7" >Mon</day>
             <p> 12/7 </p>
           </dayContainer>
           <padBetween> </padBetween>
           <dayContainer>
-            <day id="daySelectorW">Wed</day>
+            <day id="daySelectorW12-9">Wed</day>
             <p> 12/9 </p>
           </dayContainer>
           <padBetween> </padBetween>
           <dayContainer>
-            <day id="daySelectorF">Fri</day>
+            <day id="daySelectorF12-11" >Fri</day>
             <p> 12/11 </p>
           </dayContainer>
         </weekDays>
@@ -308,28 +311,30 @@
 
         <weekDays id="week12-13Days" style='padding-bottom: 4vh; display:none;'>
           <dayContainer>
-            <day id="daySelectorM">Mon</day>
+            <day id="daySelectorM12-14" >Mon</day>
             <p> 12/14 </p>
           </dayContainer>
           <padBetween> </padBetween>
           <dayContainer>
-            <day id="daySelectorW">Wed</day>
+            <day id="daySelectorW12-16">Wed</day>
             <p> 12/16 </p>
           </dayContainer>
           <padBetween> </padBetween>
           <dayContainer>
-            <day id="daySelectorF">Fri</day>
+            <day id="daySelectorF12-18">Fri</day>
             <p> 12/18 </p>
           </dayContainer>
         </weekDays>
 
         <p style="padding-bottom:4vh;" class="linkTxt" onclick="showNextWeekDays();"> Show Next Week </p>
 
+        <p id="scheduleDaySelectionText" style="display: none; padding-bottom:4vh;"> You Selected: Friday, December 11th </p>
+
         <!-- Back and proceed btns -->
-        <dualBtnContainer>
+        <dualBtnContainer style='display: flex;'>
 
           <button style="font-size: 1.5em;" onclick="navigateBackToCartItems();"> Go Back </button>
-          <button style="font-size: 1.5em;" onclick="navigateToUserInfoInput();"> Next Step </button>
+          <button id='singleOrderScheduleBtns' style=" display: none; font-size: 1.5em;" onclick="navigateToUserInfoInput();"> Next Step </button>
 
         </dualBtnContainer>
 
@@ -353,10 +358,10 @@
           </labelContainer>
 
           <inputContainerFlex>
-            <input type="text" name="name" placeholder="...">
-            <input type="email" name="email" placeholder="...">
-            <input type="tel" name="phone" placeholder="...">
-            <input type="text" name="address" placeholder="...">
+            <input id="userInputName" type="text" name="name" placeholder="...">
+            <input id="userInputEmail" type="email" name="email" placeholder="...">
+            <input id="userInputPhone" type="tel" name="phone" placeholder="...">
+            <input id="userInputAddress" type="text" name="address" placeholder="...">
           </inputContainerFlex>
 
         </inputContainerFlexbox>
@@ -390,10 +395,10 @@
 
 
         <!-- Back and proceed btns -->
-        <dualBtnContainer style="padding-top:3vh;">
+        <dualBtnContainer style="padding-top:3vh; display: flex;">
 
           <button style="font-size: 1.5em;" onclick="navigateBackToScheduleOrder();"> Go Back </button>
-          <button style="font-size: 1.5em;" onclick="navigateToBillingInfoInput();"> Checkout </button>
+          <button id="infoFormNextBtn" style="display: none; font-size: 1.5em;" onclick="navigateToBillingInfoInput();"> Checkout </button>
 
         </dualBtnContainer>
 
@@ -485,19 +490,40 @@
         <!-- day selection review -->
         <p class="revivewSectionHead" style="padding-top: 3vh; padding-bottom: 3vh;"> Delivery Schedule </p>
 
-        <weekSelectContainer style="display: flex; align-items: center; padding-bottom: 3vh;">
-          <p style="margin:0;"> Week Of November 15th</p>
-          <pad style="width: 2vh;"></pad>
-        <i class="material-icons weekNavIcon"> arrow_forward </i>
-        </weekSelectContainer>
+        <p id="reviewOrderScheduleTxt"> </p>
 
-        <weekDays style='padding-bottom: 4vh;'>
-          <day id="daySelectorMReview">Mon</day>
-          <padBetween> </padBetween>
-          <day id="daySelectorWReview">Wed</day>
-          <padBetween> </padBetween>
-          <day id="daySelectorFReview">Fri</day>
-        </weekDays>
+        <button id="reviewEditOrderscheduleBtn" style="font-size: 1.25em;" onclick="reviewEditOrderSchedule(dayOfWeekSelected);"> Edit </button>
+
+        <div id="reviewEditDaySelection" style="width: 100%; display: none;">
+
+          <weekSelectContainer style="display: flex; justify-content: center; align-items: center; padding-top: 2vh; padding-bottom: 3vh;">
+            <p style="margin:0;"> Week Of December 6th</p>
+            <pad style="width: 2vh;"></pad>
+            <i class="material-icons weekNavIcon"> arrow_forward </i>
+          </weekSelectContainer>
+
+          <weekDays style='padding-bottom: 4vh;'>
+            <div style="display: flex; flex-direction: column; align-items: center;"> 
+              <day id="daySelectorReviewM12-7" class='reviewDaySelectorMon'>Mon</day>
+              <p> 12/7 </p>
+            </div>
+            
+            <padBetween> </padBetween>
+
+            <div style="display: flex; flex-direction: column; align-items: center;"> 
+              <day id="daySelectorReviewW12-9" class='reviewDaySelectorWed'>Wed</day>
+              <p> 12/9 </p>
+            </div>
+
+            <padBetween> </padBetween>
+
+            <div style="display: flex; flex-direction: column; align-items: center;"> 
+             <day id="daySelectorReviewF12-11" class='reviewDaySelectorFri'>Fri</day>
+              <p> 12/11 </p>
+            </div>
+          </weekDays>
+
+        </div>
 
 
         <!-- Your Info -->
@@ -685,6 +711,15 @@
 
         </div>
 
+        <!-- Schedule Info -->
+        <div style="display:flex; justify-content: left; flex-direction:column; padding-top: 4vh; padding-left:4vh; width: 75%;">
+
+            <p class="revivewSectionHead"> Delivery Schedule </p>
+
+            <p id="detailsShippingDayTxt"> Shipping On:  </p>
+
+        </div>
+
         <button style="font-size: 1.5em;"> Copy Info </button>
 
         <pad> </pad>
@@ -724,6 +759,9 @@
     initReviewCreateAccountCheckbox();
     //init onclick for password confirm
     initReviewPasswordInput();
+
+    //init user info form validation
+    initUserInfoFormValidation();
   }
 
 </script>
