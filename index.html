@@ -13,6 +13,8 @@
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   </head>
   <body style="background-image:url('https://iili.io/3E7bxp.jpg'); margin-left:5%; margin-right:5%;">
@@ -30,7 +32,7 @@
       </div>
     </topNav>
 
-    <sideNav id="sideNavBar" style="display:none; background-image:url('https://iili.io/3EMP0Q.md.jpg');" draggable="true" ondrag="closeMenu()">
+    <sideNav id="sideNavBar" style="display:none; background-image:url('https://iili.io/3EMP0Q.md.jpg');  text-shadow: 2px 2px #ffffff;" draggable="true" ondrag="closeMenu()">
       <img onclick="closeMenu()" class="icon" src="https://iili.io/31dCu4.png" style="cursor:pointer;" alt="close menu icon">
       <div id="sideNavItems" class="sideNavItemsContainer" style="">
         <p onclick="window.open('./single-order.html')" class="boldTxt"> Order A Meal </p>
@@ -127,14 +129,46 @@
 
     </floatingContainer>
 
+    <!-- header block -->
+    <div class="headerBlockContainer">
+      <div class="headerBlock" style="border-radius: 20px; background-image:url('https://iili.io/3E7eHb.jpg'); background-repeat: repeat; margin-top: 8vh; text-shadow: 2px 2px #000000;">
+          <centeredContainer style="padding-top:0; padding-bottom:4vh; text-align: center;">
+            <h2 class="cursive" style="font-size:3.2em; color:white;"> Tailored Quisine Meals </h2>
+            
+            
+            <p style="margin:0; font-weight: bold; font-size: 1.75em; justify-content:center; padding-left:4vh; padding-right:4vh; color:white;"> The Home-Made Meal Kit Project</p>
+
+          <!--
+            <p style="margin:0; font-weight: bold; font-size: 1.5em; justify-content:center; padding-left:4vh; padding-right:4vh; color:white;"> Select From Fresh Soups, Pastas, & Specialty Meals From Our Chef </p>-->
+
+          </centeredContainer>
+      </div>
+
+      <pad></pad>
+
+
+      <div id="headerNotice" class="headerBlock borderedTxt transBG" style="display: flex; justify-content: center; align-items: center; width: auto; padding-left: 2vh; padding-right: 2vh; flex-direction: column;">
+        <div style="display: flex; align-items: center;">
+          <i class="material-icons"> add </i>
+          <p> Now Offering Natural Health Products & Spices</p>
+        </div>
+
+        <p id="naturalProductsShopTxt" style="display: none; margin-top:0; color: dodgerblue; text-decoration: underline;"> Shop Now </p>
+        
+      </div>
+
+    </div>
+
+
     <header >
       <flexContainer class="borderedTxt transBG" >
         <txtPadding style="padding-top:4vh;">
           <h2> The Meal Kit Project Specially Designed For Families  </h2>
-          <p> Now Offering 50 Total Deliveries Each Monday, Wednesday, And Friday </p>
+          <p> Offering Delicious, Nutritious, & Easy To Make Meals </p>
+          <p> Select From Fresh Soups, Pastas, & Specialty Meals From Our Chef </p>
 
           <div class="dynamicCenterContainer" >
-            <button class="defaultBtn" onclick="window.open('./single-order.html');"> Claim Your Order Now </button>
+            <button class="defaultBtn" onclick="window.open('./single-order.html');"> Order Now </button>
           </div>
 
         </txtPadding>
@@ -144,40 +178,33 @@
         <!-- img class="headImg" style="cursor:default;" src="https://iili.io/3E71Rf.md.jpg" alt="Tailored Quisine Logo" -->
         <flexContainerFull class="borderedTxt transBG">
           <txtPadding style="padding-top:4vh; " >
-            <h2> Schedule Your Orders  </h2>
-            <p> Get Tailored Quisine Delivered Every Week </p>
+            <h2> Schedule Weekly Delivery  </h2>
+            <p> Subscribe To Tailored Quisine Deliveries</p>
             <p> 1. Select Day(s) To Receive Orders  </p>
             <p> 2. Pick Foods To Receive On Each Day </p>
-            <p> 3. Schedule Your Subscribtion Duration </p>
+            <p> 3. Schedule Your Subscribtion Duration & Frequency </p>
             <div class="dynamicCenterContainer" >
-              <button  class="defaultBtn" onclick="window.open('./schedule-order.html');"> Get  Started </button>
+              <button  class="defaultBtn" onclick="window.open('./schedule-order.html')"> Subscribe </button>
             </div>
 
           </txtPadding>
         </flexContainerFull>
 
       </logoContainer>
+
     </header>
 
 
     <!-- Pasta and soup images + desc -->
     <centeredContainer >
-      <div class="" style="border-radius: 20px; background-image:url('https://iili.io/3E7eHb.jpg'); background-repeat: repeat;">
-        <centeredContainer style="padding-top:0; padding-bottom:5vh; text-align: center;">
-          <h2 class="cursive" style="font-size:2.5em; color:white;"> Tailored Quisine Meals </h2>
-          <p style="margin:0; font-weight: bold; font-size: 1.5em; justify-content:center; padding-left:4vh; padding-right:4vh; color:white;"> Providing The On-The-Go Family With Delicious, Healthy, And Affordable Meals  </p>
-
-        </centeredContainer>
-      </div>
-
           <tripleImgContainer>
             <imgContainer>
               <p class="cursive transBG titleTxt" style=""> Home Made Pastas </p>
-              <img id="pastaMakingImg" src="https://iili.io/319Y9R.md.png" alt="pasta making image">
+              <img id="pastaMakingImg" src="https://iili.io/319Y9R.md.png" alt="pasta making image" onclick="window.open('./single-order.html');">
             </imgContainer>
             <imgContainer>
               <p class="cursive transBG titleTxt" style=""> House Soups </p>
-              <img id="soupImg" src="https://iili.io/30yv3J.jpg" alt="soup image">
+              <img id="soupImg" src="https://iili.io/30yv3J.jpg" alt="soup image" onclick="window.open('./single-order.html');">
             </imgContainer>
             <imgContainer>
               <p class="cursive transBG titleTxt" style=""> Custom Orders </p>
@@ -187,7 +214,7 @@
     </centeredContainer>
 
 
-    <!-- Sign Up Blurb and button -->
+    <!-- Sign Up Blurb and button 
     <div style="display:flex; justify-content:center;">
       <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
         <h2> Sign Up For Recurring Deliveries </h2>
@@ -195,7 +222,7 @@
         <p  style="margin-top:0;"> Offered Each Monday, Wednesday, And Friday </p>
         <button id="signUpButton" class="defaultBtn largeBtn" type="button" name="signUpButton" > Schedule Your Orders </button>
       </centeredContainer>
-    </div>
+    </div>-->
 
     <!-- Food Images Carosel -->
     <centeredContainer >
@@ -213,12 +240,7 @@
     </centeredContainer>
 
 
-    <!-- Health Products Area -->
-    <centeredContainer class="borderedTxt transBG borderShrink" style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;">
-      <h2  style="padding-left:4vh; padding-right:4vh; "> Home-Made Health Products </h2>
-      <p  style="padding-left:4vh; padding-right:4vh; "> Natural Health Products From The Chef And Family </p>
-      <button class="defaultBtn"> Shop Now </button>
-    </centeredContainer>
+    
 
     <!-- pad -->
     <div style="padding:3vh;">
@@ -245,6 +267,9 @@
 
   //on page load...
   window.onload = function(){
+
+    //init header notice hover
+    initHeaderNotice();
 
     //init food onclicks
     initMainFoods();

@@ -890,6 +890,15 @@ replyContainer{
   padding-left: 4vh; 
 }
 
+.headerBlock{ width: 100%; }
+.headerBlockContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 /*
   Responsive Design Styling
 */
@@ -963,6 +972,10 @@ replyContainer{
   Resizing for desktop
 */
 @media (min-width:1200px){
+
+  .headerBlock{
+    width: 50%;
+  }
 
 
   .logo{

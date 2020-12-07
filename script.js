@@ -59,6 +59,19 @@ function closeMenu(){
   }, 10);
 }
 
+
+//on hover for header notice block
+function initHeaderNotice(){
+  document.getElementById('headerNotice').onmouseover = ()=>{
+    document.getElementById('naturalProductsShopTxt').style.display = 'block';
+    document.getElementsByTagName('header')[0].style.paddingTop = '4.5vh';
+  };  
+  document.getElementById('headerNotice').onmouseleave = ()=>{
+    document.getElementById('naturalProductsShopTxt').style.display = 'none';
+    document.getElementsByTagName('header')[0].style.paddingTop = '10vh';
+  };  
+}
+
 //set on hover for main food images
 function initMainFoods(){
   for(var foodId in mainFoodImgsIDs){
