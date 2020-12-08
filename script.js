@@ -836,15 +836,24 @@ function initWeeksSchedulingChecks(){
 
   //get week checks
   let weekCheckboxes = document.getElementsByClassName('scheduleWeeksCheckboxes');
+  let weekCheckboxesFreq = document.getElementsByClassName('scheduleWeeksCheckboxesFreq');
 
   //get week txt options
   let weekText = document.getElementsByClassName('scheduleWeeksText');
+  let weekTexFreq = document.getElementsByClassName('scheduleWeeksTextFreq');
+
 
   for(var i = 0; i < weekCheckboxes.length; i++){
     let elementID = weekCheckboxes[i].id;
 
     weekCheckboxes[i].onclick = () => {alterScheduleWeeksSelection(elementID)};
     weekText[i].onclick = () => {alterScheduleWeeksSelection(elementID)};
+  }
+
+  for(var i = 0; i < weekCheckboxesFreq.length; i++){
+    let elementID = weekCheckboxesFreq[i].id;
+    weekCheckboxesFreq[i].onclick = () => {alterScheduleWeeksFreqSelection(elementID)};
+    weekTexFreq[i].onclick = () => {alterScheduleWeeksFreqSelection(elementID)};
   }
 
 } 
@@ -877,6 +886,17 @@ function alterScheduleWeeksSelection(id){
 
 }
 
+//alter schedule orders # of weeks selection
+function alterScheduleWeeksFreqSelection(id){
+
+  //revert week selection checks
+  revertScheduleOrdersWeeksFreq();
+
+  //set given elem to checked
+  document.getElementById(id).checked = true;
+
+}
+
 //set all week selections to unchecked
 function revertScheduleOrdersWeeks(){
   let weekCheckboxes = document.getElementsByClassName('scheduleWeeksCheckboxes');
@@ -886,6 +906,15 @@ function revertScheduleOrdersWeeks(){
   }
 
 }
+function revertScheduleOrdersWeeksFreq(){
+  let weekCheckboxes = document.getElementsByClassName('scheduleWeeksCheckboxesFreq');
+
+  for(var i = 0; i < weekCheckboxes.length; i++){
+    weekCheckboxes[i].checked = false;
+  }
+
+}
+
 
 //init input for custom # of weeks
 function initCustomWeeksInput(){

@@ -68,16 +68,16 @@
 
 
     <!-- Header - Schedule Your Order - Select days -->
-    <centeredContainer >
+    <centeredContainer style='text-shadow: 2px 2px #000000;'>
       <div id="scheduledHeaderArea" class="" style="border-radius: 20px; background-image:url('https://iili.io/3E7eHb.jpg'); background-repeat: repeat;">
         <centeredContainer style="padding-top:0; padding-bottom:5vh; text-align: center;">
           <h2 class="cursive" style="font-size:2.5em; color:white;"> Schedule Your Orders </h2>
           <p style="margin:0; font-weight: bold; font-size: 1.5em; justify-content:center; padding-left:4vh; padding-right:4vh; color:white;">
-           Select Days To Receive Your Recurring Orders
+           1. Select Days To Receive Your Recurring Orders
          </p>
 
          <p style="margin:0; font-weight: bold; font-size: 1.5em; justify-content:center; padding-left:4vh; padding-right:4vh; color:white;">
-           Select Orders To Receive On Different Days
+           2. Choose Orders To Receive On Different Days
          </p>
 
 
@@ -88,7 +88,7 @@
     <!-- Day Of Week Selection(s) -->
     <div id="scheduledDaySelectorArea" style="display:flex; justify-content:center; padding-bottom:4vh; padding-top:4vh;">
       <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
-        <h2> Select Days To Receive Your Order </h2>
+        <h2> Select Day(s) To Receive Your Order </h2>
 
         <weekDays>
           <day id="daySelectorM">Mon</day>
@@ -486,10 +486,27 @@
       <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
         <h2> Schedule Your Deliveries </h2>
 
-        <p> How Many Weeks Would You Like To Receive Orders? </p>
+
+        <p> 1. How Frequently Would You Like To Receive Your Orders? </p>
 
         <div style="display: flex; justify-content: left; padding-bottom: 0vh;">
           <div style="display: flex; flex-direction: column;" class="deliveryFreqChecks">
+            <input id="weekly-check" type="checkbox" name="weekly" class="scheduleWeeksCheckboxesFreq">
+            <input id="biweekly-check" type="checkbox" name="biweekly" class="scheduleWeeksCheckboxesFreq">
+            <input id="monthly-check" type="checkbox" name="monthly" class="scheduleWeeksCheckboxesFreq">
+          </div>
+          <div style="display: flex; flex-direction: column;" class="deliveryFreqOptions">
+            <p id="weekly-txt" class="scheduleWeeksTextFreq"> Every Week </p>
+            <p id="biweekly-txt" class="scheduleWeeksTextFreq"> Every Other Week </p>
+            <p id="monthly-txt" class="scheduleWeeksTextFreq"> Once A Month </p>
+          </div>
+        </div>
+
+
+        <p> 2. How Many Weeks Would You Like To Receive Orders? </p>
+
+        <div style="display: flex; justify-content: left; padding-bottom: 0vh;">
+          <div style="display: flex; flex-direction: column;" class="deliveryDurationChecks">
             <input id="1-months-check" type="checkbox" name="1-month" class="scheduleWeeksCheckboxes">
             <input id="2-months-check" type="checkbox" name="2-months" class="scheduleWeeksCheckboxes">
             <input id="3-months-check" type="checkbox" name="3-months" class="scheduleWeeksCheckboxes">
@@ -498,7 +515,7 @@
             <input id="forever-months-check" type="checkbox" name="forever-months" class="scheduleWeeksCheckboxes">
             <input id="custom-months-check" type="checkbox" name="custom-months" class="scheduleWeeksCheckboxes">
           </div>
-          <div style="display: flex; flex-direction: column;" class="deliveryFreqOptions">
+          <div style="display: flex; flex-direction: column;" class="deliveryDurationOptions">
             <p id="1-months-txt" class="scheduleWeeksText"> 1 Month (4 weeks) </p>
             <p id="2-months-txt" class="scheduleWeeksText"> 2 Months (8 weeks) </p>
             <p id="3-months-txt" class="scheduleWeeksText"> 3 Months (12 weeks) </p>
@@ -577,11 +594,14 @@
 
         <h2 > Totals </h2>
 
+
+
         <div class="scheduleTotalsByDayArea" style="display: flex; justify-content: left; flex-direction: column; padding-bottom: 3vh;">
           <p> Monday: $19 </p>
           <p> Wednesday: $12 </p>
           <p> Friday: $19 </p>
         </div>
+
 
         <!-- Back and proceed btns -->
         <dualBtnContainer>
