@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title> Tailored Quisine </title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css?version=1.7">
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<!-- icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body style="background-image:url('https://iili.io/3E7bxp.jpg'); margin-left:5%; margin-right:5%;">
+
+
+    <!-- header -->
+    <centeredContainer id="menuHeader" style='text-shadow: 2px 2px #000000;'>
+      <div class="" style="border-radius: 20px; background-image:url('https://iili.io/3E7eHb.jpg'); background-repeat: repeat;">
+        <centeredContainer style="padding-top:0; padding-bottom:5vh; text-align: center;">
+          <h2 class="cursive" style="font-size:2.5em; color:white;"> Custom Orders </h2>
+          <p style="margin:0; font-weight: bold; font-size: 1.5em; justify-content:center; padding-left:4vh; padding-right:4vh; color:white;">
+           Chef Shawn Samuels Can Cook Just About Anything, But Some Foods Ship Better Than Others...
+         </p>
+        </centeredContainer>
+      </div>
+    </centeredContainer>
+
+    <!-- sub header -->
+    <div style="display: flex; width: 100%; justify-content: center;">
+        <div class=" borderedTxt transBG subhead" style="display: flex; justify-content: center; align-items: center; padding-left: 2vh; padding-right: 2vh; flex-direction: column; margin-top: 4vh;">
+            <div style="display: flex; align-items: center;">
+              <p> Place A Request & The Team Will Get Back To You Shortly Via Email </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- form -->
+    <div  style="display:flex; justify-content:center; padding-bottom:4vh; padding-top:4vh;">
+      <centeredContainer style="padding-top:0;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
+        <h2> Custom Order Form </h2>
+
+        <div id="customOrderForm" style="width: 100%;">
+            <form style="width:90%;">
+                <labels>
+                    <p> Name: </p>
+                    <p> Email: </p>
+                </labels>    
+                <inputs>
+                    <input type="text" name="name">
+                    <input type="email" name="email">
+                </inputs>
+            </form>
+
+            <!--  message -->
+            <p class="leftText" style="width: 90%; padding-left: 0;"> Your Message: </p>
+            <largeInputContainer style="width: 90%;">
+                <textarea name="message" class="messageInput "> </textarea> 
+            </largeInputContainer>
+
+
+            <!-- send btn -->
+            <div class="leftText" style=" width: 90%; padding-left: 0;">
+                <button style="margin-top: 2vh; font-size: 1.25em; display: flex; align-items: center;" onclick="sendMessage();">Send <i class="material-icons" style="margin-left: 1vh;"> send </i> </button>
+            </div>
+        </div>
+
+        <!-- message sent confirmation -->
+        <div id="sentConfirmMessage" style="display: none; justify-content: center; flex-direction: column;">
+            <p style="display: flex; justify-content: center;"> Message Sent. We'll Send You An Email Soon. </p>
+            <p style="display: flex; justify-content: center;"> Thanks For Eating With Us </p>
+            <p style="display: flex; justify-content: center;">  - Tailored Quisine -  </p>
+        </div>
+
+        <!-- back and home btns -->
+        <dualBtnContainer id='sentNavBtns' style='display: none;'>
+            <button style="font-size: 1.5em;" onclick="backToCustomerOrder()">Back</button>
+            <button style="font-size: 1.5em;" onclick="window.open('./index.html')">Home</button>
+        </dualBtnContainer>
+        
+
+      </centeredContainer>
+    </div>
+
+
+
+  
+</body>
+
+</html>
+ <!-- JS -->
+<script type="text/javascript" src="script.js?v=3"></script>
+<script type="text/javascript" src="custom-order.js?v=1"></script>
+<script type="text/javascript">
+    
+</script>

@@ -914,6 +914,56 @@ replyContainer{
   align-items: center;
 }
 
+
+form{
+  display: flex;
+  width: 90%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+form labels{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 2vh;
+}
+
+form inputs{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+form inputs input{
+  font-size: 1.25em;
+  margin:0.5vh;
+  padding: 0.5vh;
+}
+
+form labels p{
+  margin:1vh;
+  margin-left:0vh;
+  padding: 0;
+}
+
+.messageInput{
+  width: 67%;
+  height: 10vh;
+  resize: both;
+  padding: 1vh;
+  font-size: 1.25em;
+  font-weight: normal;
+}
+
+largeInputContainer{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.subhead{ width: auto; }
+
 /*
   Responsive Design Styling
 */
@@ -989,6 +1039,10 @@ replyContainer{
 @media (min-width:1200px){
 
   .headerBlock{
+    width: 50%;
+  }
+
+  .subhead{
     width: 50%;
   }
 
