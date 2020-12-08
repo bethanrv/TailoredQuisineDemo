@@ -467,6 +467,8 @@ function alterSelection(element, id, type){
     //hide item selections
     document.getElementById("pastaSelections").style.display = 'none';
     document.getElementById("soupSelections").style.display = 'none';
+    document.getElementById("specialSelections").style.display = 'none';
+
     //deselect all...
     deslectDays();
   }
@@ -476,6 +478,9 @@ function alterSelection(element, id, type){
     //show item selections
     document.getElementById("pastaSelections").style.display = 'flex';
     document.getElementById("soupSelections").style.display = 'flex';
+    document.getElementById("specialSelections").style.display = 'flex';
+
+
 
     //add in day selections next to each item...
     addInDaySelections();

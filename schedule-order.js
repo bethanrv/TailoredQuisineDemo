@@ -12,6 +12,7 @@ function navigateToCheckout(){
   //menu
   document.getElementById('soupSelections').style.display = 'none';
   document.getElementById('pastaSelections').style.display = 'none';
+   document.getElementById('specialSelections').style.display = 'none';
 
   //checkout prompt
   closeCheckoutPromt();
@@ -126,6 +127,8 @@ function navigateBackToMenuItems(){
   //menu
   document.getElementById('soupSelections').style.display = 'flex';
   document.getElementById('pastaSelections').style.display = 'flex';
+  document.getElementById('specialSelections').style.display = 'flex';
+
 
   showCart();
   showBottomCheckoutPrompt();
