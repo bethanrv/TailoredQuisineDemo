@@ -276,6 +276,7 @@ sideNav{
   background-color: white;
   width: 40%;
   height: 100%;
+  text-shadow: 2px 2px #ffffff;
 }
 
 sideNav p{
@@ -691,7 +692,7 @@ linkContainer{
     font-size: 1.5em;
     background-color: white;
     border-color: black;
-    width: 25vw;
+    min-width: 25vw;
 }
 .defaultBtn:hover{
     font-size: 1.5em;
@@ -947,6 +948,19 @@ form labels p{
   padding: 0;
 }
 
+mobileForm{
+  width: 90%;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+mobileForm input{
+  font-size: 1.25em;
+  margin:0.5vh;
+  padding: 0.5vh;
+}
+
 .messageInput{
   width: 67%;
   height: 10vh;
@@ -964,6 +978,20 @@ largeInputContainer{
 
 .subhead{ width: auto; }
 
+.fixHeight{
+  padding: 0;
+  maring:0;
+}
+
+.fixHieght label{
+  height: 4vh;
+  padding: 0;
+  maring:0;
+}
+
+.sidePadDesktop{}
+
+
 /*
   Responsive Design Styling
 */
@@ -975,7 +1003,48 @@ largeInputContainer{
 */
 @media (max-width:768px){
 
+  .messageInput{
+    width: 100%;
+    height: 20vh;
+  }
+
+  form{
+    display: none;
+  }
+
+  mobileForm{
+    display: flex;
+  }
+
+  menuItemTxt{
+    flex-direction: column;
+  }
+
+  menuItemTxt weekDays{
+    padding-right: 4vh;
+    padding-top: 1vh;
+  }
+
+  .sidePadDesktop{
+    display: none;
+    width: 0;
+  }
+
+
   
+  menuItemDesc{
+    padding-right: 1vh;
+    padding-left: 1vh;
+
+  }
+
+  .prompt{
+    left:10vw;
+    width: 80%;
+    height: auto;
+    padding-bottom: 5vh;
+  }
+
 
   .largeBtn{
     width: 40vw;
@@ -1004,7 +1073,7 @@ largeInputContainer{
   }
 
   .sideNavItemsContainer p{
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
 
 

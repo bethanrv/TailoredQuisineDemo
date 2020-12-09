@@ -28,7 +28,7 @@ function closeMenuItems(){
 	document.getElementById('menuHeader').style.display = 'none';
 	document.getElementById('soupSelection').style.display = 'none';
 	document.getElementById('pastaSelection').style.display = 'none';
-
+	document.getElementById('specialsSelection').style.display = 'none';
 }
 
 //navigate back to menu items
@@ -36,6 +36,7 @@ function navigateBackToMenu(){
 	document.getElementById('menuHeader').style.display = 'flex';
 	document.getElementById('soupSelection').style.display = 'flex';
 	document.getElementById('pastaSelection').style.display = 'flex';
+	document.getElementById('specialsSelection').style.display = 'flex';
 	document.getElementById('checkoutPromptBottom').style.display = 'flex';
 
 	document.getElementById('checkoutHeader').style.display = 'none';

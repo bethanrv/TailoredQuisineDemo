@@ -624,6 +624,7 @@ function initCartItemsFunctions(){
   //get list of item removers
   let itemRemovers = document.getElementsByClassName('removeItemIcon');
 
+  //OLD - Changin to just strike thru on click...
   /* Attach functions to removers
      Hover - red strike thru on corresponding item
      Click - remove corresponding item */
@@ -637,18 +638,27 @@ function initCartItemsFunctions(){
     //store corresponding cart item area (includes txt and cancel btn)
     let cartItemArea = document.getElementById(itemRemovers[i].id.substring(0, itemRemovers[i].id.indexOf('Remover')));
 
+
     //add hover event
-    itemRemovers[i].onmouseover = () => {
-      cartItemTxt.style.textDecoration = "line-through";
-      cartItemTxt.style.textDecorationColor = "red";
-    };
-    itemRemovers[i].onmouseleave = () => {
-      cartItemTxt.style.textDecoration = "none";
-    };
+    // itemRemovers[i].onmouseover = () => {
+    //   cartItemTxt.style.textDecoration = "line-through";
+    //   cartItemTxt.style.textDecorationColor = "red";
+    // };
+    // itemRemovers[i].onmouseleave = () => {
+    //   cartItemTxt.style.textDecoration = "none";
+    // };
+
+    //store html info
+    let status = itemRemovers[i].innerHTML.trim();
+    let id = itemRemovers[i].id;
 
     //add click event
     itemRemovers[i].onclick = () => {
-      cartItemArea.style.display = "none";
+      
+      //change cancel btn to undo
+      alterUndoCancel(id, cartItemTxtID);
+
+      
     };
 
 
@@ -657,14 +667,47 @@ function initCartItemsFunctions(){
   }
 }
 
+function alterUndoCancel(id, txtID){
+  let status = document.getElementById(id).innerHTML.trim();
+  let cartItemTxt = document.getElementById(txtID);
+  if(status == 'cancel'){
+
+    cartItemTxt.style.textDecoration = "line-through";
+    cartItemTxt.style.textDecorationColor = "red";
+    cancelToUndo(id);
+  }
+  else {
+     cartItemTxt.style.textDecoration = "none";
+     undoToCancel(id);
+  }
+}
+
+function cancelToUndo(id){  
+  let item = document.getElementById(id);
+
+  item.innerHTML = 'undo';
+  item.style.color = 'green';
+
+}
+
+function undoToCancel(id){  
+  let item = document.getElementById(id);
+
+  item.innerHTML = 'cancel';
+  item.style.color = 'red';
+
+}
+
 //init onclick for review cart items
 function initReviewCartItemRemove(){
   //get list of item removers
   let itemRemovers = document.getElementsByClassName('removeItemIconSmall');
 
+  //OLD....
   /* Attach functions to removers
      Hover - red strike thru on corresponding item
      Click - remove corresponding item */
+  //...CHANGING TO JUST STRIKE THRU ONCLICK... NO REMOVE
 
   for(var i = 0; i < itemRemovers.length; i++){
 
@@ -675,18 +718,22 @@ function initReviewCartItemRemove(){
     //store corresponding cart item area (includes txt and cancel btn)
     let cartItemArea = document.getElementById(itemRemovers[i].id.substring(0, itemRemovers[i].id.indexOf('Remover')));
 
+    //OLD...
     //add hover event
-    itemRemovers[i].onmouseover = () => {
-      cartItemTxt.style.textDecoration = "line-through";
-      cartItemTxt.style.textDecorationColor = "red";
-    };
-    itemRemovers[i].onmouseleave = () => {
-      cartItemTxt.style.textDecoration = "none";
-    };
+    // itemRemovers[i].onmouseover = () => {
+    //   cartItemTxt.style.textDecoration = "line-through";
+    //   cartItemTxt.style.textDecorationColor = "red";
+    // };
+    // itemRemovers[i].onmouseleave = () => {
+    //   cartItemTxt.style.textDecoration = "none";
+    // };
 
     //add click event
     itemRemovers[i].onclick = () => {
-      cartItemArea.style.display = "none";
+      cartItemTxt.style.textDecoration = "line-through";
+      cartItemTxt.style.textDecorationColor = "red";
+
+      //change remover btn to undo
     };
 
 

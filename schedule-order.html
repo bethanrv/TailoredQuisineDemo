@@ -122,7 +122,7 @@
             <menuItemTxt>
               <menuItemTitle id="soupMenuItem1">1. Tomato & Turmeric $7 Half - $14 Full</menuItemTitle>
               <weekDays id="soupMenuItem1Days">
-                <padBetween> </padBetween>
+                <padBetween class="sidePadDesktop"> </padBetween>
                 <day class="mon">M</day>
                 <padBetween> </padBetween>
                 <day class="wed">W</day>
@@ -727,12 +727,22 @@
 
 
     <!-- Checkout - review info -->
-    <div id="checkoutReview" style="display:none; justify-content:center; padding-top: 5vh;">
+    <div id="checkoutReview" style="display:none; justify-content:center; padding-top: 5vh; margin-left: 5vw; margin-right: 5vw;">
       <centeredContainer style="padding-top:0vh;padding-bottom:3vh; padding-left: 2vh;  padding-right: 2vh;" class="borderedTxt transBG borderShrink">
         <h2> Review Your Order </h2>
 
-        <h2 class="reviewOrderHeader"> Ordering Weekly For... </h2>
+        <h2 class="reviewOrderHeader"> Order Frequency </h2>
+        <div style="display: flex; justify-content: left; padding-bottom: 0vh;">
+          <div style="display: flex; flex-direction: column;" class="deliveryFreqChecks">
+            <input id="1-months-check" checked="true" disabled="true" type="checkbox" name="1-month" class="scheduleWeeksCheckboxes">
 
+          </div>
+          <div style="display: flex; flex-direction: column;" class="deliveryFreqOptions">
+            <p id="1-months-txt" class="scheduleWeeksText"> Each Week </p>
+          </div>
+        </div>
+
+        <h2 class="reviewOrderHeader"> Order Duration </h2>
         <div style="display: flex; justify-content: left; padding-bottom: 0vh;">
           <div style="display: flex; flex-direction: column;" class="deliveryFreqChecks">
             <input id="1-months-check" checked="true" disabled="true" type="checkbox" name="1-month" class="scheduleWeeksCheckboxes">
@@ -941,10 +951,20 @@
 
         <p> Order ID: 0107</p>
 
-        <p class="reviewOrderHeader" style="display: flex; justify-content: left; width: 75%; padding-left: 2vh; "> Ordering Weekly For... </p>
+        <h2 class="reviewOrderHeader" style="width: 75%"> Order Frequency </h2>
+        <div style="display: flex; justify-content: left; padding-bottom: 0vh; width: 75%">
+          <div style="display: flex; flex-direction: column;" class="deliveryFreqChecks">
+            <input id="1-months-check" checked="true" disabled="true" type="checkbox" name="1-month" class="scheduleWeeksCheckboxes">
 
-        <div style="display: flex; justify-content: left; padding-bottom: 0vh; width: 75%;">
-          <div style="display: flex; flex-direction: column; padding-left: 2vh;" class="deliveryFreqChecks">
+          </div>
+          <div style="display: flex; flex-direction: column;" class="deliveryFreqOptions">
+            <p id="1-months-txt" class="scheduleWeeksText"> Each Week </p>
+          </div>
+        </div>
+
+        <h2 class="reviewOrderHeader" style="width: 75%"> Order Duration </h2>
+        <div style="display: flex; justify-content: left; padding-bottom: 0vh; width: 75%">
+          <div style="display: flex; flex-direction: column;" class="deliveryFreqChecks">
             <input id="1-months-check" checked="true" disabled="true" type="checkbox" name="1-month" class="scheduleWeeksCheckboxes">
 
           </div>
