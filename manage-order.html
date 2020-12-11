@@ -50,23 +50,23 @@
 
 
     <!-- sign in area -->
-    <div id="signInArea" class="center" style="width:90vw;">
-      <flexContainerFull class="borderedTxt transBG center" style="padding:4vh; width:100%;">
+    <div id="signInArea" class="center">
+      <flexContainerFull class="borderedTxt transBG center mobileMargin" style="padding:4vh;">
         <p style="text-decoration:underline;"> Login </p>
 
-        <div style="display:flex; align-items:center; ">
+        <div class="dynamicForm" style="">
           <pad style="width:4vh;"></pad>
           <p> Email: </p>
           <pad></pad>
           <input type="email" style="font-size:1.25em; height:4vh;"/>
         </div>
-        <div style="display:flex; align-items:center; ">
+        <div class="dynamicForm">
           <p> Password: </p>
           <pad></pad>
           <input type="password" style="font-size:1.25em; height:4vh;"/>
         </div>
 
-        <button style="font-size:1.25em;" onclick="login()"> Login </button>
+        <button style="font-size:1.25em; margin-top:2vh;" onclick="login()"> Login </button>
 
         <p style="padding-top: 2vh;" class="linkTxt" onclick="openSendPassContainer()"> Don't Have An Account? </p>
 
@@ -88,7 +88,7 @@
         <pad></pad>
         <input type="email" style="font-size:1.25em; height:4vh;"/>
       </div>
-      <button style="font-size:1.25em; margin:2vh; display:flex; align-items:center;">
+      <button style="font-size:1.25em; margin:2vh; display:flex; align-items:center;" onclick="closeSendPassContainer();">
         <p style="padding-right: 2vh;"> Send Password  </p>
         <i class="material-icons" > send </i>
       </button>

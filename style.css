@@ -991,6 +991,15 @@ largeInputContainer{
 
 .sidePadDesktop{}
 
+.mobileMargin{
+  width: 100%;
+}
+
+.dynamicForm{
+  display:flex; 
+  align-items:center; 
+}
+
 
 /*
   Responsive Design Styling
@@ -1002,6 +1011,25 @@ largeInputContainer{
   Resizing for mobile
 */
 @media (max-width:768px){
+
+  floatingContainer{
+    width: 90%;
+    left: 5%;
+  }
+
+  .dynamicForm{
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .dynamicForm pad{ 
+    display: none;
+  }
+
+
+  .mobileMargin{
+    width: 90%;
+  }
 
   .messageInput{
     width: 100%;
