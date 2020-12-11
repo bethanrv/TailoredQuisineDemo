@@ -106,6 +106,32 @@ function navigateBackToBillingInfoInput(){
 
 //navigate to order details area
 function navigateToOrderDetailsArea(){
+
+
+	var animationTotalTime = 3500;
+	var textTransitionTime = 1500;
+
+	//show loading animation pop up
+	document.getElementById('loadingAnimationArea').style.display = 'flex';
+	document.getElementById('dim').style.display = 'block';
+
+	setTimeout(function() {
+		// //hide animation
+		document.getElementById('loadingAnimationHeader').innerHTML = "Order Sent";
+		document.getElementById('loadingAnimationText').innerHTML = "Thank You For Shopping With Us!";
+
+	}, textTransitionTime);
+
+
+	setTimeout(function() {
+		// //hide animation
+		document.getElementById('loadingAnimationArea').style.display = 'none';
+		document.getElementById('dim').style.display = 'none';
+
+	}, animationTotalTime);
+
+	
+
 	document.getElementById('orderDetailsArea').style.display = 'flex';
 	document.getElementById('orderReviewArea').style.display = 'none';
 }
