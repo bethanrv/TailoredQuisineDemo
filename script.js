@@ -281,7 +281,7 @@ function initMenuItemsOnClick(){
   var menuItems = document.getElementsByTagName('menuItemTxt');
 
   for(var i = 0; i < menuItems.length; i++){
-    menuItems[i].onclick = function(){promptCheckout()};
+    menuItems[i].onclick = () => {promptCheckout()};
   }
 
 }

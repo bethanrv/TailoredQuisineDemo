@@ -53,6 +53,29 @@ function navigateToCheckout(){
 
 //confirm order.. navigate to order details
 function confirmOrder(){
+
+  var animationTotalTime = 3500;
+  var textTransitionTime = 1500;
+
+  //show loading animation pop up
+  document.getElementById('loadingAnimationArea').style.display = 'flex';
+  document.getElementById('dim').style.display = 'block';
+
+  setTimeout(function() {
+    // //hide animation
+    document.getElementById('loadingAnimationHeader').innerHTML = "Order Sent";
+    document.getElementById('loadingAnimationText').innerHTML = "Thank You For Shopping With Us!";
+
+  }, textTransitionTime);
+
+
+  setTimeout(function() {
+    // //hide animation
+    document.getElementById('loadingAnimationArea').style.display = 'none';
+    document.getElementById('dim').style.display = 'none';
+
+  }, animationTotalTime);
+  
   document.getElementById('checkoutReview').style.display = 'none';
   document.getElementById('checkoutOrderDetails').style.display = 'flex';
 }
@@ -169,7 +192,7 @@ function initMenuItemTitleOnclick(){
   //add onclick for each... select all days in corresponding day selector
   for(var i = 0; i < titleElements.length; i++){
     let titleID = titleElements[i].id;
-    titleElements[i].onclick = () => {selectAllDaysForItem(titleID)};
+    titleElements[i].onclick = () => {selectAllDaysForItem(titleID), promptCheckout()};
   }
 }
 
@@ -179,9 +202,20 @@ function selectAllDaysForItem(itemID){
 
 
   for(var i = 0; i < itemDays.length; i++){
-    console.log(itemDays[i])
 
     if(!itemDays[i].classList.contains('selected')) 
       itemDays[i].classList.add('selected');
   }
+}
+
+//prompt user to either checkout or keep shopping when an item is added to cart
+function promptCheckout(){
+  document.getElementById('checkoutPrompt').style.display = 'block';
+  document.getElementById('dim').style.display = 'block';
+
+  //add cart to display
+  document.getElementById('cart').style.display = 'block';
+
+  //add bottom checkout prompt
+  document.getElementById('checkoutPromptBottom').style.display = 'flex';
 }

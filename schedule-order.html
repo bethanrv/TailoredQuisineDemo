@@ -45,7 +45,7 @@
     <!-- checkout prompt -->
     <div id='checkoutPrompt' style="" class="prompt">
       <div style="display: flex; justify-content: center;  align-items: center; flex-direction: column;">
-        <h2 id="promptedAddedTxt"> Added 3 Items To Cart </h2>
+        <h2 id="promptedAddedTxt" style="padding: 2vh;"> Added 3 Items To Cart </h2>
         <h2> Total - $19 </h2>
         <button onclick="navigateToCheckout();" style="font-size: 2em; border-color:black;"> Checkout </button>
         <pad></pad>
@@ -941,6 +941,19 @@
 
       </centeredContainer>
     </div> <!-- end cart items area -->
+
+
+    <!-- loading animation area -->
+    <floatingContainer id="loadingAnimationArea" style="display:none;">
+
+      <h2 id="loadingAnimationHeader"> Loading... </h2>
+
+      <p id="loadingAnimationText"> Sending Order </p>
+
+    </floatingContainer>
+
+    <dim id="dim">
+    </dim>
 
 
     <!-- Order Details For Reference -->
