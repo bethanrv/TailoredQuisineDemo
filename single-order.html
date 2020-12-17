@@ -830,6 +830,28 @@
 
     //init user info form validation
     initUserInfoFormValidation();
+
+
+    setTimeout(() => {
+        loadScrollDown(); //set page y 
+    }, 100);
   }
+
+  //load scroll down - given pasta or soup...
+  const loadScrollDown = (() => {
+    if (window.location.href.toString().indexOf('soup')  > -1) {
+        //var y_off = document.getElementById('soupSelection').getBoundingClientRect().top;
+        //y_off = parseInt(y_off) - 100;
+        //window.scrollBy(0, y_off); 
+    }
+    else if (window.location.href.toString().indexOf('pasta') > -1) {
+        let y_off = document.getElementById('pastaSelection').getBoundingClientRect().top;
+
+
+
+        y_off = parseInt(y_off) - 90;
+        window.scrollBy(0,y_off); 
+    }
+  });
 
 </script>
